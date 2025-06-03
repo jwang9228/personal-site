@@ -2,10 +2,15 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import FadeContent from './utils/FadeContent';
 
 export default function RootLayout({children}) {
-  const [activeTab, setActiveTab] = useState('about');
+  const pathname = usePathname();
+  const [activeTab, setActiveTab] = useState(pathname === '/' 
+    ? 'about' 
+    : pathname.slice(1).split('/')[0]
+  );
 
   const tabs = [
     {'label': 'about', 'href': '/'},
@@ -24,7 +29,10 @@ export default function RootLayout({children}) {
     <div className='flex flex-col justify-between h-screen px-8 tablet:px-14 laptop:px-16 pt-6 pb-6 tablet:pb-8'>
       <div>
         <FadeContent duration={750}>
-          <div className='flex flex-wrap justify-end items-center gap-x-5 tablet:gap-x-7'>
+          {/* fix the padding here for line 29 to simplify... make it so that content can't hit the top or bottom navbar (divide)*/}
+          <div className='fixed top-0 right-0 z-50 px-8 tablet:px-14 laptop:px-16 pt-6
+            flex flex-wrap justify-end items-center gap-x-5 tablet:gap-x-7'
+          >
             {tabs.map((tab, i) => (
               <Link 
                 key={i} 
@@ -47,13 +55,13 @@ export default function RootLayout({children}) {
             ))}
           </div>
         </FadeContent>
-        <div className='py-10'>
+        <div className='py-12'>
           {children}
         </div>
       </div>
       <FadeContent duration={750}>
         <div className='flex w-fit flex-col gap-y-4'>
-          <hr className='text-zinc-300/70' />
+          <hr className='h-px border-0 bg-gradient-to-r from-zinc-300/10 via-zinc-300/70 to-zinc-300/10' />
           <div className='flex items-center gap-x-6 tablet:gap-x-8'>
             {socials.map((social, i) => (
               <Link

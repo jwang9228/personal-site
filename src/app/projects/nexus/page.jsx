@@ -3,7 +3,42 @@
 import NexusClient from '../../components/projects/nexus/NexusClient';
 import NexusServer from '../../components/projects/nexus/NexusServer';
 import { useState } from 'react';
+import Orb from '../../components/utils/Orb';
 
+export default function Page() {
+  return (
+    <div className='flex flex-col'>
+      <div className='flex relative items-center justify-center'>
+        <div className='relative z-2 w-full h-150'>
+          <Orb
+            hoverIntensity={0.5}
+            rotateOnHover={true}
+            hue={0}
+            forceHoverState={false}
+          />  
+        </div>
+        <div className='absolute z-0 text-lg'>
+          {"Enter the Nexus ->"}
+        </div>
+      </div>
+      <div className='flex relative items-center justify-center'>
+        <div className='relative z-2 w-full h-150'>
+          <Orb
+            hoverIntensity={0.5}
+            rotateOnHover={true}
+            hue={0}
+            forceHoverState={false}
+          />  
+        </div>
+        <div className='absolute z-0 text-lg'>
+          {"Enter the Nexus 2 ->"}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/*
 export default function Page() {
   const [showClient, setShowClient] = useState(true);
 
@@ -34,3 +69,4 @@ export default function Page() {
     </div>
   )
 }
+  */
