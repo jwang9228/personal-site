@@ -9,29 +9,16 @@ export default function Page() {
   return (
     <div className='flex flex-col'>
       <div className='flex relative items-center justify-center'>
-        <div className='relative z-2 w-full h-150'>
+        <div className='relative z-2 w-full h-70'>
           <Orb
-            hoverIntensity={0.5}
-            rotateOnHover={true}
+            hoverIntensity={0}
+            rotateOnHover={false}
             hue={0}
             forceHoverState={false}
           />  
         </div>
-        <div className='absolute z-0 text-lg'>
+        <div className='absolute z-0 text-xl'>
           {"Enter the Nexus ->"}
-        </div>
-      </div>
-      <div className='flex relative items-center justify-center'>
-        <div className='relative z-2 w-full h-150'>
-          <Orb
-            hoverIntensity={0.5}
-            rotateOnHover={true}
-            hue={0}
-            forceHoverState={false}
-          />  
-        </div>
-        <div className='absolute z-0 text-lg'>
-          {"Enter the Nexus 2 ->"}
         </div>
       </div>
     </div>

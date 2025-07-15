@@ -3,11 +3,11 @@ import { CiLocationOn } from 'react-icons/ci';
 import { AiOutlineGithub } from 'react-icons/ai';
 import { CiMail, CiLinkedin } from 'react-icons/ci';
 import { PiPlant, PiGraduationCapLight } from 'react-icons/pi';
-import Threads from './utils/Threads';
-import DecryptedText from './utils/DecryptedText';
-import FadeContent from './utils/FadeContent';
+import DecryptedText from '../utils/DecryptedText';
+import FadeContent from '../utils/FadeContent';
+import Hobbies from './hobbies/Hobbies';
 
-export default function Home() {
+export default function About() {
 
   const socials = [
     {'icon': <CiMail className='size-6.5 scale-y-125' />,  'href': 'mailto:jwang.srv1@gmail.com'},
@@ -16,16 +16,7 @@ export default function Home() {
   ];
 
   return (
-    <div className='flex flex-col gap-y-10'>
-      <div className='absolute -z-10 mt-5 opacity-50'>
-        <FadeContent delay={100} duration={2500}>
-          <Threads
-            amplitude={0.4}
-            distance={0}
-            enableMouseInteraction={false}
-          />
-        </FadeContent>
-      </div>
+    <div className='flex flex-col gap-y-8'>
       <div className='flex flex-col gap-y-1'>
         <FadeContent>
           <DecryptedText 
@@ -41,7 +32,7 @@ export default function Home() {
         <FadeContent delay={50}>
           <DecryptedText 
             text='Full Stack Developer' 
-            parentClassName='text-lg text-zinc-300'
+            parentClassName='text-lg text-zinc-200'
             speed={30}
             maxIterations={15}
             sequential
@@ -49,22 +40,27 @@ export default function Home() {
             animateOn='view'
           />
         </FadeContent>
+        <FadeContent delay={100}>              
+          <hr className='w-full h-px mt-4.5
+            border-0 bg-gradient-to-r 
+            from-zinc-300/70 via-zinc-300/50 to-zinc-300/40' />
+        </FadeContent>
       </div>
-      <div className='flex flex-col gap-y-2 mt-4 text-zinc-300'>
+      <div className='flex flex-col gap-y-2 text-zinc-300'>
         <FadeContent delay={150} duration={2000}>
-          <div className='flex items-center gap-x-3'>
-            <PiPlant className='size-4' />
+          <div className='flex items-center gap-x-4'>
+            <PiPlant className='size-4 opacity-80' />
             Current: SDE @ Agrofocal
           </div>
         </FadeContent>
         <FadeContent delay={200} duration={2000}>
-          <div className='flex items-center gap-x-3'>
+          <div className='flex items-center gap-x-4'>
             <CiLocationOn className='size-4' />
             Pleasanton, CA
           </div>
         </FadeContent>
         <FadeContent delay={250} duration={2000}>
-          <div className='flex items-start gap-x-3'>
+          <div className='flex items-start gap-x-4'>
             <PiGraduationCapLight className='size-4 mt-1' />
             <div className='flex flex-col'>
               <div>Northeastern University '23</div>
@@ -74,7 +70,7 @@ export default function Home() {
         </FadeContent>
       </div>
       <FadeContent delay={400} duration={2000}>
-        <div className='flex items-center gap-x-4.5'>
+        <div className='flex items-center gap-x-4.5 my-1.5'>
           {socials.map((social, i) => (
             <Link
               key={i}
@@ -86,6 +82,9 @@ export default function Home() {
             </Link>
           ))}
         </div>
+      </FadeContent>
+      <FadeContent delay={550} duration={2000}>
+        <Hobbies />
       </FadeContent>
     </div>
   )
