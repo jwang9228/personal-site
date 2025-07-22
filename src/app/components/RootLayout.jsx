@@ -28,7 +28,7 @@ export default function RootLayout({children}) {
     <div className='flex flex-col relative h-dvh'
     >
       <div className='flex justify-end fixed w-full top-0 z-10
-        px-8 py-6 gap-x-5 tablet:gap-x-7 bg-black'
+        px-8 tablet:px-12 py-6 tablet:py-8 gap-x-5 tablet:gap-x-7 bg-black'
       >
         {tabs.map((tab, i) => (
           <Link 
@@ -51,12 +51,11 @@ export default function RootLayout({children}) {
           </Link>
         ))}
       </div>
-      <div className='overflow-y-auto px-8 py-26'>
+      <div className='overflow-y-auto px-8 tablet:px-12 pt-24 pb-28'>
         {children}
       </div>
       <div className='flex flex-col items-center w-full fixed bottom-0
-        gap-y-4 px-8 py-6 tablet:pb-8 z-50 bg-black'
-      >
+        gap-y-4 px-8 tablet:px-12 py-6 tablet:py-8 z-50 bg-black'>
         <hr className='w-full h-px border-0 bg-gradient-to-r from-zinc-300/30 via-zinc-300/80 to-zinc-300/30' />
         <div className='flex w-full justify-between items-center'>
           {socials.map((social, i) => (
@@ -65,7 +64,7 @@ export default function RootLayout({children}) {
               href={social.href}
               target='_blank'
               rel='noopener noreferrer'
-              className='text-foreground/90 laptop:text-foreground/80 hover:text-foreground/100 text-lg'
+              className='text-foreground/90 hover:text-foreground/100 text-lg tablet:text-xl'
             >
               {social.label}
             </Link>

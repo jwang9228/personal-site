@@ -3,7 +3,6 @@ import { IoTrophyOutline, IoShieldHalf } from 'react-icons/io5';
 import { TbStars } from 'react-icons/tb';
 
 export default function Games() {
-
   const games = [
     {
       'name': 'Honkai Star Rail', 
@@ -36,19 +35,24 @@ export default function Games() {
   ];
 
   return (
-    <div className='flex flex-col gap-y-4 font-light'>
+    <div className='flex flex-col gap-y-4 tablet:gap-y-4.5 
+      font-light tablet:text-lg'>
       <>Currently playing the following:</>
-      <div className='flex flex-col gap-y-4.5 mt-0.5'>
+      <div className='flex flex-col 
+        gap-y-4.5 tablet:gap-y-6 mt-0.5'>
 				{games.map(game => (
-          <div key={game.name} className='flex flex-col gap-y-1'>
+          <div key={game.name} className='flex flex-col 
+            gap-y-1 tablet:gap-y-1.5'>
             <div className='flex justify-between items-center'>
               <div className='italic font-normal'>{game.name}</div>
-              <div className='flex items-center gap-x-1.5 text-sm opacity-95'>
+              <div className='flex items-center gap-x-1.5 
+                text-sm tablet:text-base opacity-95'>
                 {game.rankIcon}
                 {game.rank}
               </div>
             </div>
-            <div className='flex items-center gap-x-1.5 text-sm'>
+            <div className='flex items-center gap-x-1.5 
+              text-sm tablet:text-base'>
               <AiOutlineTag />
               {game.ign}
               <div className='opacity-85'>{game.tag}</div>

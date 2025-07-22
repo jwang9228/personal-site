@@ -10,7 +10,6 @@ import { BsMotherboard, BsMemory, BsSnow, BsDeviceSsd } from 'react-icons/bs';
 import { MdOutlinePower } from 'react-icons/md';
 
 export default function PC() {
-
   const peripherals = [
     {
       'icon': <PiMouseMiddleClick />,
@@ -67,7 +66,8 @@ export default function PC() {
   ];
 
   return (
-    <div className='flex flex-col gap-y-4 font-light'>
+    <div className='flex flex-col 
+      gap-y-4 tablet:gap-y-5 font-light tablet:text-lg'>
       <>Check out my setup and custom build specs below!</>
       <PCItem 
         header='peripherals' 
@@ -76,8 +76,8 @@ export default function PC() {
             {peripherals.map(peripheral => (
               <div 
                 key={peripheral.description} 
-                className='flex items-center gap-x-3.5'
-              >
+                className='flex items-center 
+                  gap-x-3.5 tablet:gap-x-4'>
                 {peripheral.icon}
                 {peripheral.description}
               </div>
@@ -94,8 +94,8 @@ export default function PC() {
               {Object.entries(build.specs).map(([buildPart, buildVal]) => (
                 <div 
                   key={buildPart}
-                  className='flex items-center gap-x-3.5'
-                >
+                  className='flex items-center 
+                    gap-x-3.5 tablet:gap-x-4'>
                   {buildSpecsIcons[buildPart]}
                   {buildVal}
                 </div>
@@ -107,12 +107,13 @@ export default function PC() {
       <PCItem 
         header='icon legend'
         content={
-          <div className='grid grid-cols-2 items-center gap-y-0.5'>
+          <div className='grid grid-cols-2 
+            items-center gap-y-0.5 tablet:gap-y-1'>
             {Object.entries(buildSpecsIcons).map(([iconName, icon]) => (
               <div 
                 key={iconName}
-                className='flex items-center gap-x-2'
-              >
+                className='flex items-center 
+                  gap-x-2 tablet:gap-x-4'>
                 {icon}
                 {iconName}
               </div>
@@ -126,13 +127,13 @@ export default function PC() {
 
 function PCItem({header, content}) {
   return (
-    <div className='relative border border-zinc-400/90 rounded-md 
-      px-4.5 pt-5 pb-4 mt-2.5'
-    >
+    <div className='relative border tablet:w-2/3
+      border-zinc-400/90 rounded-md px-4.5 tablet:px-5 pt-5 pb-4 mt-2.5'>
       <span className='absolute -top-3.5 left-3.5 px-1.5 bg-black italic'>
         {header}
       </span>
-      <div className='flex flex-col text-sm gap-y-1'>
+      <div className='flex flex-col 
+        text-sm tablet:text-base gap-y-1 tablet:gap-y-2'>
         {content}
       </div>
     </div>

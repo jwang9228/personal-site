@@ -9,6 +9,9 @@ import PC from './PC';
 export default function Hobbies() {
 	const [detailsSection, setDetailsSection] = useState(undefined);
 
+  /* each hobby has an underlined link ('link') that goes to a more 
+  specific detailed section for that hobby ('detailsSection'), 
+  'prelink' and 'postlink' are just texts before and after 'link' */
 	const hobbies = [
 		{
 			'prelink': 'Playing badminton @ Bintang Dublin',
@@ -34,8 +37,8 @@ export default function Hobbies() {
 	];
 
 	return (
-		<div className='flex flex-col gap-y-3.5 mt-1.5 text-zinc-300'>
-			<div className='text-lg'>
+		<div className='flex flex-col gap-y-3.5 tablet:gap-y-4.5 mt-1.5 text-zinc-300'>
+			<div className='text-lg tablet:text-xl'>
 				{detailsSection
 					? <button 
 							type='button'
@@ -50,15 +53,14 @@ export default function Hobbies() {
 			</div>
 			{detailsSection 
 				? <>{detailsSection}</>
-				: <ul className='space-y-2.5 font-light'>
+				: <ul className='space-y-2.5 tablet:space-y-4 font-light tablet:text-lg'>
 						{hobbies.map(hobby => (
 							<li key={hobby.prelink}>
 								<>{`- ${hobby.prelink}`}</>
 								<button 
 									type='button'
 									className='mx-1.5 underline hover:cursor-pointer font-normal'
-									onClick={() => setDetailsSection(hobby.detailsSection)}
-								>
+									onClick={() => setDetailsSection(hobby.detailsSection)}>
 									{hobby.link}
 								</button>
 								<>{hobby.postlink}</>
