@@ -35,24 +35,24 @@ export default function Games() {
   ];
 
   return (
-    <div className='flex flex-col gap-y-4 tablet:gap-y-4.5 
-      font-light tablet:text-lg'>
+    <div className='flex flex-col gap-y-4 tablet:gap-y-4.5 laptop:gap-y-5
+      font-light tablet:text-lg laptop:text-xl'>
       <>Currently playing the following:</>
       <div className='flex flex-col 
         gap-y-4.5 tablet:gap-y-6 mt-0.5'>
 				{games.map(game => (
           <div key={game.name} className='flex flex-col 
-            gap-y-1 tablet:gap-y-1.5'>
-            <div className='flex justify-between items-center'>
+            gap-y-1 tablet:gap-y-1.5 laptop:gap-y-2'>
+            <div className='flex justify-between items-center laptop:gap-x-40'>
               <div className='italic font-normal'>{game.name}</div>
               <div className='flex items-center gap-x-1.5 
-                text-sm tablet:text-base opacity-95'>
+                text-sm tablet:text-base laptop:text-lg opacity-95'>
                 {game.rankIcon}
                 {game.rank}
               </div>
             </div>
             <div className='flex items-center gap-x-1.5 
-              text-sm tablet:text-base'>
+              text-sm tablet:text-base laptop:text-lg'>
               <AiOutlineTag />
               {game.ign}
               <div className='opacity-85'>{game.tag}</div>

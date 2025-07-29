@@ -37,8 +37,8 @@ export default function Hobbies() {
 	];
 
 	return (
-		<div className='flex flex-col gap-y-3.5 tablet:gap-y-4.5 mt-1.5 text-zinc-300'>
-			<div className='text-lg tablet:text-xl'>
+		<div className='flex flex-col gap-y-3.5 tablet:gap-y-4.5 laptop:gap-y-5 text-zinc-300'>
+			<div className='text-lg tablet:text-xl laptop:text-2xl'>
 				{detailsSection
 					? <button 
 							type='button'
@@ -53,7 +53,8 @@ export default function Hobbies() {
 			</div>
 			{detailsSection 
 				? <>{detailsSection}</>
-				: <ul className='space-y-2.5 tablet:space-y-4 font-light tablet:text-lg'>
+				: <ul className='space-y-2.5 tablet:space-y-4 laptop:space-y-4.5 
+            font-light tablet:text-lg laptop:text-xl'>
 						{hobbies.map(hobby => (
 							<li key={hobby.prelink}>
 								<>{`- ${hobby.prelink}`}</>
