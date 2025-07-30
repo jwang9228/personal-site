@@ -1,11 +1,11 @@
 'use client'
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { CiLocationOn } from 'react-icons/ci';
 import { AiOutlineGithub } from 'react-icons/ai';
 import { CiMail, CiLinkedin } from 'react-icons/ci';
 import { PiPlant, PiGraduationCapLight } from 'react-icons/pi';
+import Link from 'next/link';
 import DecryptedText from '../utils/DecryptedText';
 import FadeContent from '../utils/FadeContent';
 import Hobbies from './hobbies/Hobbies';
