@@ -14,25 +14,25 @@ export default function Hobbies() {
   'prelink' and 'postlink' are just texts before and after 'link' */
 	const hobbies = [
 		{
-			'prelink': 'Playing badminton @ Bintang Dublin',
+			prelink: 'Playing badminton, squash, or swimming',
 		},
 		{
-			'prelink': 'Hiking and exploring',
-			'link': 'scenic spots',
-			'postlink': 'in NorCal',
-			'detailsSection': <Trails />
+			prelink: 'Hiking and exploring',
+			link: 'scenic spots',
+			postlink: 'in NorCal',
+			detailsSection: <Trails />
 		},
 		{
-			'prelink': 'Climbing the ranks in the latest',
-			'link': 'competitive games',
-			'postlink': '',
-			'detailsSection': <Games />
+			prelink: 'Climbing the ranks in the latest',
+			link: 'competitive games',
+			postlink: '',
+			detailsSection: <Games />
 		},
 		{
-			'prelink': 'Tinkering with',
-			'link': 'PC parts',
-			'postlink': 'and peripherals',
-			'detailsSection': <PC />
+			prelink: 'Tinkering with',
+			link: 'PC parts',
+			postlink: 'and peripherals',
+			detailsSection: <PC />
 		}
 	];
 
@@ -53,7 +53,7 @@ export default function Hobbies() {
 			</div>
 			{detailsSection 
 				? <>{detailsSection}</>
-				: <ul className='space-y-2.5 tablet:space-y-4 laptop:space-y-4.5 
+				: <ul className='space-y-2.5 tablet:space-y-4 laptop:space-y-5
             font-light tablet:text-lg laptop:text-xl'>
 						{hobbies.map(hobby => (
 							<li key={hobby.prelink}>

@@ -5,32 +5,32 @@ import { TbStars } from 'react-icons/tb';
 export default function Games() {
   const games = [
     {
-      'name': 'Honkai Star Rail', 
-      'ign': 'SirRacha', 
-      'tag': 'UID 617240702',
-      'rankIcon': <TbStars className='opacity-85' />,
-      'rank': 'MOC12/PF4/AS4'
+      name: 'Honkai Star Rail', 
+      ign: 'SirRacha', 
+      tag: 'UID 617240702',
+      rankIcon: <TbStars className='opacity-85' />,
+      rank: 'MOC12/PF4/AS4'
     },
     {
-      'name': 'Overwatch 2', 
-      'ign': 'SirRacha',
-      'tag': '#11210',
-      'rankIcon': <IoShieldHalf className='opacity-85' />,
-      'rank': 'Diamond 1'
+      name: 'Overwatch 2', 
+      ign: 'SirRacha',
+      tag: '#11210',
+      rankIcon: <IoShieldHalf className='opacity-85' />,
+      rank: 'Diamond 1'
     },
     {
-      'name': 'Brawl Stars', 
-      'ign': 'SirRacha', 
-      'tag': '#22YL9Q8PU', 
-      'rankIcon': <IoTrophyOutline />,
-      'rank': '60k'
+      name: 'Brawl Stars', 
+      ign: 'SirRacha', 
+      tag: '#22YL9Q8PU', 
+      rankIcon: <IoTrophyOutline />,
+      rank: '60k'
     },
     {
-      'name': 'Clash Royale', 
-      'ign': '_indent', 
-      'tag': '#LLGLGGLG', 
-      'rankIcon': <IoTrophyOutline />,
-      'rank': '10k'
+      name: 'Clash Royale', 
+      ign: '_indent', 
+      tag: '#LLGLGGLG', 
+      rankIcon: <IoTrophyOutline />,
+      rank: '10k'
     }
   ];
 

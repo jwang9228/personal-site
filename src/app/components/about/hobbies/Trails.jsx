@@ -9,15 +9,15 @@ export default function Trails() {
 
 	const spots = [
 		{
-			'name': 'Point Lobos State Natural Reserve',
-			'location': 'Carmel, Monterey County',
-			'imagesDir': '/trails/point-lobos',
+			name: 'Point Lobos State Natural Reserve',
+			location: 'Carmel, Monterey County',
+			imagesDir: '/trails/point-lobos',
       /* portrait images: [0-3].jpeg, rest landscape, height of 
       1 portrait = 2 landscape, mosaic gallery 
       columns need balanced heights */
-      'mobileView': [0, 4, 5, 1, 6, 7, 8, 9, 2, 10, 11, 3],
-      'tabletView': [0, 4, 5, 6, 7, 8, 1, 9, 10, 2, 11, 12], 
-      'laptopView': [0, 4, 5, 6, 7, 1, 8, 2, 9, 3, 10, 11]
+      mobileView: [0, 4, 5, 1, 6, 7, 8, 9, 2, 10, 11, 3],
+      tabletView: [0, 4, 5, 6, 7, 8, 1, 9, 10, 2, 11, 12], 
+      laptopView: [0, 4, 5, 6, 7, 1, 8, 2, 9, 3, 10, 11]
 		}
 	];
 
@@ -63,7 +63,7 @@ export default function Trails() {
 													grayscale sepia-10 hover:grayscale-0 hover:sepia-0 
 													focus:grayscale-0 focus:sepia-0 active:grayscale-0 active:sepia-0
 													transition-all duration-300'
-												src={`${spot['imagesDir']}/${
+												src={`${spot.imagesDir}/${
                           spot[deviceView.view][i + col * (spot[deviceView.view].length / deviceView.columns)]
                         }.webp`}
                         loading='lazy'

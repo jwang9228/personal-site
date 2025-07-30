@@ -16,16 +16,16 @@ export default function About() {
   // renders the 'about' section socials icons + hyperlinks
   const socials = [
     {
-      'icon': <CiMail className='size-6.5 tablet:size-7.5 laptop:size-8.5 scale-y-125' />,  
-      'href': 'mailto:jwang.srv1@gmail.com'
+      icon: <CiMail className='size-6.5 tablet:size-7.5 laptop:size-8.5 scale-y-125' />,  
+      href: 'mailto:jwang.srv1@gmail.com'
     },
     {
-      'icon': <CiLinkedin className='size-7.5 tablet:size-8.5 laptop:size-8.5' />, 
-      'href': 'https://www.linkedin.com/in/justin-n-wang/'
+      icon: <CiLinkedin className='size-7.5 tablet:size-8.5 laptop:size-9.5' />, 
+      href: 'https://www.linkedin.com/in/justin-n-wang/'
     },
     {
-      'icon': <AiOutlineGithub className='size-6.5 tablet:size-7.5 laptop:size-8.5' />, 
-      'href': 'https://github.com/jwang9228/'
+      icon: <AiOutlineGithub className='size-6.5 tablet:size-7.5 laptop:size-8.5' />, 
+      href: 'https://github.com/jwang9228/'
     }
   ];
 
@@ -96,7 +96,7 @@ export default function About() {
           </div>
           <FadeContent delay={400} duration={2000}>
             <div className='flex items-center gap-x-4.5 tablet:gap-x-5 laptop:gap-x-5.5
-              my-1.5 tablet:my-2 laptop:my-2.5'>
+              my-1.5 tablet:my-2'>
               {socials.map((social, i) => (
                 <Link
                   key={i}

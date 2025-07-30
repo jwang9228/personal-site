@@ -12,55 +12,55 @@ import { MdOutlinePower } from 'react-icons/md';
 export default function PC() {
   const peripherals = [
     {
-      'icon': <PiMouseMiddleClick />,
-      'description': 'Finalmouse ULX Pro Series - Aceu'
+      icon: <PiMouseMiddleClick />,
+      description: 'Finalmouse ULX Pro Series - Aceu'
     },
     {
-      'icon': <FaRegKeyboard />,
-      'description': 'Razer Huntsman V3 Pro Mini 60%'
+      icon: <FaRegKeyboard />,
+      description: 'Razer Huntsman V3 Pro Mini 60%'
     },
     {
-      'icon': <PiMonitor />,
-      'description': 'LG 27GP850-B Ultragear QHD 165Hz'
+      icon: <PiMonitor />,
+      description: 'LG 27GP850-B Ultragear QHD 165Hz'
     }
   ];
 
   const buildSpecsIcons = {
-    'case': <PiComputerTower />,
-    'cpu': <PiCpu />,
-    'gpu': <PiGraphicsCard />,
-    'motherboard': <BsMotherboard />,
-    'ram': <BsMemory />, 
-    'storage' : <BsDeviceSsd />,
-    'cpu cooler': <BsSnow />,
-    'psu': <MdOutlinePower />
+    case: <PiComputerTower />,
+    cpu: <PiCpu />,
+    gpu: <PiGraphicsCard />,
+    motherboard: <BsMotherboard />,
+    ram: <BsMemory />, 
+    storage: <BsDeviceSsd />,
+    cooler: <BsSnow />,
+    psu: <MdOutlinePower />
   };
 
   const builds = [
     {
-      'name': '2024 sff build', 
-      'specs': {
-        'case': 'Fractal Design - Terra (Jade)',
-        'cpu': 'AMD Ryzen 7 7800X3D',
-        'gpu': 'NVIDIA GeForce GTX 1660 Super',
-        'motherboard': 'MSI MPG B650I Edge (AM5)',
-        'ram': 'G.SKILL Flare X5 (DDR5 32 GB)',
-        'storage': 'Samsung 980 PRO M.2 (1TB)',
-        'cpu cooler': 'Noctua NH-L12S (120mm Fan)',
-        'psu': 'Corsair SF750 (750w 80+ Platinum)'
+      name: '2024 sff build', 
+      specs: {
+        case: 'Fractal Design - Terra (Jade)',
+        cpu: 'AMD Ryzen 7 7800X3D',
+        gpu: 'NVIDIA GeForce GTX 1660 Super',
+        motherboard: 'MSI MPG B650I Edge (AM5)',
+        ram: 'G.SKILL Flare X5 (DDR5 32 GB)',
+        storage: 'Samsung 980 PRO M.2 (1TB)',
+        cooler: 'Noctua NH-L12S (120mm Fan)',
+        psu: 'Corsair SF750 (750w 80+ Platinum)'
       }
     },
     {
-      'name': '2022 tower build',
-      'specs': {
-        'case': 'NZXT H510 Flow',
-        'cpu': 'AMD Ryzen 9 5900X',
-        'gpu': 'NVIDIA GeForce RTX 3080',
-        'motherboard': 'NZXT N7 B550 (AM4)',
-        'ram': 'Corsair Vengeance RGB Pro (DDR4 32GB)',
-        'storage': 'Samsung 970 EVO Plus M.2 (1 TB)',
-        'cpu cooler': 'NZXT Kraken Z63 RGB (280mm AIO)',
-        'psu': 'Corsair RM750x (750w 80+ Gold)'
+      name: '2022 tower build',
+      specs: {
+        case: 'NZXT H510 Flow',
+        cpu: 'AMD Ryzen 9 5900X',
+        gpu: 'NVIDIA GeForce RTX 3080',
+        motherboard: 'NZXT N7 B550 (AM4)',
+        ram: 'Corsair Vengeance RGB Pro (DDR4 32GB)',
+        storage: 'Samsung 970 EVO Plus M.2 (1 TB)',
+        cooler: 'NZXT Kraken Z63 RGB (280mm AIO)',
+        psu: 'Corsair RM750x (750w 80+ Gold)'
       }
     }
   ];
