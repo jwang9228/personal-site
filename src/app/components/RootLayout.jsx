@@ -13,7 +13,7 @@ export default function RootLayout({children}) {
 
   const tabs = [
     {label: 'about', href: '/'},
-    {label: 'experience', href: '/'},
+    {label: 'experience', href: '/experience'},
     {label: 'projects', href: '/projects/nexus'}
   ];
 
@@ -21,7 +21,7 @@ export default function RootLayout({children}) {
     {label: 'email', href: 'mailto:jwang.srv1@gmail.com'},
     {label: 'linkedin', href: 'https://www.linkedin.com/in/justin-n-wang/'},
     {label: 'github', href: 'https://github.com/jwang9228/'}, 
-    {label: 'resume', href: '/WangResume.pdf'}
+    {label: 'resume', href: '/experience/WangResume.pdf'}
   ];
 
   return (

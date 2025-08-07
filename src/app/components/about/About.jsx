@@ -6,7 +6,6 @@ import { AiOutlineGithub } from 'react-icons/ai';
 import { CiMail, CiLinkedin } from 'react-icons/ci';
 import { PiPlant, PiGraduationCapLight } from 'react-icons/pi';
 import Link from 'next/link';
-import DecryptedText from '../utils/DecryptedText';
 import FadeContent from '../utils/FadeContent';
 import Hobbies from './hobbies/Hobbies';
 
@@ -43,28 +42,22 @@ export default function About() {
     <div className='flex flex-col gap-y-8 laptop:gap-y-10'>
       <div className='flex flex-col gap-y-1 tablet:gap-y-2 laptop:gap-y-3'>
         <FadeContent>
-          <DecryptedText 
-            text='Justin Wang' 
-            parentClassName='text-3xl tablet:text-4xl font-medium'
-            speed={65}
-            maxIterations={15}
-            sequential
-            useOriginalCharsOnly
-            animateOn='view' />
+          <div className='text-3xl tablet:text-4xl font-medium'>
+            Justin Wang
+          </div>
         </FadeContent>
         <FadeContent delay={50}>
-          <DecryptedText 
-            text='Full Stack Developer' 
-            parentClassName='text-lg tablet:text-xl laptop:text-2xl text-zinc-200'
-            speed={30}
-            maxIterations={15}
-            sequential
-            useOriginalCharsOnly
-            animateOn='view' />
+          <div className='text-lg tablet:text-xl laptop:text-2xl text-zinc-200'>
+            Full Stack Developer
+          </div>
+        </FadeContent>
+        <FadeContent delay={100}>
+          <div className='text-sm tablet:text-base laptop:text-lg text-zinc-200 font-light'>
+            Finding optimal solutions to real-world problems
+          </div>
         </FadeContent>
         <FadeContent delay={100}>              
-          <hr className='w-full h-px mt-4.5 laptop:mt-5
-            border-0 bg-gradient-to-r 
+          <hr className='w-full h-px mt-4 border-0 bg-gradient-to-r 
             from-zinc-300/70 via-zinc-300/50 to-zinc-300/40' />
         </FadeContent>
       </div>

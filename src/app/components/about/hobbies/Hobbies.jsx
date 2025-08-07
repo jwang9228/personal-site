@@ -14,7 +14,7 @@ export default function Hobbies() {
   'prelink' and 'postlink' are just texts before and after 'link' */
 	const hobbies = [
 		{
-			prelink: 'Playing badminton, squash, or swimming',
+			prelink: 'Playing badminton, squash, or swimming'
 		},
 		{
 			prelink: 'Hiking and exploring',
@@ -58,12 +58,14 @@ export default function Hobbies() {
 						{hobbies.map(hobby => (
 							<li key={hobby.prelink}>
 								<>{`- ${hobby.prelink}`}</>
-								<button 
-									type='button'
-									className='mx-1.5 underline hover:cursor-pointer font-normal'
-									onClick={() => setDetailsSection(hobby.detailsSection)}>
-									{hobby.link}
-								</button>
+                {hobby.link &&
+                  <button 
+                    type='button'
+                    className='mx-1.5 underline hover:cursor-pointer font-normal'
+                    onClick={() => setDetailsSection(hobby.detailsSection)}>
+                    {hobby.link}
+                  </button>
+                }
 								<>{hobby.postlink}</>
 							</li>
 						))}
