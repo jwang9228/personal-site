@@ -33,7 +33,7 @@ export default function Experience() {
             {
               skill: 'Python',
               skillIcon: <AiOutlinePython />,
-              subSkills: ['PyTorch', 'TensorRT', 'Inference', 'Data Annotations']
+              subSkills: ['PyTorch', 'TensorRT', 'Inference', 'Data Annotation']
             }
           ]
         }, 
@@ -55,30 +55,34 @@ export default function Experience() {
   return (
     <div>
       {experiences.map(experience => (
-        <div key={experience.company} className='flex flex-col gap-y-8'>
-          <div className='flex items-center gap-x-4.5'>
-            <img src={`/experience/${experience.logo}`} className='size-12' />
-            <div className='space-y-0.5'>
-              <div className='text-xl font-medium'>{experience.company}</div>
-              <div className='text-lg font-light'>{experience.location}</div>
+        <div key={experience.company} className='flex flex-col gap-y-8 tablet:gap-y-10 laptop:gap-y-12'>
+          <div className='flex items-center gap-x-4.5 tablet:gap-x-5 laptop:gap-x-6'>
+            <img 
+              src={`/experience/${experience.logo}`} 
+              className='size-12 tablet:size-14 laptop:size-16' />
+            <div className='space-y-0.5 tablet:space-y-1 laptop:space-y-1.5'>
+              <div className='text-xl tablet:text-2xl laptop:text-3xl font-medium'>{experience.company}</div>
+              <div className='text-lg tablet:text-xl laptop:text-2xl font-light'>{experience.location}</div>
             </div>
           </div>
           {experience.positions.map(position => (
             <div key={position.title} className='space-y-0.5 text-zinc-300'>
-              <div className='text-lg text-zinc-200'>{position.title}</div>
-              <div className='italic'>{position.duration}</div>
-              <div className='border-l border-zinc-300 mt-4 pl-3.5 font-light space-y-5'>
+              <div className='text-lg tablet:text-xl laptop:text-2xl text-zinc-200'>{position.title}</div>
+              <div className='italic tablet:text-lg laptop:text-xl'>{position.duration}</div>
+              <div className='border-l border-zinc-300 mt-4 pl-3.5 tablet:pl-4 font-light 
+                space-y-5 tablet:space-y-6'>
                 {position.skills.map(skill => (
-                  <div key={skill.skill} className='space-y-2'>
-                    <div className='flex items-center gap-x-1.5 text-zinc-200'>
+                  <div key={skill.skill} className='space-y-2 tablet:space-y-2.5'>
+                    <div className='flex items-center gap-x-1.5 text-zinc-200 tablet:text-lg'>
                       {skill.skillIcon}
                       {skill.skill}
                     </div>
-                    <div className='flex flex-wrap gap-x-3 gap-y-2.5 text-sm'>
+                    <div className='flex flex-wrap gap-x-3 tablet:gap-x-4 gap-y-2.5 
+                      text-sm tablet:text-base'>
                       {skill.subSkills.map(subSkill => (
                         <div 
                           key={subSkill} 
-                          className='px-1.5 py-0.5 bg-zinc-700/80 rounded'>
+                          className='px-1.5 tablet:px-2 laptop:px-2.5 py-0.5 bg-zinc-700/80 rounded'>
                             {subSkill}
                         </div>
                       ))}
