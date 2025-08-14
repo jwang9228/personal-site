@@ -1,24 +1,15 @@
 'use client'
 
-import NexusClient from '../../components/projects/nexus/NexusClient';
-import NexusServer from '../../components/projects/nexus/NexusServer';
-import { useState } from 'react';
-import Orb from '../../components/utils/Orb';
-
 export default function Page() {
   return (
-    <div className='flex flex-col'>
-      <div className='flex relative items-center justify-center'>
-        <div className='relative z-2 w-full h-70'>
-          <Orb
-            hoverIntensity={0}
-            rotateOnHover={false}
-            hue={0}
-            forceHoverState={false}
-          />  
-        </div>
-        <div className='absolute z-0 text-xl'>
-          {"Enter the Nexus ->"}
+    <div className='flex justify-between items-center'>
+      <div className='w-fit p-px rounded-sm hover:animate-rotate-border
+        hover:bg-zinc-400 hover:bg-conic/[from_var(--border-angle)] 
+        from-dark via-light/85 to-dark
+        from-80% via-90% to-100%'>
+        <div className='rounded-sm px-2.5 py-1.5 bg-dark 
+          border border-zinc-500'>
+          Enter the Nexus
         </div>
       </div>
     </div>

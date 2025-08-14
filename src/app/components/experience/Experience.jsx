@@ -1,6 +1,8 @@
 import { AiOutlinePython } from 'react-icons/ai';
 import { FaJava } from 'react-icons/fa6';
 import { RiJavascriptLine } from 'react-icons/ri';
+import FadeContent from '../utils/FadeContent';
+import Link from 'next/link';
 
 export default function Experience() {
 
@@ -9,6 +11,7 @@ export default function Experience() {
       company: 'Agrofocal Technologies',
       location: 'San Jose, CA',
       logo: 'Agrofocal.png',
+      link: 'https://agrofocal.ai',
       positions: [
         {
           title: 'Software Developer',
@@ -56,20 +59,27 @@ export default function Experience() {
     <div>
       {experiences.map(experience => (
         <div key={experience.company} className='flex flex-col gap-y-8 tablet:gap-y-10 laptop:gap-y-12'>
-          <div className='flex items-center gap-x-4.5 tablet:gap-x-5 laptop:gap-x-6'>
-            <img 
-              src={`/experience/${experience.logo}`} 
-              className='size-12 tablet:size-14 laptop:size-16' />
+          <FadeContent delay={100} duration={1500} 
+            className='flex items-center gap-x-4.5 tablet:gap-x-5 laptop:gap-x-6'>
+              <Link
+                href={experience.link}
+                target='_blank'
+                rel='noopener noreferrer'>
+                <img 
+                  src={`/experience/${experience.logo}`} 
+                  className='size-12 tablet:size-14 laptop:size-16 hover:cursor-pointer' />
+              </Link>
             <div className='space-y-0.5 tablet:space-y-1 laptop:space-y-1.5'>
               <div className='text-xl tablet:text-2xl laptop:text-3xl font-medium'>{experience.company}</div>
               <div className='text-lg tablet:text-xl laptop:text-2xl font-light'>{experience.location}</div>
             </div>
-          </div>
-          {experience.positions.map(position => (
-            <div key={position.title} className='space-y-0.5 text-zinc-300'>
+          </FadeContent>
+          {experience.positions.map((position, i) => (
+            <FadeContent key={position.title} delay={150 + (200 * i)} duration={1500}
+              className='space-y-0.5 text-light'>
               <div className='text-lg tablet:text-xl laptop:text-2xl text-zinc-200'>{position.title}</div>
               <div className='italic tablet:text-lg laptop:text-xl'>{position.duration}</div>
-              <div className='border-l border-zinc-300 mt-4 pl-3.5 tablet:pl-4 font-light 
+              <div className='border-l border-light mt-4 pl-3.5 tablet:pl-4 font-light 
                 space-y-5 tablet:space-y-6'>
                 {position.skills.map(skill => (
                   <div key={skill.skill} className='space-y-2 tablet:space-y-2.5'>
@@ -90,7 +100,7 @@ export default function Experience() {
                   </div>
                 ))}
               </div>
-            </div>
+            </FadeContent>
           ))}
         </div>
       ))}

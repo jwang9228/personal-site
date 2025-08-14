@@ -37,7 +37,7 @@ export default function Hobbies() {
 	];
 
 	return (
-		<div className='flex flex-col gap-y-3.5 tablet:gap-y-4.5 laptop:gap-y-5 text-zinc-300'>
+		<div className='flex flex-col gap-y-3.5 tablet:gap-y-4.5 laptop:gap-y-5 text-light'>
 			<div className='text-lg tablet:text-xl laptop:text-2xl'>
 				{detailsSection
 					? <button 

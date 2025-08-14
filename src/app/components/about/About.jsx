@@ -58,26 +58,26 @@ export default function About() {
         </FadeContent>
         <FadeContent delay={100}>              
           <hr className='w-full h-px mt-4 border-0 bg-gradient-to-r 
-            from-zinc-300/70 via-zinc-300/50 to-zinc-300/40' />
+            from-light/70 via-light/50 to-light/40' />
         </FadeContent>
       </div>
       <div className='flex flex-col laptop:flex-row gap-y-8 gap-x-30'>
         <div className='flex flex-col gap-y-8'>
           <div className='flex flex-col gap-y-2 tablet:gap-y-3 laptop:gap-y-4.5 
-            text-zinc-300 tablet:text-lg laptop:text-xl text-nowrap'>
-            <FadeContent delay={150} duration={2000}>
+            text-light tablet:text-lg laptop:text-xl text-nowrap'>
+            <FadeContent delay={150} duration={1500}>
               <div className='flex items-center gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
                 <PiPlant className='size-4 tablet:size-4.5 laptop:size-5 opacity-80' />
                 Current: SDE @ Agrofocal
               </div>
             </FadeContent>
-            <FadeContent delay={200} duration={2000}>
+            <FadeContent delay={200} duration={1500}>
               <div className='flex items-center gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
                 <CiLocationOn className='size-4 tablet:size-4.5 laptop:size-5' />
                 Pleasanton, CA
               </div>
             </FadeContent>
-            <FadeContent delay={250} duration={2000}>
+            <FadeContent delay={250} duration={1500}>
               <div className='flex items-start gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
                 <PiGraduationCapLight className='size-4 tablet:size-4.5 laptop:size-5 mt-1' />
                 <div className='flex flex-col'>
@@ -87,7 +87,7 @@ export default function About() {
               </div>
             </FadeContent>
           </div>
-          <FadeContent delay={400} duration={2000}>
+          <FadeContent delay={400} duration={1500}>
             <div className='flex items-center gap-x-4.5 tablet:gap-x-5 laptop:gap-x-5.5
               my-1.5 tablet:my-2'>
               {socials.map((social, i) => (
@@ -102,7 +102,7 @@ export default function About() {
             </div>
           </FadeContent>
         </div>
-        <FadeContent delay={isMobile ? 550 : 150} duration={isMobile ? 2000 : 2400}>
+        <FadeContent delay={isMobile ? 525 : 150} duration={isMobile ? 1500 : 2000}>
           <Hobbies />
         </FadeContent>
       </div>

@@ -157,7 +157,7 @@ function PCItem({header, content}) {
       border-zinc-400/90 rounded-md px-4.5 tablet:px-5 laptop:px-6 
       pt-5 laptop:pt-7 pb-4 mt-2.5'>
       <span className='absolute -top-3.5 left-3.5 tablet:left-5 
-        px-1.5 tablet:px-2 bg-black italic'>
+        px-1.5 tablet:px-2 bg-dark italic'>
         {header}
       </span>
       <div className='flex flex-col gap-y-1 tablet:gap-y-2 laptop:gap-y-2.5
