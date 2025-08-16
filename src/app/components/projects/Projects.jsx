@@ -1,3 +1,4 @@
+import { AiOutlineGithub } from 'react-icons/ai';
 import FadeContent from '../utils/FadeContent';
 import Link from 'next/link';
 
@@ -7,12 +8,14 @@ export default function Projects() {
     {
       title: 'personal website',
       description: '(You are here)',
-      skills: ['Next.js', 'React', 'Tailwind CSS']
+      skills: ['Next.js', 'React', 'Tailwind CSS'],
+      repository: 'https://github.com/jwang9228/personal-site'
     },
     {
       title: 'nexus', 
       description: 'An alternative to popular League of Legends stat trackers',
-      skills: ['Next.js', 'React', 'Tailwind CSS', 'AWS S3']
+      skills: ['Next.js', 'React', 'Tailwind CSS', 'AWS S3'],
+      repository: 'https://github.com/jwang9228/nexus'
     }, 
     {
       title: 'nexus node server',
@@ -26,12 +29,19 @@ export default function Projects() {
       {projects.map((project, i) => (
         <FadeContent key={project.title} delay={100 + (150 * i)} duration={1500} 
           className='space-y-0.5 tablet:space-y-1 laptop:space-y-1.5'>
-          <div className='text-lg tablet:text-xl laptop:text-2xl'>{project.title}</div>
+          <div className='flex items-center gap-x-3 text-lg tablet:text-xl laptop:text-2xl'>
+            <div>{project.title}</div>
+            {project.repository && 
+              <Link href={project.repository} target='_blank' rel='noopener noreferrer'>
+                <AiOutlineGithub /> 
+              </Link>
+            }
+          </div>
           <div className='tablet:text-lg laptop:text-xl text-zinc-400 font-light'>
             {project.description}
           </div>
           <div className='flex flex-wrap gap-x-3 tablet:gap-x-4.5 gap-y-2.5 
-            mt-3 tablet:mt-3.5 laptop:mt-4 text-light/95 
+            mt-3 tablet:mt-3.5 laptop:mt-4 text-ight/95 
             text-sm tablet:text-base laptop:text-lg'>
             {project.skills.map(skill => (
               <div 
@@ -55,7 +65,7 @@ export default function Projects() {
           target='_blank'
           rel='noopener noreferrer'
           className='cursor-pointer rounded-sm px-2.5 py-1.5 bg-dark 
-          border border-zinc-500 text-light/90 tablet:text-lg laptop:text-xl'>
+            border border-zinc-500 text-light/90 tablet:text-lg laptop:text-xl'>
           Explore the nexus
         </Link>
       </FadeContent>

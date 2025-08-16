@@ -91,11 +91,7 @@ export default function About() {
             <div className='flex items-center gap-x-4.5 tablet:gap-x-5 laptop:gap-x-5.5
               my-1.5 tablet:my-2'>
               {socials.map((social, i) => (
-                <Link
-                  key={i}
-                  href={social.href}
-                  target='_blank'
-                  rel='noopener noreferrer'>
+                <Link key={i} href={social.href} target='_blank' rel='noopener noreferrer'>
                   {social.icon}
                 </Link>
               ))}

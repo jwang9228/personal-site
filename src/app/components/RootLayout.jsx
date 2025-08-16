@@ -30,10 +30,7 @@ export default function RootLayout({children}) {
         px-8 tablet:px-12 laptop:px-16 py-6 tablet:py-8 laptop:py-10
         gap-x-5 tablet:gap-x-7 laptop:gap-x-10 bg-dark'>
         {tabs.map((tab, i) => (
-          <Link
-            key={i}
-            href={tab.href}
-            onClick={() => setActiveTab(tab.label)}
+          <Link key={i} href={tab.href} onClick={() => setActiveTab(tab.label)}
             className={`group transition duration-200 text-lg tablet:text-xl laptop:text-2xl text-light/75
               ${activeTab === tab.label && 'text-light/100'}`}
           >
@@ -58,12 +55,9 @@ export default function RootLayout({children}) {
           bg-gradient-to-r from-light/30 via-light/80 to-light/30' />
         <div className='flex w-full laptop:w-4/5 justify-between items-center'>
           {socials.map((social, i) => (
-            <Link
-              key={i}
-              href={social.href}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='text-light/90 hover:text-light/100 text-lg tablet:text-xl laptop:text-2xl'
+            <Link key={i} href={social.href} target='_blank' rel='noopener noreferrer'
+              className='text-light/90 hover:text-light/100 
+                text-lg tablet:text-xl laptop:text-2xl'
             >
               {social.label}
             </Link>
