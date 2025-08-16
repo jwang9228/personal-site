@@ -30,7 +30,7 @@ export default function Games() {
       ign: '_indent', 
       tag: '#LLGLGGLG', 
       rankIcon: <IoTrophyOutline />,
-      rank: '10k'
+      rank: '15k'
     }
   ];
 

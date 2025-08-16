@@ -78,12 +78,12 @@ export default function Experience() {
             <FadeContent key={position.title} delay={150 + (200 * i)} duration={1500}
               className='space-y-0.5 text-light'>
               <div className='text-lg tablet:text-xl laptop:text-2xl text-zinc-200'>{position.title}</div>
-              <div className='italic tablet:text-lg laptop:text-xl'>{position.duration}</div>
+              <div className='italic tablet:text-lg laptop:text-xl text-zinc-400'>{position.duration}</div>
               <div className='border-l border-light mt-4 pl-3.5 tablet:pl-4 font-light 
                 space-y-5 tablet:space-y-6'>
                 {position.skills.map(skill => (
                   <div key={skill.skill} className='space-y-2 tablet:space-y-2.5'>
-                    <div className='flex items-center gap-x-1.5 text-zinc-200 tablet:text-lg'>
+                    <div className='flex items-center gap-x-1.5 tablet:text-lg'>
                       {skill.skillIcon}
                       {skill.skill}
                     </div>

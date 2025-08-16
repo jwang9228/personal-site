@@ -30,22 +30,20 @@ export default function RootLayout({children}) {
         px-8 tablet:px-12 laptop:px-16 py-6 tablet:py-8 laptop:py-10
         gap-x-5 tablet:gap-x-7 laptop:gap-x-10 bg-dark'>
         {tabs.map((tab, i) => (
-          <Link 
-            key={i} 
-            href={tab.href} 
+          <Link
+            key={i}
+            href={tab.href}
             onClick={() => setActiveTab(tab.label)}
-            className={`group transition duration-200 text-lg tablet:text-xl laptop:text-2xl text-foreground/75
-              ${activeTab === tab.label && 'text-foreground/100'}`
-            }
+            className={`group transition duration-200 text-lg tablet:text-xl laptop:text-2xl text-light/75
+              ${activeTab === tab.label && 'text-light/100'}`}
           >
             {tab.label}
-            <span 
-              className={`block h-0.5 bg-foreground/80
-                ${activeTab === tab.label 
-                  ? 'max-w-full' 
-                  : 'max-w-0 group-hover:max-w-full transition-all duration-300'
-                }`
-              } 
+            <span
+              className={`block h-0.5 bg-light/80 transition-all duration-300
+                ${activeTab === tab.label
+                  ? 'max-w-full'
+                  : 'max-w-0 group-hover:max-w-full'
+                }`}
             />
           </Link>
         ))}
@@ -65,7 +63,7 @@ export default function RootLayout({children}) {
               href={social.href}
               target='_blank'
               rel='noopener noreferrer'
-              className='text-foreground/90 hover:text-foreground/100 text-lg tablet:text-xl laptop:text-2xl'
+              className='text-light/90 hover:text-light/100 text-lg tablet:text-xl laptop:text-2xl'
             >
               {social.label}
             </Link>
