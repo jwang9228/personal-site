@@ -161,7 +161,7 @@ function PCItem({header, content}) {
         {header}
       </span>
       <div className='flex flex-col gap-y-1 tablet:gap-y-2 laptop:gap-y-2.5
-        text-sm tablet:text-base laptop:text-lg tablet:text-nowrap'>
+        text-sm tablet:text-base laptop:text-lg'>
         {content}
       </div>
     </div>
