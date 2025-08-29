@@ -61,7 +61,7 @@ export default function About() {
             from-light/70 via-light/50 to-light/40' />
         </FadeContent>
       </div>
-      <div className='flex flex-col laptop:flex-row gap-y-8 gap-x-30'>
+      <div className='flex flex-col laptop:flex-row gap-y-8 gap-x-24'>
         <div className='flex flex-col gap-y-8'>
           <div className='flex flex-col gap-y-2 tablet:gap-y-3 laptop:gap-y-4.5 
             text-light tablet:text-lg laptop:text-xl text-nowrap'>
@@ -98,7 +98,7 @@ export default function About() {
             </div>
           </FadeContent>
         </div>
-        <FadeContent delay={isMobile ? 525 : 150} duration={isMobile ? 1500 : 2000}>
+        <FadeContent delay={isMobile ? 525 : 150} duration={isMobile ? 1500 : 2000} className='w-full'>
           <Hobbies />
         </FadeContent>
       </div>
