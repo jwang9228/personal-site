@@ -8,6 +8,7 @@ import { PiPlant, PiGraduationCapLight } from 'react-icons/pi';
 import Link from 'next/link';
 import FadeContent from '../utils/FadeContent';
 import Hobbies from './hobbies/Hobbies';
+import { TbH4 } from 'react-icons/tb';
 
 export default function About() {
   const [isMobile, setIsMobile] = useState(false);
@@ -80,10 +81,10 @@ export default function About() {
             <FadeContent delay={250} duration={1500}>
               <li className='flex items-start gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
                 <PiGraduationCapLight className='size-4 tablet:size-4.5 laptop:size-5 mt-1' />
-                <p className='flex flex-col'>
+                <section className='flex flex-col'>
                   <h4>Northeastern University '23</h4>
                   <h4>B.S. in Computer Science</h4>
-                </p>
+                </section>
               </li>
             </FadeContent>
           </ul>
