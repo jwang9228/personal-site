@@ -36,33 +36,33 @@ export default function Games() {
   ];
 
   return (
-    <div className='flex flex-col gap-y-4 tablet:gap-y-4.5 laptop:gap-y-5
+    <section className='flex flex-col gap-y-4 tablet:gap-y-4.5 laptop:gap-y-5
       font-light tablet:text-lg laptop:text-xl'>
-      <>Currently playing the following:</>
-      <div className='flex flex-col 
+      <h2>Currently playing the following:</h2>
+      <ul className='flex flex-col 
         gap-y-4.5 tablet:gap-y-6 mt-0.5'>
 				{games.map(game => (
-          <div key={game.name} className='flex flex-col 
+          <li key={game.name} className='flex flex-col 
             gap-y-1 tablet:gap-y-1.5 laptop:gap-y-2'>
-            <div className='flex justify-between items-center laptop:gap-x-40'>
-              <div className='italic font-normal'>{game.name}</div>
+            <p className='flex justify-between items-center laptop:gap-x-40'>
+              <h3 className='italic font-normal'>{game.name}</h3>
               {showRank && 
-                <div className='flex items-center gap-x-1.5 
+                <h4 className='flex items-center gap-x-1.5 
                   text-sm tablet:text-base laptop:text-lg opacity-95'>
                   {game.rankIcon}
                   {game.rank}
-                </div>
+                </h4>
               }
-            </div>
-            <div className='flex items-center gap-x-1.5 
+            </p>
+            <h4 className='flex items-center gap-x-1.5 
               text-sm tablet:text-base laptop:text-lg'>
               <AiOutlineTag />
               {game.ign}
-              <div className='opacity-85'>{game.tag}</div>
-            </div>
-          </div>
+              <label className='opacity-85'>{game.tag}</label>
+            </h4>
+          </li>
         ))}
-      </div>
-    </div>
+      </ul>
+    </section>
   )
 }

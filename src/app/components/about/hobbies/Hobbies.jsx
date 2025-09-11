@@ -37,8 +37,8 @@ export default function Hobbies() {
 	];
 
 	return (
-		<div className='flex flex-col gap-y-3.5 tablet:gap-y-4.5 laptop:gap-y-5 text-light'>
-			<div className='text-lg tablet:text-xl laptop:text-2xl'>
+		<section className='flex flex-col gap-y-3.5 tablet:gap-y-4.5 laptop:gap-y-5 text-light'>
+			<h2 className='text-lg tablet:text-xl laptop:text-2xl'>
 				{detailsSection
 					? <button 
 							type='button'
@@ -50,7 +50,7 @@ export default function Hobbies() {
 						</button>
 					: <>When I'm off work, find me:</>
 				}
-			</div>
+			</h2>
 			{detailsSection 
 				? <>{detailsSection}</>
 				: <ul className='space-y-2.5 tablet:space-y-4 laptop:space-y-5
@@ -71,6 +71,6 @@ export default function Hobbies() {
 						))}
 					</ul>
 			}
-		</div>
+		</section>
 	)
 }

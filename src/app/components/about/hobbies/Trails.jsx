@@ -38,22 +38,22 @@ export default function Trails() {
   }, []);
 
 	return (
-		<div className='flex flex-col gap-y-4 laptop:gap-y-5 font-light tablet:text-lg laptop:text-xl'>
-	  	<>
+		<main className='flex flex-col gap-y-4 laptop:gap-y-5 font-light tablet:text-lg laptop:text-xl'>
+	  	<h2>
 				A slice of recent memories exploring scenic gems of 
 				Northern California.
-			</>
-			<div className='flex flex-col gap-y-6 mt-2'>
+			</h2>
+			<ul className='flex flex-col gap-y-6 mt-2'>
 				{spots.map(spot => (
-					<div key={spot.name} className='space-y-0.5 laptop:space-y-1'>
-            <div className='italic font-normal'>{spot.name}</div>
-            <div className='flex items-center gap-x-2 text-sm laptop:text-base'>
+					<li key={spot.name} className='space-y-0.5 laptop:space-y-1'>
+            <h3 className='italic font-normal'>{spot.name}</h3>
+            <h4 className='flex items-center gap-x-2 text-sm laptop:text-base'>
               <TbLocation /> 
               <>{spot.location}</>
-            </div>
-						<div className={`grid grid-cols-2 tablet:grid-cols-3 laptop:grid-cols-4 gap-2.5 mt-6 laptop:mt-8`}>
+            </h4>
+						<ul className={`grid grid-cols-2 tablet:grid-cols-3 laptop:grid-cols-4 gap-2.5 mt-6 laptop:mt-8`}>
 							{Array.from({ length: deviceView.columns}, (_, col) => (
-								<div key={col} className='grid gap-2.5'>
+								<li key={col} className='grid gap-2.5'>
 									{Array.from({ length: (spot[deviceView.view].length / deviceView.columns) }, (_, i) => (
 										<FadeContent 
                         key={i + col * (spot[deviceView.view].length / deviceView.columns)} 
@@ -67,15 +67,15 @@ export default function Trails() {
                           spot[deviceView.view][i + col * (spot[deviceView.view].length / deviceView.columns)]
                         }.webp`}
                         loading='lazy'
-												alt='' />										
+												alt={`Trail Image ${i + col * (spot[deviceView.view].length / deviceView.columns)}`} />										
 										</FadeContent>
 									))}
-								</div>
+								</li>
 							))}
-						</div>
-					</div>
+						</ul>
+					</li>
 				))}
-			</div>
-		</div>
+			</ul>
+		</main>
 	)
 }

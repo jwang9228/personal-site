@@ -66,48 +66,48 @@ export default function PC() {
   ];
 
   return (
-    <div className='flex flex-col gap-y-4 tablet:gap-y-5 laptop:gap-y-7
+    <main className='flex flex-col gap-y-4 tablet:gap-y-5 laptop:gap-y-7
       font-light tablet:text-lg laptop:text-xl'>
-      <>Check out my setup and custom build specs below!</>
-      <div className='flex flex-col laptop:grid laptop:grid-cols-3 
+      <h2>Check out my setup and custom build specs below!</h2>
+      <section className='flex flex-col laptop:grid laptop:grid-cols-3 
         gap-x-2 laptop:gap-x-6 gap-y-4.5 tablet:gap-y-6 laptop:gap-y-7'>
-        <div className='flex flex-col gap-y-4.5 tablet:gap-y-6'>
+        <section className='flex flex-col gap-y-4.5 tablet:gap-y-6'>
           <PCItem 
             header='peripherals' 
             content={
               <>
                 {peripherals.map(peripheral => (
-                  <div 
+                  <li
                     key={peripheral.description} 
                     className='flex items-center 
                       gap-x-3.5 tablet:gap-x-4 laptop:gap-x-5 laptop:gap-y-7'>
                     {peripheral.icon}
                     {peripheral.description}
-                  </div>
+                  </li>
                 ))}
               </>
             }
           />
-          <div className='hidden laptop:flex'>
+          <section className='hidden laptop:flex'>
             <PCItem 
               header='icon legend'
               content={
-                <div className='grid grid-cols-2
+                <ul className='grid grid-cols-2
                   items-center gap-y-0.5 tablet:gap-y-1'>
                   {Object.entries(buildSpecsIcons).map(([iconName, icon]) => (
-                    <div 
+                    <li
                       key={iconName}
                       className='flex items-center 
                         gap-x-2 tablet:gap-x-4 laptop:gap-x-5'>
                       {icon}
                       {iconName}
-                    </div>
+                    </li>
                   ))}
-                </div>
+                </ul>
               }
             />
-          </div>
-        </div>
+          </section>
+        </section>
         {builds.map(build => (
           <PCItem 
             key={build.name}
@@ -115,55 +115,55 @@ export default function PC() {
             content={
               <>
                 {Object.entries(build.specs).map(([buildPart, buildVal]) => (
-                  <div 
+                  <li 
                     key={buildPart}
                     className='flex items-center 
                       gap-x-3.5 tablet:gap-x-4 laptop:gap-x-5'>
                     {buildSpecsIcons[buildPart]}
                     {buildVal}
-                  </div>
+                  </li>
                 ))}
               </>
             }
           />
         ))}
-        <div className='laptop:hidden'>
+        <section className='laptop:hidden'>
           <PCItem 
             header='icon legend'
             content={
-              <div className='grid grid-cols-2
+              <ul className='grid grid-cols-2
                 items-center gap-y-0.5 tablet:gap-y-1'>
                 {Object.entries(buildSpecsIcons).map(([iconName, icon]) => (
-                  <div 
+                  <li 
                     key={iconName}
                     className='flex items-center 
                       gap-x-2 tablet:gap-x-4 laptop:gap-x-5'>
                     {icon}
                     {iconName}
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             }
           />
-        </div>
-      </div>
-    </div>
+        </section>
+      </section>
+    </main>
   )
 }
 
 function PCItem({header, content}) {
   return (
-    <div className='relative border tablet:w-2/3 laptop:w-full h-fit laptop:h-full
+    <section className='relative border tablet:w-2/3 laptop:w-full h-fit laptop:h-full
       border-zinc-400/90 rounded-md px-4.5 tablet:px-5 laptop:px-6 
       pt-5 laptop:pt-7 pb-4 mt-2.5'>
       <span className='absolute -top-3.5 left-3.5 tablet:left-5 
         px-1.5 tablet:px-2 bg-dark italic'>
         {header}
       </span>
-      <div className='flex flex-col gap-y-1 tablet:gap-y-2 laptop:gap-y-2.5
+      <p className='flex flex-col gap-y-1 tablet:gap-y-2 laptop:gap-y-2.5
         text-sm tablet:text-base laptop:text-lg'>
         {content}
-      </div>
-    </div>
+      </p>
+    </section>
   )
 }

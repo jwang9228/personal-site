@@ -39,69 +39,69 @@ export default function About() {
   }, []);
 
   return (
-    <div className='flex flex-col gap-y-8 laptop:gap-y-10'>
-      <div className='flex flex-col gap-y-1 tablet:gap-y-2 laptop:gap-y-3'>
+    <main className='flex flex-col gap-y-8 laptop:gap-y-10'>
+      <header className='flex flex-col gap-y-1 tablet:gap-y-2 laptop:gap-y-3'>
         <FadeContent>
-          <div className='text-3xl tablet:text-4xl font-medium'>
+          <h1 className='text-3xl tablet:text-4xl font-medium'>
             Justin Wang
-          </div>
+          </h1>
         </FadeContent>
         <FadeContent delay={50}>
-          <div className='text-lg tablet:text-xl laptop:text-2xl text-zinc-200'>
+          <h2 className='text-lg tablet:text-xl laptop:text-2xl text-zinc-200'>
             Full Stack Developer
-          </div>
+          </h2>
         </FadeContent>
         <FadeContent delay={100}>
-          <div className='text-sm tablet:text-base laptop:text-lg text-zinc-200 font-light'>
+          <h3 className='text-sm tablet:text-base laptop:text-lg text-zinc-200 font-light'>
             Finding optimal solutions to real-world problems
-          </div>
+          </h3>
         </FadeContent>
         <FadeContent delay={100}>              
           <hr className='w-full h-px mt-4 border-0 bg-gradient-to-r 
             from-light/70 via-light/50 to-light/40' />
         </FadeContent>
-      </div>
-      <div className='flex flex-col laptop:flex-row gap-y-8 gap-x-24'>
-        <div className='flex flex-col gap-y-8'>
-          <div className='flex flex-col gap-y-2 tablet:gap-y-3 laptop:gap-y-4.5 
+      </header>
+      <section className='flex flex-col laptop:flex-row gap-y-8 gap-x-24'>
+        <section className='flex flex-col gap-y-8'>
+          <ul className='flex flex-col gap-y-2 tablet:gap-y-3 laptop:gap-y-4.5 
             text-light tablet:text-lg laptop:text-xl text-nowrap'>
             <FadeContent delay={150} duration={1500}>
-              <div className='flex items-center gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
+              <li className='flex items-center gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
                 <PiPlant className='size-4 tablet:size-4.5 laptop:size-5 opacity-80' />
-                Current: SDE @ Agrofocal
-              </div>
+                <h4>Current: SDE @ Agrofocal</h4>
+              </li>
             </FadeContent>
             <FadeContent delay={200} duration={1500}>
-              <div className='flex items-center gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
+              <li className='flex items-center gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
                 <CiLocationOn className='size-4 tablet:size-4.5 laptop:size-5' />
-                Pleasanton, CA
-              </div>
+                <h4>Pleasanton, CA</h4>
+              </li>
             </FadeContent>
             <FadeContent delay={250} duration={1500}>
-              <div className='flex items-start gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
+              <li className='flex items-start gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
                 <PiGraduationCapLight className='size-4 tablet:size-4.5 laptop:size-5 mt-1' />
-                <div className='flex flex-col'>
-                  <div>Northeastern University '23</div>
-                  <div>B.S. in Computer Science</div>
-                </div>
-              </div>
+                <p className='flex flex-col'>
+                  <h4>Northeastern University '23</h4>
+                  <h4>B.S. in Computer Science</h4>
+                </p>
+              </li>
             </FadeContent>
-          </div>
+          </ul>
           <FadeContent delay={400} duration={1500}>
-            <div className='flex items-center gap-x-4.5 tablet:gap-x-5 laptop:gap-x-5.5
+            <h4 className='flex items-center gap-x-4.5 tablet:gap-x-5 laptop:gap-x-5.5
               my-1.5 tablet:my-2'>
               {socials.map((social, i) => (
                 <Link key={i} href={social.href} target='_blank' rel='noopener noreferrer'>
                   {social.icon}
                 </Link>
               ))}
-            </div>
+            </h4>
           </FadeContent>
-        </div>
+        </section>
         <FadeContent delay={isMobile ? 525 : 150} duration={isMobile ? 1500 : 2000} className='w-full'>
           <Hobbies />
         </FadeContent>
-      </div>
-    </div>
+      </section>
+    </main>
   )
 }

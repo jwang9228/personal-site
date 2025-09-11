@@ -36,7 +36,7 @@ const FadeContent = ({
   }, [threshold, delay]);
 
   return (
-    <div
+    <section
       ref={ref}
       className={className}
       style={{
@@ -46,7 +46,7 @@ const FadeContent = ({
       }}
     >
       {children}
-    </div>
+    </section>
   );
 };
 

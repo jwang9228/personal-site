@@ -25,33 +25,33 @@ export default function Projects() {
   ];
 
   return (
-    <div className='flex flex-col gap-y-8 tablet:gap-y-10 laptop:gap-y-12'>
+    <main className='flex flex-col gap-y-8 tablet:gap-y-10 laptop:gap-y-12'>
       {projects.map((project, i) => (
         <FadeContent key={project.title} delay={100 + (150 * i)} duration={1500} 
           className='space-y-0.5 tablet:space-y-1 laptop:space-y-1.5'>
-          <div className='flex items-center gap-x-3 text-lg tablet:text-xl laptop:text-2xl'>
-            <div>{project.title}</div>
+          <header className='flex items-center gap-x-3 text-lg tablet:text-xl laptop:text-2xl'>
+            <h2>{project.title}</h2>
             {project.repository && 
               <Link href={project.repository} target='_blank' rel='noopener noreferrer'>
                 <AiOutlineGithub /> 
               </Link>
             }
-          </div>
-          <div className='tablet:text-lg laptop:text-xl text-zinc-400 font-light'>
+          </header>
+          <h3 className='tablet:text-lg laptop:text-xl text-zinc-400 font-light'>
             {project.description}
-          </div>
-          <div className='flex flex-wrap gap-x-3 tablet:gap-x-4.5 gap-y-2.5 
+          </h3>
+          <ul className='flex flex-wrap gap-x-3 tablet:gap-x-4.5 gap-y-2.5 
             mt-3 tablet:mt-3.5 laptop:mt-4 text-ight/95 
             text-sm tablet:text-base laptop:text-lg'>
             {project.skills.map(skill => (
-              <div 
+              <li
                 key={skill} 
                 className='px-1.5 tablet:px-2 laptop:px-2.5 py-0.5 
                 bg-zinc-700/80 rounded'>
                   {skill}
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </FadeContent>
       ))}
       <FadeContent delay={100 + (150 * projects.length)} duration={1500}
@@ -69,6 +69,6 @@ export default function Projects() {
           Explore the nexus
         </Link>
       </FadeContent>
-    </div>
+    </main>
   )
 }

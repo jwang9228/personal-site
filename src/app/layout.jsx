@@ -9,6 +9,11 @@ export const metadata = {
   description: "Justin Wang's Personal Site",
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+}
+
 export default function Layout({ children }) {
   return (
     <html lang='en'>
