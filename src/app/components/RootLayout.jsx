@@ -55,12 +55,14 @@ export default function RootLayout({children}) {
           bg-gradient-to-r from-light/30 via-light/80 to-light/30' />
         <ul className='flex w-full laptop:w-4/5 justify-between items-center'>
           {socials.map((social, i) => (
-            <Link key={i} href={social.href} target='_blank' rel='noopener noreferrer'
-              className='text-light/90 hover:text-light/100 
-                text-lg tablet:text-xl laptop:text-2xl'
-            >
-              <li>{social.label}</li>
-            </Link>
+            <li>
+              <Link key={i} href={social.href} target='_blank' rel='noopener noreferrer'
+                className='text-light/90 hover:text-light/100 
+                  text-lg tablet:text-xl laptop:text-2xl'
+              >
+                {social.label}
+              </Link>
+            </li>
           ))}
         </ul>
       </footer>

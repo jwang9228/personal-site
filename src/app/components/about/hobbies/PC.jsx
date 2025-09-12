@@ -113,7 +113,7 @@ export default function PC() {
             key={build.name}
             header={build.name}
             content={
-              <>
+              <ul>
                 {Object.entries(build.specs).map(([buildPart, buildVal]) => (
                   <li 
                     key={buildPart}
@@ -123,7 +123,7 @@ export default function PC() {
                     {buildVal}
                   </li>
                 ))}
-              </>
+              </ul>
             }
           />
         ))}

@@ -20,7 +20,7 @@ export const viewport = {
 export default function Layout({ children }) {
   return (
     <html lang='en'>
-      <body className={inter.className} >
+      <body className={`${inter.className} antialiased`} >
         <RootLayout children={children} />
       </body>
     </html>

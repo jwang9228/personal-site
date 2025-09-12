@@ -8,7 +8,6 @@ import { PiPlant, PiGraduationCapLight } from 'react-icons/pi';
 import Link from 'next/link';
 import FadeContent from '../utils/FadeContent';
 import Hobbies from './hobbies/Hobbies';
-import { TbH4 } from 'react-icons/tb';
 
 export default function About() {
   const [isMobile, setIsMobile] = useState(false);
@@ -66,27 +65,30 @@ export default function About() {
         <section className='flex flex-col gap-y-8'>
           <ul className='flex flex-col gap-y-2 tablet:gap-y-3 laptop:gap-y-4.5 
             text-light tablet:text-lg laptop:text-xl text-nowrap'>
-            <FadeContent delay={150} duration={1500}>
-              <li className='flex items-center gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
+            <li>
+              <FadeContent delay={150} duration={1500}
+                className='flex items-center gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
                 <PiPlant className='size-4 tablet:size-4.5 laptop:size-5 opacity-80' />
                 <h4>Current: SDE @ Agrofocal</h4>
-              </li>
-            </FadeContent>
-            <FadeContent delay={200} duration={1500}>
-              <li className='flex items-center gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
+              </FadeContent>
+            </li>
+            <li>
+              <FadeContent delay={200} duration={1500}
+                className='flex items-center gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
                 <CiLocationOn className='size-4 tablet:size-4.5 laptop:size-5' />
                 <h4>Pleasanton, CA</h4>
-              </li>
-            </FadeContent>
-            <FadeContent delay={250} duration={1500}>
-              <li className='flex items-start gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
+              </FadeContent>
+            </li>
+            <li>
+              <FadeContent delay={250} duration={1500} 
+                className='flex items-start gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
                 <PiGraduationCapLight className='size-4 tablet:size-4.5 laptop:size-5 mt-1' />
                 <section className='flex flex-col'>
                   <h4>Northeastern University '23</h4>
                   <h4>B.S. in Computer Science</h4>
                 </section>
-              </li>
-            </FadeContent>
+              </FadeContent>
+            </li>
           </ul>
           <FadeContent delay={400} duration={1500}>
             <h4 className='flex items-center gap-x-4.5 tablet:gap-x-5 laptop:gap-x-5.5
