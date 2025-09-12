@@ -5,7 +5,10 @@ import RootLayout from './components/RootLayout';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: "Justin Wang",
+  title: {
+    template: '%s | Justin Wang',
+    default: 'Justin Wang'
+  },
   description: "Justin Wang's Personal Site",
 };
 
