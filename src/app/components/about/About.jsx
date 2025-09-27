@@ -53,7 +53,7 @@ export default function About() {
         </FadeContent>
         <FadeContent delay={100}>
           <h3 className='text-sm tablet:text-base laptop:text-lg text-zinc-200 font-light'>
-            Finding optimal solutions to real-world problems
+            Resourceful and self-driven engineer focused on building practical solutions to real-world problems 
           </h3>
         </FadeContent>
         <FadeContent delay={100}>              
