@@ -20,12 +20,12 @@ export default function Experience() {
             {
               skill: 'Python',
               skillIcon: <AiOutlinePython />,
-              subSkills: ['Flask', 'PyMongo', 'OpenCV', 'boto3']
+              subSkills: ['Flask', 'PyMongo', 'OpenCV', 'boto3', 'Cron']
             },
             {
               skill: 'JavaScript',
               skillIcon: <RiJavascriptLine />,
-              subSkills: ['Tailwind CSS', 'Vite + React', 'React Router', 'Figma']
+              subSkills: ['Tailwind CSS', 'Vite + React', 'React Router', 'Figma', 'Esri ArcGIS']
             }
           ]
         }, 

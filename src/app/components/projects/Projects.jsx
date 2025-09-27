@@ -14,13 +14,8 @@ export default function Projects() {
     {
       title: 'nexus', 
       description: 'An alternative to popular League of Legends stat trackers',
-      skills: ['Next.js', 'React', 'Tailwind CSS', 'AWS S3'],
+      skills: ['Next.js', 'React', 'Tailwind CSS', 'AWS S3', 'Node.js', 'Express', 'REST API', 'Riot API', 'MongoDB', 'PM2'],
       repository: 'https://github.com/jwang9228/nexus'
-    }, 
-    {
-      title: 'nexus node server',
-      description: 'Node.js backend for nexus',
-      skills: ['Node.js', 'Express', 'REST API', 'Riot API', 'MongoDB', 'PM2']
     }
   ];
 
@@ -40,8 +35,9 @@ export default function Projects() {
           <h3 className='tablet:text-lg laptop:text-xl text-zinc-400 font-light'>
             {project.description}
           </h3>
-          <ul className='flex flex-wrap gap-x-3 tablet:gap-x-4.5 gap-y-2.5 
-            mt-3 tablet:mt-3.5 laptop:mt-4 text-ight/95 
+          <ul className='flex flex-wrap w-full laptop:w-1/3
+            gap-x-3 tablet:gap-x-4.5 gap-y-2.5 tablet:gap-y-4
+            mt-3 tablet:mt-3.5 laptop:mt-4 text-light/95 
             text-sm tablet:text-base laptop:text-lg'>
             {project.skills.map(skill => (
               <li
