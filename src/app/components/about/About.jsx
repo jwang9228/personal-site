@@ -69,7 +69,7 @@ export default function About() {
               <FadeContent delay={150} duration={1500}
                 className='flex items-center gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
                 <PiPlant className='size-4 tablet:size-4.5 laptop:size-5 opacity-80' />
-                <h4>Current: SDE @ Agrofocal</h4>
+                <h4>Current: SWE @ UIC Payments</h4>
               </FadeContent>
             </li>
             <li>

@@ -8,6 +8,19 @@ export default function Experience() {
 
   const experiences = [
     {
+      company: 'UIC Payments',
+      location: 'Fremont, CA', 
+      logo: 'UIC.jpg',
+      link: 'https://uicpaymentsinc.com/',
+      positions: [
+        {
+          title: 'Software Engineer',
+          duration: 'October 2025 - Present',
+          skills: []
+        }
+      ]
+    }, 
+    {
       company: 'Agrofocal Technologies',
       location: 'San Jose, CA',
       logo: 'Agrofocal.png',
@@ -15,7 +28,7 @@ export default function Experience() {
       positions: [
         {
           title: 'Software Developer',
-          duration: 'January 2024 - Present',
+          duration: 'January 2024 - October 2025',
           skills: [
             {
               skill: 'Python',
@@ -56,7 +69,7 @@ export default function Experience() {
   ];
 
   return (
-    <ul>
+    <ul className='flex flex-col gap-y-8 tablet:gap-y-10 laptop:gap-y-12'>
       {experiences.map(experience => (
         <li key={experience.company} className='flex flex-col gap-y-8 tablet:gap-y-10 laptop:gap-y-12'>
           <FadeContent delay={100} duration={1500} 
@@ -68,7 +81,7 @@ export default function Experience() {
                 <img 
                   src={`/experience/${experience.logo}`} 
                   alt={`${experience.company} Logo`}
-                  className='size-12 tablet:size-14 laptop:size-16 hover:cursor-pointer' />
+                  className='rounded-xl size-12 tablet:size-14 laptop:size-16 hover:cursor-pointer' />
               </Link>
             <header className='space-y-0.5 tablet:space-y-1 laptop:space-y-1.5'>
               <h2 className='text-xl tablet:text-2xl laptop:text-3xl font-medium'>{experience.company}</h2>
