@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { CiLocationOn } from 'react-icons/ci';
 import { AiOutlineGithub } from 'react-icons/ai';
 import { CiMail, CiLinkedin } from 'react-icons/ci';
-import { PiPlant, PiGraduationCapLight } from 'react-icons/pi';
+import { PiGraduationCapLight, PiContactlessPayment } from 'react-icons/pi';
 import Link from 'next/link';
 import FadeContent from '../utils/FadeContent';
 import Hobbies from './hobbies/Hobbies';
@@ -68,7 +68,7 @@ export default function About() {
             <li>
               <FadeContent delay={150} duration={1500}
                 className='flex items-center gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
-                <PiPlant className='size-4 tablet:size-4.5 laptop:size-5 opacity-80' />
+                <PiContactlessPayment className='size-4 tablet:size-4.5 laptop:size-5 opacity-80' />
                 <h4>Current: SWE @ UIC Payments</h4>
               </FadeContent>
             </li>
