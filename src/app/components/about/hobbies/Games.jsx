@@ -44,7 +44,7 @@ export default function Games() {
 				{games.map(game => (
           <li key={game.name} className='flex flex-col 
             gap-y-1 tablet:gap-y-1.5 laptop:gap-y-2'>
-            <p className='flex justify-between items-center laptop:gap-x-40'>
+            <section className='flex justify-between items-center laptop:gap-x-40'>
               <h3 className='italic font-normal'>{game.name}</h3>
               {showRank && 
                 <h4 className='flex items-center gap-x-1.5 
@@ -53,7 +53,7 @@ export default function Games() {
                   {game.rank}
                 </h4>
               }
-            </p>
+            </section>
             <h4 className='flex items-center gap-x-1.5 
               text-sm tablet:text-base laptop:text-lg'>
               <AiOutlineTag />

@@ -69,7 +69,7 @@ export default function PC() {
     <main className='flex flex-col gap-y-4 tablet:gap-y-5 laptop:gap-y-7
       font-light tablet:text-lg laptop:text-xl'>
       <h2>Check out my setup and custom build specs below!</h2>
-      <section className='flex flex-col laptop:grid laptop:grid-cols-3 
+      <section className='flex flex-col laptop:grid desktop:grid-cols-3 
         gap-x-2 laptop:gap-x-6 gap-y-4.5 tablet:gap-y-6 laptop:gap-y-7'>
         <section className='flex flex-col gap-y-4.5 tablet:gap-y-6'>
           <PCItem 
@@ -92,7 +92,7 @@ export default function PC() {
             <PCItem 
               header='icon legend'
               content={
-                <ul className='grid grid-cols-2
+                <ul className='grid grid-cols-2 h-full justify-between
                   items-center gap-y-0.5 tablet:gap-y-1'>
                   {Object.entries(buildSpecsIcons).map(([iconName, icon]) => (
                     <li
@@ -113,7 +113,7 @@ export default function PC() {
             key={build.name}
             header={build.name}
             content={
-              <ul>
+              <ul className='flex flex-col justify-between h-full'>
                 {Object.entries(build.specs).map(([buildPart, buildVal]) => (
                   <li 
                     key={buildPart}
@@ -137,7 +137,7 @@ export default function PC() {
                   <li 
                     key={iconName}
                     className='flex items-center 
-                      gap-x-2 tablet:gap-x-4 laptop:gap-x-5'>
+                      gap-x-3.5 tablet:gap-x-4 laptop:gap-x-5'>
                     {icon}
                     {iconName}
                   </li>
@@ -160,10 +160,10 @@ function PCItem({header, content}) {
         px-1.5 tablet:px-2 bg-dark italic'>
         {header}
       </span>
-      <p className='flex flex-col gap-y-1 tablet:gap-y-2 laptop:gap-y-2.5
+      <span className='flex flex-col h-full gap-y-1 tablet:gap-y-2 laptop:gap-y-2.5
         text-sm tablet:text-base laptop:text-lg'>
         {content}
-      </p>
+      </span>
     </section>
   )
 }

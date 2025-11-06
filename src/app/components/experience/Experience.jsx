@@ -69,9 +69,9 @@ export default function Experience() {
   ];
 
   return (
-    <ul className='flex flex-col gap-y-8 tablet:gap-y-10 laptop:gap-y-12'>
+    <ul className='flex flex-col gap-y-6 tablet:gap-y-8 laptop:gap-y-10'>
       {experiences.map(experience => (
-        <li key={experience.company} className='flex flex-col gap-y-8 tablet:gap-y-10 laptop:gap-y-12'>
+        <li key={experience.company} className='flex flex-col gap-y-4 tablet:gap-y-6 laptop:gap-y-8'>
           <FadeContent delay={100} duration={1500} 
             className='flex items-center gap-x-4.5 tablet:gap-x-5 laptop:gap-x-6'>
               <Link
