@@ -83,7 +83,7 @@ export default function About() {
             from-light/70 via-light/50 to-light/40' />
         </FadeContent>
       </header>
-      <section className='flex flex-col laptop:flex-row gap-y-8 gap-x-24'>
+      <section className='flex flex-col laptop:flex-row gap-y-8 gap-x-28'>
         <FadeContent delay={2200} duration={500} className='flex flex-col gap-y-8'>
           <ul className='flex flex-col gap-y-2 tablet:gap-y-3 laptop:gap-y-4.5 
             text-light tablet:text-lg laptop:text-xl text-nowrap'>

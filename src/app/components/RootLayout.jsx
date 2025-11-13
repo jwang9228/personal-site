@@ -45,7 +45,7 @@ export default function RootLayout({children}) {
   return (
     <div className='flex flex-col relative h-dvh'>
       <FadeContent delay={isMobile ? 2900 : 2600} duration={400} 
-        className='flex justify-end fixed w-full top-0
+        className='flex justify-end fixed w-full top-0 z-10
           px-8 tablet:px-12 laptop:px-16 py-6 tablet:py-8 laptop:py-10
           gap-x-5 tablet:gap-x-7 laptop:gap-x-10 bg-dark'
       >
