@@ -9,7 +9,6 @@
 @theme inline {
   --color-dark: #0a0a0a;
   --color-light: #d4d4d8; /* zinc-300 */
-  --font-sans: var(--font-geist-sans);
   --breakpoint-*: initial;
   --breakpoint-mobile: 299px;
   --breakpoint-tablet: 767px;
@@ -22,10 +21,35 @@
       --border-angle: 360deg;
     }
   }
+
+  --animate-slide-left: slide-left 0.5s ease-in-out forwards;
+  @keyframes slide-left {
+    0% { transform: translateX(-20%); }
+    100% { transform: translateX(0%); }
+  }
+
+  --animate-wipe: wipe ease-out forwards;
+  @keyframes wipe {
+    from {
+      clip-path: inset(0 100% 0 0);
+    } 
+    to {
+      clip-path: inset(0 0% 0 0);
+    }
+  }
+
+  --animate-drop-down: drop-down ease-out forwards;
+  @keyframes drop-down {
+    0% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 }
 
 body {
   background: theme(--color-dark);
   color: theme(--color-light);
-  font-family: theme(--font-sans);
 }

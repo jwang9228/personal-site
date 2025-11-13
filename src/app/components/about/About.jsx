@@ -11,6 +11,7 @@ import Hobbies from './hobbies/Hobbies';
 
 export default function About() {
   const [isMobile, setIsMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   // renders the 'about' section socials icons + hyperlinks
   const socials = [
@@ -29,6 +30,8 @@ export default function About() {
   ];
 
   useEffect(() => {
+    setMounted(true);
+  
     const handleWindowResize = () => {
       setIsMobile(window.innerWidth < 1024);
     };
@@ -38,70 +41,80 @@ export default function About() {
     return () => window.removeEventListener('resize', handleWindowResize);
   }, []);
 
+  if (!mounted) return null;
+
   return (
     <main className='flex flex-col gap-y-8 laptop:gap-y-10'>
       <header className='flex flex-col gap-y-1 tablet:gap-y-2 laptop:gap-y-3'>
-        <FadeContent>
-          <h1 className='text-3xl tablet:text-4xl font-medium'>
-            Justin Wang
+        <FadeContent duration={100}>
+          <h1 className='inline-block overflow-hidden 
+            text-3xl tablet:text-4xl font-medium'
+          >
+            <span className='block animate-wipe [clip-path:inset(0_100%_0_0)]
+              [animation-delay:0.4s] [animation-duration:0.4s]'>
+              Justin Wang
+            </span>
           </h1>
         </FadeContent>
         <FadeContent delay={50}>
-          <h2 className='text-lg tablet:text-xl laptop:text-2xl text-zinc-200'>
-            Full Stack Developer
+          <h2 className='inline-block overflow-hidden 
+            text-lg tablet:text-xl laptop:text-2xl text-zinc-200'
+          >
+            <span className='block animate-wipe [clip-path:inset(0_100%_0_0)]
+              [animation-delay:0.8s] [animation-duration:0.4s]'>
+              Full Stack Developer
+            </span>
           </h2>
         </FadeContent>
         <FadeContent delay={100}>
-          <h3 className='text-sm tablet:text-base laptop:text-lg text-zinc-200 font-light'>
-            Resourceful and self-driven engineer focused on building practical solutions to real-world problems 
+          <h3 className='inline-block overflow-hidden
+            text-sm tablet:text-base laptop:text-xl text-zinc-200 font-light'
+          >
+            <span className='block animate-wipe [clip-path:inset(0_100%_0_0)]
+              [animation-delay:1.2s] [animation-duration:0.6s]'>
+              Building practical solutions to real-world problems 
+            </span>
           </h3>
         </FadeContent>
-        <FadeContent delay={100}>              
-          <hr className='w-full h-px mt-4 border-0 bg-gradient-to-r 
+        <FadeContent delay={50} className='inline-block overflow-hidden'>              
+          <hr className=' block animate-wipe [clip-path:inset(0_100%_0_0)]
+              [animation-delay:1.8s] [animation-duration:0.7s]
+              w-full h-px mt-4 border-0 bg-gradient-to-r 
             from-light/70 via-light/50 to-light/40' />
         </FadeContent>
       </header>
       <section className='flex flex-col laptop:flex-row gap-y-8 gap-x-24'>
-        <section className='flex flex-col gap-y-8'>
+        <FadeContent delay={2200} duration={500} className='flex flex-col gap-y-8'>
           <ul className='flex flex-col gap-y-2 tablet:gap-y-3 laptop:gap-y-4.5 
             text-light tablet:text-lg laptop:text-xl text-nowrap'>
-            <li>
-              <FadeContent delay={150} duration={1500}
-                className='flex items-center gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
-                <PiContactlessPayment className='size-4 tablet:size-4.5 laptop:size-5 opacity-80' />
-                <h4>Current: SWE @ UIC Payments</h4>
-              </FadeContent>
+            <li className='flex items-center gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
+              <PiContactlessPayment className='size-4 tablet:size-4.5 laptop:size-5 opacity-80' />
+              <h4>Current: SWE @ UIC Payments</h4>
             </li>
-            <li>
-              <FadeContent delay={200} duration={1500}
-                className='flex items-center gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
-                <CiLocationOn className='size-4 tablet:size-4.5 laptop:size-5' />
-                <h4>Pleasanton, CA</h4>
-              </FadeContent>
+            <li className='flex items-center gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
+              <CiLocationOn className='size-4 tablet:size-4.5 laptop:size-5' />
+              <h4>Pleasanton, CA</h4>
             </li>
-            <li>
-              <FadeContent delay={250} duration={1500} 
-                className='flex items-start gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
-                <PiGraduationCapLight className='size-4 tablet:size-4.5 laptop:size-5 mt-1' />
-                <section className='flex flex-col'>
-                  <h4>Northeastern University '23</h4>
-                  <h4>B.S. in Computer Science</h4>
-                </section>
-              </FadeContent>
+            <li className='flex items-start gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
+              <PiGraduationCapLight className='size-4 tablet:size-4.5 laptop:size-5 mt-1' />
+              <section className='flex flex-col'>
+                <h4>Northeastern University '23</h4>
+                <h4>B.S. in Computer Science</h4>
+              </section>
             </li>
           </ul>
-          <FadeContent delay={400} duration={1500}>
-            <h4 className='flex items-center gap-x-4.5 tablet:gap-x-5 laptop:gap-x-5.5
-              my-1.5 tablet:my-2'>
-              {socials.map((social, i) => (
-                <Link key={i} href={social.href} target='_blank' rel='noopener noreferrer'>
-                  {social.icon}
-                </Link>
-              ))}
-            </h4>
-          </FadeContent>
-        </section>
-        <FadeContent delay={isMobile ? 525 : 150} duration={isMobile ? 1500 : 2000} className='w-full'>
+          <h4 className='flex items-center gap-x-4.5 tablet:gap-x-5 laptop:gap-x-5.5
+            my-1.5 tablet:my-2'>
+            {socials.map((social, i) => (
+              <Link key={i} href={social.href} target='_blank' rel='noopener noreferrer'>
+                {social.icon}
+              </Link>
+            ))}
+          </h4>
+        </FadeContent>
+        <FadeContent 
+          delay={isMobile ? 2600 : 2200} duration={isMobile ? 700 : 500} 
+          className='w-full'>
           <Hobbies />
         </FadeContent>
       </section>

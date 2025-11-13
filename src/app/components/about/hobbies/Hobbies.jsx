@@ -46,7 +46,7 @@ export default function Hobbies() {
 							onClick={() => setDetailsSection(undefined)}
 						>
 							<IoIosArrowBack className='mr-1' />
-							<>about</>
+							<span className='mobile:-translate-y-0.25 tablet:-translate-0.5'>about</span>
 						</button>
 					: <>When I'm off work, find me:</>
 				}
@@ -61,7 +61,8 @@ export default function Hobbies() {
                 {hobby.link &&
                   <button 
                     type='button'
-                    className='mx-1.5 underline hover:cursor-pointer font-normal'
+                    className='mx-1.5 underline underline-offset-5
+                    hover:cursor-pointer font-normal'
                     onClick={() => setDetailsSection(hobby.detailsSection)}>
                     {hobby.link}
                   </button>

@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import FadeContent from './utils/FadeContent';
 
 export default function RootLayout({children}) {
   const pathname = usePathname();
@@ -10,6 +11,9 @@ export default function RootLayout({children}) {
     ? 'about' 
     : pathname.slice(1).split('/')[0]
   );
+
+  const [isMobile, setIsMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   const tabs = [
     {label: 'about', href: '/'},
@@ -24,11 +28,27 @@ export default function RootLayout({children}) {
     {label: 'resume', href: '/experience/WangResume.pdf'}
   ];
 
+  useEffect(() => {
+    setMounted(true);
+
+    const handleWindowResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    
+    handleWindowResize();
+    window.addEventListener('resize', handleWindowResize);
+    return () => window.removeEventListener('resize', handleWindowResize);
+  }, []);
+
+  if (!mounted) return null;
+
   return (
     <div className='flex flex-col relative h-dvh'>
-      <header className='flex justify-end fixed w-full top-0 z-10
-        px-8 tablet:px-12 laptop:px-16 py-6 tablet:py-8 laptop:py-10
-        gap-x-5 tablet:gap-x-7 laptop:gap-x-10 bg-dark'>
+      <FadeContent delay={isMobile ? 2900 : 2600} duration={400} 
+        className='flex justify-end fixed w-full top-0
+          px-8 tablet:px-12 laptop:px-16 py-6 tablet:py-8 laptop:py-10
+          gap-x-5 tablet:gap-x-7 laptop:gap-x-10 bg-dark'
+      >
         {tabs.map((tab, i) => (
           <Link key={i} href={tab.href} onClick={() => setActiveTab(tab.label)}
             className={`group transition duration-200 text-lg tablet:text-xl laptop:text-2xl text-light/75
@@ -44,13 +64,15 @@ export default function RootLayout({children}) {
             />
           </Link>
         ))}
-      </header>
+      </FadeContent>
       <main className='overflow-y-auto px-8 tablet:px-12 laptop:px-16 
         pt-24 tablet:pt-26 laptop:pt-30 pb-26 tablet:pb-30 laptop:pb-36'>
         {children}
       </main>
-      <footer className='flex flex-col items-center w-full fixed bottom-0
-        px-8 tablet:px-12 laptop:px-16 py-6 tablet:py-8 laptop:py-10 z-50 bg-dark'>
+      <FadeContent delay={isMobile ? 2900 : 2600} duration={400} 
+        className='flex flex-col items-center w-full fixed bottom-0
+        px-8 tablet:px-12 laptop:px-16 py-6 tablet:py-8 laptop:py-10 z-50 bg-dark'
+      >
         <hr className='w-full h-px border-0 mb-4 tablet:mb-6 laptop:mb-8
           bg-gradient-to-r from-light/30 via-light/80 to-light/30' />
         <ul className='flex w-full laptop:w-4/5 justify-between items-center'>
@@ -65,7 +87,7 @@ export default function RootLayout({children}) {
             </li>
           ))}
         </ul>
-      </footer>
+      </FadeContent>
     </div>
   )
 }
