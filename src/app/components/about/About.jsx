@@ -51,7 +51,7 @@ export default function About() {
             text-3xl tablet:text-4xl font-medium'
           >
             <span className='block animate-wipe [clip-path:inset(0_100%_0_0)]
-              [animation-delay:0.4s] [animation-duration:0.4s]'>
+              [animation-delay:0.6s] [animation-duration:0.4s]'>
               Justin Wang
             </span>
           </h1>
@@ -61,7 +61,7 @@ export default function About() {
             text-lg tablet:text-xl laptop:text-2xl text-zinc-200'
           >
             <span className='block animate-wipe [clip-path:inset(0_100%_0_0)]
-              [animation-delay:0.8s] [animation-duration:0.4s]'>
+              [animation-delay:1.0s] [animation-duration:0.4s]'>
               Full Stack Developer
             </span>
           </h2>
@@ -71,7 +71,7 @@ export default function About() {
             text-sm tablet:text-base laptop:text-xl text-zinc-200 font-light'
           >
             <span className='block animate-wipe [clip-path:inset(0_100%_0_0)]
-              [animation-delay:1.2s] [animation-duration:0.6s]'>
+              [animation-delay:1.4s] [animation-duration:0.6s]'>
               Building practical solutions to real-world problems 
             </span>
           </h3>
@@ -83,8 +83,8 @@ export default function About() {
             from-light/70 via-light/50 to-light/40' />
         </FadeContent>
       </header>
-      <section className='flex flex-col laptop:flex-row gap-y-8 gap-x-28'>
-        <FadeContent delay={2200} duration={500} className='flex flex-col gap-y-8'>
+      <section className='flex flex-col laptop:flex-row laptop:justify-between gap-y-8 desktop:gap-x-36'>
+        <FadeContent delay={2400} duration={500} className='flex flex-col gap-y-8'>
           <ul className='flex flex-col gap-y-2 tablet:gap-y-3 laptop:gap-y-4.5 
             text-light tablet:text-lg laptop:text-xl text-nowrap'>
             <li className='flex items-center gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
@@ -113,8 +113,8 @@ export default function About() {
           </h4>
         </FadeContent>
         <FadeContent 
-          delay={isMobile ? 2600 : 2200} duration={isMobile ? 700 : 500} 
-          className='w-full'>
+          delay={isMobile ? 2700 : 2425} duration={isMobile ? 700 : 525} 
+          className='laptop:w-auto desktop:w-full'>
           <Hobbies />
         </FadeContent>
       </section>
