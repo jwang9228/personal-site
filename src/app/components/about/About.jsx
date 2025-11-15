@@ -83,8 +83,13 @@ export default function About() {
             from-light/70 via-light/50 to-light/40' />
         </FadeContent>
       </header>
-      <section className='flex flex-col laptop:flex-row laptop:justify-between gap-y-8 desktop:gap-x-36'>
-        <FadeContent delay={2400} duration={500} className='flex flex-col gap-y-8'>
+      <section className='flex flex-col laptop:flex-row laptop:justify-between 
+        laptop:gap-x-20 desktop:gap-x-28 gap-y-8'
+      >
+        <FadeContent 
+          delay={2400} duration={500} 
+          className='flex flex-col laptop:w-1/2 desktop:w-1/4 gap-y-8'
+        >
           <ul className='flex flex-col gap-y-2 tablet:gap-y-3 laptop:gap-y-4.5 
             text-light tablet:text-lg laptop:text-xl text-nowrap'>
             <li className='flex items-center gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
@@ -114,7 +119,7 @@ export default function About() {
         </FadeContent>
         <FadeContent 
           delay={isMobile ? 2700 : 2425} duration={isMobile ? 700 : 525} 
-          className='laptop:w-auto desktop:w-full'>
+          className='w-full'>
           <Hobbies />
         </FadeContent>
       </section>

@@ -43,11 +43,12 @@ export default function RootLayout({children}) {
   if (!mounted) return null;
 
   return (
-    <div className='flex flex-col relative h-dvh'>
+    <div className='flex flex-col h-dvh overflow-y-auto 
+      px-8 tablet:px-12 laptop:px-16 desktop:px-24 
+      py-6 tablet:py-8 laptop:py-10 desktop:py-12'
+    >
       <FadeContent duration={400} 
-        className='flex justify-end w-full fixed top-0 z-10
-          px-8 tablet:px-12 laptop:px-16 py-6 tablet:py-8 laptop:py-10
-          gap-x-5 tablet:gap-x-7 laptop:gap-x-10 bg-dark
+        className='flex justify-end w-full gap-x-5 tablet:gap-x-7 laptop:gap-x-10
           animate-drop-down [animation-delay:0s] [animation-duration:0.7s]'
       >
         {tabs.map((tab, i) => (
@@ -66,14 +67,11 @@ export default function RootLayout({children}) {
           </Link>
         ))}
       </FadeContent>
-      <main className='overflow-y-auto px-8 tablet:px-12 laptop:px-16 
-        pt-24 tablet:pt-26 laptop:pt-30 pb-26 tablet:pb-30 laptop:pb-36'>
+      <main className='py-14 tablet:py-16 laptop:py-24'>
         {children}
       </main>
-      <FadeContent duration={400} 
-        className='flex flex-col items-center w-full fixed bottom-0
-        px-8 tablet:px-12 laptop:px-16 py-6 tablet:py-8 laptop:py-10 z-50 bg-dark
-        animate-drop-down [animation-delay:0s] [animation-duration:0.7s]'
+      <FadeContent delay={isMobile ? 3200 : 2750} duration={400} 
+        className='flex flex-col items-center w-full mt-auto'
       >
         <hr className='w-full h-px border-0 mb-4 tablet:mb-6 laptop:mb-8
           bg-gradient-to-r from-light/30 via-light/80 to-light/30' />
