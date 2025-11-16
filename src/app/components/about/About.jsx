@@ -86,7 +86,7 @@ export default function About() {
       <section className='flex flex-col laptop:flex-row laptop:justify-between gap-y-8'>
         <FadeContent 
           delay={3000} duration={500} 
-          className='flex flex-col laptop:w-1/2 desktop:w-2/5 gap-y-8'
+          className='flex flex-col laptop:w-1/2 desktop:w-2/5 gap-x-8 gap-y-8'
         >
           <ul className='flex flex-col gap-y-2 tablet:gap-y-3 laptop:gap-y-4.5 
             text-light tablet:text-lg laptop:text-xl text-nowrap'>
