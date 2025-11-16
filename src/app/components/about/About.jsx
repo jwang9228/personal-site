@@ -46,39 +46,39 @@ export default function About() {
   return (
     <main className='flex flex-col gap-y-8 laptop:gap-y-10'>
       <header className='flex flex-col gap-y-1 tablet:gap-y-2 laptop:gap-y-3'>
-        <FadeContent duration={100}>
+        <FadeContent delay={1000} duration={100}>
           <h1 className='inline-block overflow-hidden 
             text-3xl tablet:text-4xl font-medium'
           >
             <span className='block animate-wipe [clip-path:inset(0_100%_0_0)]
-              [animation-delay:0.6s] [animation-duration:0.4s]'>
+              [animation-delay:1s] [animation-duration:0.4s]'>
               Justin Wang
             </span>
           </h1>
         </FadeContent>
-        <FadeContent delay={50}>
+        <FadeContent delay={1050} duration={100}>
           <h2 className='inline-block overflow-hidden 
             text-lg tablet:text-xl laptop:text-2xl text-zinc-200'
           >
             <span className='block animate-wipe [clip-path:inset(0_100%_0_0)]
-              [animation-delay:1.0s] [animation-duration:0.4s]'>
+              [animation-delay:1.4s] [animation-duration:0.4s]'>
               Full Stack Developer
             </span>
           </h2>
         </FadeContent>
-        <FadeContent delay={100}>
+        <FadeContent delay={1000}>
           <h3 className='inline-block overflow-hidden
             text-sm tablet:text-base laptop:text-xl text-zinc-200 font-light'
           >
             <span className='block animate-wipe [clip-path:inset(0_100%_0_0)]
-              [animation-delay:1.4s] [animation-duration:0.6s]'>
+              [animation-delay:1.8s] [animation-duration:0.6s]'>
               Building practical solutions to real-world problems 
             </span>
           </h3>
         </FadeContent>
-        <FadeContent delay={50} className='inline-block overflow-hidden'>              
+        <FadeContent delay={1000} className='inline-block overflow-hidden'>              
           <hr className=' block animate-wipe [clip-path:inset(0_100%_0_0)]
-              [animation-delay:1.8s] [animation-duration:0.7s]
+              [animation-delay:2.4s] [animation-duration:0.7s]
               w-full h-px mt-4 border-0 bg-gradient-to-r 
             from-light/70 via-light/50 to-light/40' />
         </FadeContent>
@@ -87,7 +87,7 @@ export default function About() {
         laptop:gap-x-20 desktop:gap-x-28 gap-y-8'
       >
         <FadeContent 
-          delay={2400} duration={500} 
+          delay={3000} duration={500} 
           className='flex flex-col laptop:w-1/2 desktop:w-1/4 gap-y-8'
         >
           <ul className='flex flex-col gap-y-2 tablet:gap-y-3 laptop:gap-y-4.5 
@@ -118,7 +118,7 @@ export default function About() {
           </h4>
         </FadeContent>
         <FadeContent 
-          delay={isMobile ? 2700 : 2425} duration={isMobile ? 700 : 525} 
+          delay={isMobile ? 3300 : 3025} duration={isMobile ? 700 : 525} 
           className='w-full'>
           <Hobbies />
         </FadeContent>

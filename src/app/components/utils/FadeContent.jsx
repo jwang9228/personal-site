@@ -10,12 +10,20 @@ const FadeContent = ({
   delay = 0,
   threshold = 0.1,
   initialOpacity = 0,
-  className = ''
+  className = '',
+  immediate = true
 }) => {
   const [inView, setInView] = useState(false);
   const ref = useRef(null);
 
   useEffect(() => {
+    if (immediate) {
+      setTimeout(() => {
+        setInView(true);
+      }, delay);
+      return;
+    }
+
     if (!ref.current) return;
 
     const observer = new IntersectionObserver(
