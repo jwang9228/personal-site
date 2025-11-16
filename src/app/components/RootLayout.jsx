@@ -67,7 +67,7 @@ export default function RootLayout({children}) {
           </Link>
         ))}
       </FadeContent>
-      <main className='py-14 tablet:py-16 laptop:py-24'>
+      <main className='py-14 tablet:py-16 laptop:py-20'>
         {children}
       </main>
       <FadeContent delay={isMobile ? 3600 : 3500} duration={400}
