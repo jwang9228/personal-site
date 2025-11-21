@@ -29,6 +29,13 @@ export default function RootLayout({children}) {
   ];
 
   useEffect(() => {
+    const newTab = pathname === "/" 
+      ? "about" 
+      : pathname.slice(1).split("/")[0];
+    setActiveTab(newTab);
+  }, [pathname]);
+
+  useEffect(() => {
     setMounted(true);
 
     const handleWindowResize = () => {
