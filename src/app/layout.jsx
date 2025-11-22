@@ -1,8 +1,9 @@
-import { Inter } from 'next/font/google'
+import { Inter, Lora } from 'next/font/google'
 import './globals.css';
 import RootLayout from './components/RootLayout';
 
 const inter = Inter({ subsets: ['latin'] });
+const lora = Lora({ subsets: ['latin'] });
 
 export const metadata = {
   title: {
@@ -20,7 +21,7 @@ export const viewport = {
 export default function Layout({ children }) {
   return (
     <html lang='en'>
-      <body className={`${inter.className} antialiased`} >
+      <body className={`${lora.className} antialiased`} >
         <RootLayout children={children} />
       </body>
     </html>

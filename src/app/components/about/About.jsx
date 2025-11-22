@@ -45,12 +45,13 @@ export default function About() {
 
   return (
     <main className='flex flex-col gap-y-8 laptop:gap-y-10'>
-      <header className='flex flex-col gap-y-1 tablet:gap-y-2 laptop:gap-y-3'>
+      <header className='flex flex-col gap-y-0.5 tablet:gap-y-1.5 laptop:gap-y-2.5'>
         <FadeContent delay={1000} duration={100}>
           <h1 className='inline-block overflow-hidden 
             text-3xl tablet:text-4xl font-medium'
           >
-            <span className='block animate-wipe [clip-path:inset(0_100%_0_0)]
+            <span className='block pb-0.5 tablet:pb-1 desktop:pb-1.5
+              animate-wipe [clip-path:inset(0_100%_0_0)]
               [animation-delay:1s] [animation-duration:0.4s]'>
               Justin Wang
             </span>
@@ -60,7 +61,8 @@ export default function About() {
           <h2 className='inline-block overflow-hidden 
             text-lg tablet:text-xl laptop:text-2xl text-zinc-200'
           >
-            <span className='block animate-wipe [clip-path:inset(0_100%_0_0)]
+            <span className='block pb-0.5 tablet:pb-1 desktop:pb-1.5
+              animate-wipe [clip-path:inset(0_100%_0_0)]
               [animation-delay:1.4s] [animation-duration:0.4s]'>
               Full Stack Developer
             </span>
