@@ -54,7 +54,7 @@ export default function RootLayout({children}) {
       px-8 tablet:px-12 laptop:px-16 desktop:px-24 
       py-6 tablet:py-8 laptop:py-10 desktop:py-12'
     >
-      <FadeContent delay={500} duration={400} 
+      <FadeContent duration={400} 
         className='flex justify-end w-full gap-x-5 tablet:gap-x-7 laptop:gap-x-10
           animate-drop-down [animation-delay:0s] [animation-duration:0.7s]'
       >
@@ -77,7 +77,11 @@ export default function RootLayout({children}) {
       <main className='py-14 tablet:py-16 laptop:py-20'>
         {children}
       </main>
-      <FadeContent delay={isMobile ? 3600 : 3500} duration={400}
+      <FadeContent 
+        delay={isMobile 
+          ? (activeTab === 'about' ? 2400 : 1200)
+          : (activeTab === 'about' ? 2150 : 1100)} 
+        duration={400}
         className='flex flex-col items-center w-full mt-auto'
       >
         <hr className='w-full h-px border-0 mb-4 tablet:mb-6 laptop:mb-8

@@ -46,48 +46,48 @@ export default function About() {
   return (
     <main className='flex flex-col gap-y-8 laptop:gap-y-10'>
       <header className='flex flex-col gap-y-0.5 tablet:gap-y-1.5 laptop:gap-y-2.5'>
-        <FadeContent delay={1000} duration={100}>
+        <FadeContent delay={500} duration={100}>
           <h1 className='inline-block overflow-hidden 
             text-3xl tablet:text-4xl font-medium'
           >
             <span className='block pb-0.5 tablet:pb-1 desktop:pb-1.5
               animate-wipe [clip-path:inset(0_100%_0_0)]
-              [animation-delay:1s] [animation-duration:0.4s]'>
+              [animation-delay:0.5s] [animation-duration:0.3s]'>
               Justin Wang
             </span>
           </h1>
         </FadeContent>
-        <FadeContent delay={1050} duration={100}>
+        <FadeContent delay={550} duration={100}>
           <h2 className='inline-block overflow-hidden 
             text-lg tablet:text-xl laptop:text-2xl text-zinc-200'
           >
             <span className='block pb-0.5 tablet:pb-1 desktop:pb-1.5
               animate-wipe [clip-path:inset(0_100%_0_0)]
-              [animation-delay:1.4s] [animation-duration:0.4s]'>
+              [animation-delay:0.8s] [animation-duration:0.3s]'>
               Full Stack Developer
             </span>
           </h2>
         </FadeContent>
-        <FadeContent delay={1000}>
+        <FadeContent delay={500}>
           <h3 className='inline-block overflow-hidden
             text-sm tablet:text-base laptop:text-xl text-zinc-200 font-light'
           >
             <span className='block animate-wipe [clip-path:inset(0_100%_0_0)]
-              [animation-delay:1.8s] [animation-duration:0.6s]'>
+              [animation-delay:1.1s] [animation-duration:0.5s]'>
               Building practical solutions to real-world problems 
             </span>
           </h3>
         </FadeContent>
-        <FadeContent delay={1000} className='inline-block overflow-hidden'>              
-          <hr className=' block animate-wipe [clip-path:inset(0_100%_0_0)]
-              [animation-delay:2.4s] [animation-duration:0.7s]
+        <section className='inline-block overflow-hidden'>              
+          <hr className='block animate-wipe [clip-path:inset(0_100%_0_0)]
+              [animation-delay:1.55s] [animation-duration:0.5s]
               w-full h-px mt-4 border-0 bg-gradient-to-r 
             from-light/70 via-light/50 to-light/40' />
-        </FadeContent>
+        </section>
       </header>
       <section className='flex flex-col laptop:flex-row laptop:justify-between gap-y-8'>
         <FadeContent 
-          delay={3000} duration={500} 
+          delay={1900} duration={500} 
           className='flex flex-col laptop:w-1/2 desktop:w-1/4 gap-y-8'
         >
           <ul className='flex flex-col gap-y-2 tablet:gap-y-3 laptop:gap-y-4.5 
@@ -118,7 +118,7 @@ export default function About() {
           </h4>
         </FadeContent>
         <FadeContent 
-          delay={isMobile ? 3300 : 3025} duration={isMobile ? 700 : 525} 
+          delay={isMobile ? 2150 : 1925} duration={isMobile ? 700 : 525} 
           className='w-full laptop:w-1/2 desktop:w-3/4'>
           <Hobbies />
         </FadeContent>
