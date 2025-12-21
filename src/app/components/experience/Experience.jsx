@@ -72,7 +72,7 @@ export default function Experience() {
     <ul className='flex flex-col gap-y-6 tablet:gap-y-8 laptop:gap-y-10'>
       {experiences.map(experience => (
         <li key={experience.company} className='flex flex-col gap-y-4 tablet:gap-y-6 laptop:gap-y-8'>
-          <FadeContent delay={100} duration={1500} 
+          <FadeContent delay={1000} duration={1500} 
             className='flex items-center gap-x-4.5 tablet:gap-x-5 laptop:gap-x-6'>
               <Link
                 href={experience.link}
@@ -89,7 +89,7 @@ export default function Experience() {
             </header>
           </FadeContent>
           {experience.positions.map((position, i) => (
-            <FadeContent key={position.title} delay={150 + (200 * i)} duration={1500}
+            <FadeContent key={position.title} delay={1050 + (200 * i)} duration={1500}
               className='space-y-0.5 text-light'>
               <h4 className='text-lg tablet:text-xl laptop:text-2xl text-zinc-200'>{position.title}</h4>
               <h5 className='italic tablet:text-lg laptop:text-xl text-zinc-400'>{position.duration}</h5>

@@ -21,8 +21,14 @@ export default function PC() {
     },
     {
       icon: <PiMonitor />,
+      description: 'MSI MAG 271QPX QD-OLED 360Hz'
+    },
+    /*
+    {
+      icon: <PiMonitor />,
       description: 'LG 27GP850-B Ultragear QHD 165Hz'
     }
+    */
   ];
 
   const buildSpecsIcons = {

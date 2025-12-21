@@ -22,7 +22,7 @@ export default function Projects() {
   return (
     <main className='flex flex-col gap-y-8 tablet:gap-y-10 laptop:gap-y-12'>
       {projects.map((project, i) => (
-        <FadeContent key={project.title} delay={100 + (150 * i)} duration={1500} 
+        <FadeContent key={project.title} delay={1000 + (150 * i)} duration={1500} 
           className='space-y-0.5 tablet:space-y-1 laptop:space-y-1.5'>
           <header className='flex items-center gap-x-3 text-lg tablet:text-xl laptop:text-2xl'>
             <h2>{project.title}</h2>
@@ -50,7 +50,7 @@ export default function Projects() {
           </ul>
         </FadeContent>
       ))}
-      <FadeContent delay={100 + (150 * projects.length)} duration={1500}
+      <FadeContent delay={1000 + (150 * projects.length)} duration={1500}
         className='flex justify-between items-center w-fit
         p-px rounded-sm hover:animate-rotate-border
         hover:bg-zinc-400 hover:bg-conic/[from_var(--border-angle)] 
