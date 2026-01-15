@@ -1,6 +1,7 @@
 import { 
   PiMouseMiddleClick, 
   PiMonitor,
+  PiHeadphones,
   PiComputerTower,
   PiCpu,
   PiGraphicsCard
@@ -12,6 +13,10 @@ import { MdOutlinePower } from 'react-icons/md';
 export default function PC() {
   const peripherals = [
     {
+      icon: <PiMonitor />,
+      description: 'MSI MAG 271QPX QD-OLED 360Hz'
+    },
+    {
       icon: <PiMouseMiddleClick />,
       description: 'Finalmouse ULX Pro Series - Aceu'
     },
@@ -20,9 +25,9 @@ export default function PC() {
       description: 'Razer Huntsman V3 Pro Mini 60%'
     },
     {
-      icon: <PiMonitor />,
-      description: 'MSI MAG 271QPX QD-OLED 360Hz'
-    },
+      icon: <PiHeadphones />,
+      description: 'Sennheiser HD 599 SE'
+    }
     /*
     {
       icon: <PiMonitor />,
@@ -44,7 +49,7 @@ export default function PC() {
 
   const builds = [
     {
-      name: '2024 sff build', 
+      name: '2024 sff build (current)', 
       specs: {
         case: 'Fractal Design - Terra (Jade)',
         cpu: 'AMD Ryzen 7 7800X3D',
@@ -52,7 +57,7 @@ export default function PC() {
         mobo: 'MSI MPG B650I Edge (AM5)',
         ram: 'G.SKILL Flare X5 (DDR5 32 GB)',
         storage: 'Samsung 980 PRO M.2 (1TB)',
-        cooler: 'Noctua NH-L12S (120mm Fan)',
+        cooler: 'Noctua NH-L12S',
         psu: 'Corsair SF750 (750w 80+ Platinum)'
       }
     },
@@ -93,7 +98,9 @@ export default function PC() {
                 ))}
               </>
             }
+            fitContent={true}
           />
+          { /*
           <section className='hidden laptop:flex'>
             <PCItem 
               header='icon legend'
@@ -113,6 +120,7 @@ export default function PC() {
               }
             />
           </section>
+          */ }
         </section>
         {builds.map(build => (
           <PCItem 
@@ -133,6 +141,7 @@ export default function PC() {
             }
           />
         ))}
+        { /*
         <section className='laptop:hidden'>
           <PCItem 
             header='icon legend'
@@ -152,16 +161,18 @@ export default function PC() {
             }
           />
         </section>
+        */ }
       </section>
     </main>
   )
 }
 
-function PCItem({header, content}) {
+function PCItem({header, content, fitContent}) {
   return (
-    <section className='relative border tablet:w-2/3 laptop:w-full h-fit laptop:h-full
+    <section className={`relative border tablet:w-2/3 laptop:w-full 
+      ${fitContent ? 'h-fit' : 'h-full'}
       border-zinc-400/90 rounded-md px-4.5 tablet:px-5 laptop:px-6 
-      pt-5 laptop:pt-7 pb-4 mt-2.5'>
+      pt-5 laptop:pt-7 pb-4 mt-2.5`}>
       <span className='absolute -top-3.5 left-3.5 tablet:left-5 
         px-1.5 tablet:px-2 bg-dark italic'>
         {header}

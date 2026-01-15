@@ -22,17 +22,17 @@ export default function Hobbies() {
 			postlink: 'in NorCal',
 			detailsSection: <Trails />
 		},
+    {
+			prelink: 'Tinkering with',
+			link: 'PC parts',
+			postlink: 'and peripherals',
+			detailsSection: <PC />
+		},
 		{
 			prelink: 'Climbing the ranks in the latest',
 			link: 'competitive games',
 			postlink: '',
 			detailsSection: <Games />
-		},
-		{
-			prelink: 'Tinkering with',
-			link: 'PC parts',
-			postlink: 'and peripherals',
-			detailsSection: <PC />
 		}
 	];
 
