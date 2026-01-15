@@ -48,7 +48,7 @@ export default function PC() {
       specs: {
         case: 'Fractal Design - Terra (Jade)',
         cpu: 'AMD Ryzen 7 7800X3D',
-        gpu: 'NVIDIA GeForce GTX 1660 Super',
+        gpu: 'NVIDIA GeForce RTX 5070 Ti',
         mobo: 'MSI MPG B650I Edge (AM5)',
         ram: 'G.SKILL Flare X5 (DDR5 32 GB)',
         storage: 'Samsung 980 PRO M.2 (1TB)',
