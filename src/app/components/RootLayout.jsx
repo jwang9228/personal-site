@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 import Link from 'next/link';
 import FadeContent from './utils/FadeContent';
 
@@ -54,6 +55,17 @@ export default function RootLayout({children}) {
       px-8 tablet:px-12 laptop:px-16 desktop:px-24 
       py-6 tablet:py-8 laptop:py-10 desktop:py-12'
     >
+      <FadeContent className='fixed inset-0 -z-10'>
+        <Image
+          src="/Polarity.png"
+          alt='Background'
+          fill
+          unoptimized
+          priority
+          quality={100}
+          className='object-cover'
+        />
+      </FadeContent>
       <FadeContent duration={400} 
         className='flex justify-end w-full gap-x-5 tablet:gap-x-7 laptop:gap-x-10
           animate-drop-down [animation-delay:0s] [animation-duration:0.7s]'

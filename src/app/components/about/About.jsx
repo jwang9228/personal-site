@@ -44,7 +44,7 @@ export default function About() {
   if (!mounted) return null;
 
   return (
-    <main className='flex flex-col gap-y-8 laptop:gap-y-10'>
+    <main className='flex flex-col gap-y-6 laptop:gap-y-10'>
       <header className='flex flex-col gap-y-0.5 tablet:gap-y-1.5 laptop:gap-y-2.5'>
         <FadeContent delay={500} duration={100}>
           <h1 className='inline-block overflow-hidden 
@@ -68,22 +68,6 @@ export default function About() {
             </span>
           </h2>
         </FadeContent>
-        <FadeContent delay={500}>
-          <h3 className='inline-block overflow-hidden
-            text-sm tablet:text-base laptop:text-xl text-zinc-200 font-light'
-          >
-            <span className='block animate-wipe [clip-path:inset(0_100%_0_0)]
-              [animation-delay:1.1s] [animation-duration:0.5s]'>
-              Building practical solutions to real-world problems 
-            </span>
-          </h3>
-        </FadeContent>
-        <section className='inline-block overflow-hidden'>              
-          <hr className='block animate-wipe [clip-path:inset(0_100%_0_0)]
-              [animation-delay:1.55s] [animation-duration:0.5s]
-              w-full h-px mt-4 border-0 bg-gradient-to-r 
-            from-light/70 via-light/50 to-light/40' />
-        </section>
       </header>
       <section className='flex flex-col laptop:flex-row laptop:justify-between gap-y-8'>
         <FadeContent 
@@ -94,7 +78,7 @@ export default function About() {
             text-light tablet:text-lg laptop:text-xl text-nowrap'>
             <li className='flex items-center gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
               <PiContactlessPayment className='size-4 tablet:size-4.5 laptop:size-5 opacity-80' />
-              <h4>Current: SWE @ UIC Payments</h4>
+              <h4>Software Engineer @ UIC Payments</h4>
             </li>
             <li className='flex items-center gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
               <CiLocationOn className='size-4 tablet:size-4.5 laptop:size-5' />

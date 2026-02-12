@@ -38,7 +38,7 @@ export default function Games() {
   return (
     <section className='flex flex-col gap-y-4 tablet:gap-y-4.5 laptop:gap-y-5
       font-light tablet:text-lg laptop:text-xl'>
-      <h2>Currently playing the following:</h2>
+      <h2>Currently playing:</h2>
       <ul className='flex flex-col 
         gap-y-4.5 tablet:gap-y-6 mt-0.5'>
 				{games.map(game => (

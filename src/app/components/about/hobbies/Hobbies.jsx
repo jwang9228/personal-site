@@ -17,20 +17,18 @@ export default function Hobbies() {
 			prelink: 'Playing badminton, squash, or swimming'
 		},
 		{
-			prelink: 'Hiking and exploring',
+			prelink: 'Exploring',
 			link: 'scenic spots',
 			postlink: 'in NorCal',
 			detailsSection: <Trails />
 		},
     {
-			prelink: 'Tinkering with',
-			link: 'PC parts',
-			postlink: 'and peripherals',
+			prelink: 'Planning my next PC',
+			link: 'setup upgrade',
 			detailsSection: <PC />
 		},
 		{
-			prelink: 'Climbing the ranks in the latest',
-			link: 'competitive games',
+			link: 'Gaming!',
 			postlink: '',
 			detailsSection: <Games />
 		}
@@ -55,14 +53,14 @@ export default function Hobbies() {
 				? <>{detailsSection}</>
 				: <ul className='space-y-2.5 tablet:space-y-4 laptop:space-y-5
             font-light tablet:text-lg laptop:text-xl'>
-						{hobbies.map(hobby => (
-							<li key={hobby.prelink}>
-								<>{`- ${hobby.prelink}`}</>
+						{hobbies.map((hobby, i) => (
+							<li key={i}>
+								<span>- {hobby.prelink}</span>
                 {hobby.link &&
                   <button 
                     type='button'
-                    className='mx-1.5 underline underline-offset-5
-                    hover:cursor-pointer font-normal'
+                    className={`underline underline-offset-5 hover:cursor-pointer font-normal 
+                      ${hobby.prelink ? 'mx-1.5' : 'ml-0 mr-1.5'}`}
                     onClick={() => setDetailsSection(hobby.detailsSection)}>
                     {hobby.link}
                   </button>
