@@ -53,3 +53,7 @@ body {
   background: theme(--color-dark);
   color: theme(--color-light);
 }
+
+html {
+  scrollbar-gutter: stable;
+}

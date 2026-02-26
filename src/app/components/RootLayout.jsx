@@ -34,11 +34,12 @@ export default function RootLayout({children}) {
   if (!mounted) return null;
 
   return (
-    <div className='flex flex-col h-dvh overflow-y-auto 
+    <div className='flex flex-col h-dvh
       px-10 tablet:px-12 laptop:px-16 desktop:px-24 
       py-6 tablet:py-8 laptop:py-10 desktop:py-12'
     >
       <FadeContent className='fixed inset-0 -z-10'>
+        {/*
         <Image
           src='/Polarity.png'
           alt='Background'
@@ -48,6 +49,7 @@ export default function RootLayout({children}) {
           quality={100}
           className='object-cover'
         />
+        */}
       </FadeContent>
       <FadeContent duration={400} 
         className='flex justify-center w-full gap-x-5 tablet:gap-x-7 laptop:gap-x-10
