@@ -1,10 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react';
-import { CiLocationOn } from 'react-icons/ci';
 import { AiOutlineGithub } from 'react-icons/ai';
 import { CiMail, CiLinkedin } from 'react-icons/ci';
-import { PiGraduationCapLight, PiContactlessPayment } from 'react-icons/pi';
 import Link from 'next/link';
 import FadeContent from '../utils/FadeContent';
 import Hobbies from './hobbies/Hobbies';
@@ -64,7 +62,7 @@ export default function About() {
             <span className='block pb-0.5 tablet:pb-1 desktop:pb-1.5
               animate-wipe [clip-path:inset(0_100%_0_0)]
               [animation-delay:0.8s] [animation-duration:0.3s]'>
-              Full Stack Developer
+              Full Stack Developer & Software Engineer at UIC Payments
             </span>
           </h2>
         </FadeContent>
@@ -74,24 +72,6 @@ export default function About() {
           delay={1900} duration={500} 
           className='flex flex-col laptop:w-1/2 desktop:w-1/4 gap-y-8'
         >
-          <ul className='flex flex-col gap-y-2 tablet:gap-y-3 laptop:gap-y-4.5 
-            text-light tablet:text-lg laptop:text-xl text-nowrap'>
-            <li className='flex items-center gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
-              <PiContactlessPayment className='size-4 tablet:size-4.5 laptop:size-5 opacity-80' />
-              <h4>Software Engineer @ UIC Payments</h4>
-            </li>
-            <li className='flex items-center gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
-              <CiLocationOn className='size-4 tablet:size-4.5 laptop:size-5' />
-              <h4>Pleasanton, CA</h4>
-            </li>
-            <li className='flex items-start gap-x-4 tablet:gap-x-4.5 laptop:gap-x-5'>
-              <PiGraduationCapLight className='size-4 tablet:size-4.5 laptop:size-5 mt-1' />
-              <section className='flex flex-col'>
-                <h4>Northeastern University '23</h4>
-                <h4>B.S. in Computer Science</h4>
-              </section>
-            </li>
-          </ul>
           <h4 className='flex items-center gap-x-4.5 tablet:gap-x-5 laptop:gap-x-5.5
             my-1.5 tablet:my-2'>
             {socials.map((social, i) => (

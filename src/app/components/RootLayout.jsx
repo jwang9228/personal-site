@@ -12,21 +12,12 @@ export default function RootLayout({children}) {
     ? 'about' 
     : pathname.slice(1).split('/')[0]
   );
-
-  const [isMobile, setIsMobile] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   const tabs = [
     {label: 'about', href: '/'},
     {label: 'experience', href: '/experience'},
     {label: 'projects', href: '/projects'}
-  ];
-
-  const socials = [
-    {label: 'email', href: 'mailto:jwang.srv1@gmail.com'},
-    {label: 'linkedin', href: 'https://www.linkedin.com/in/justin-n-wang/'},
-    {label: 'github', href: 'https://github.com/jwang9228/'}, 
-    {label: 'resume', href: '/experience/WangResume.pdf'}
   ];
 
   useEffect(() => {
@@ -38,26 +29,18 @@ export default function RootLayout({children}) {
 
   useEffect(() => {
     setMounted(true);
-
-    const handleWindowResize = () => {
-      setIsMobile(window.innerWidth < 1024);
-    };
-    
-    handleWindowResize();
-    window.addEventListener('resize', handleWindowResize);
-    return () => window.removeEventListener('resize', handleWindowResize);
   }, []);
 
   if (!mounted) return null;
 
   return (
     <div className='flex flex-col h-dvh overflow-y-auto 
-      px-8 tablet:px-12 laptop:px-16 desktop:px-24 
+      px-10 tablet:px-12 laptop:px-16 desktop:px-24 
       py-6 tablet:py-8 laptop:py-10 desktop:py-12'
     >
       <FadeContent className='fixed inset-0 -z-10'>
         <Image
-          src="/Polarity.png"
+          src='/Polarity.png'
           alt='Background'
           fill
           unoptimized
@@ -67,11 +50,14 @@ export default function RootLayout({children}) {
         />
       </FadeContent>
       <FadeContent duration={400} 
-        className='flex justify-end w-full gap-x-5 tablet:gap-x-7 laptop:gap-x-10
+        className='flex justify-center w-full gap-x-5 tablet:gap-x-7 laptop:gap-x-10
           animate-drop-down [animation-delay:0s] [animation-duration:0.7s]'
       >
         {tabs.map((tab, i) => (
-          <Link key={i} href={tab.href} onClick={() => setActiveTab(tab.label)}
+          <Link 
+            key={i} 
+            href={tab.href} 
+            onClick={() => setActiveTab(tab.label)}
             className={`group transition duration-200 text-lg tablet:text-xl laptop:text-2xl text-light/75
               ${activeTab === tab.label && 'text-light/100'}`}
           >
@@ -89,28 +75,6 @@ export default function RootLayout({children}) {
       <main className='py-14 tablet:py-16 laptop:py-20'>
         {children}
       </main>
-      <FadeContent 
-        delay={isMobile 
-          ? (activeTab === 'about' ? 2400 : 1200)
-          : (activeTab === 'about' ? 2150 : 1100)} 
-        duration={400}
-        className='flex flex-col items-center w-full mt-auto'
-      >
-        <hr className='w-full h-px border-0 mb-4 tablet:mb-6 laptop:mb-8
-          bg-gradient-to-r from-light/30 via-light/80 to-light/30' />
-        <ul className='flex w-full laptop:w-4/5 justify-between items-center'>
-          {socials.map((social, i) => (
-            <li key={i}>
-              <Link href={social.href} target='_blank' rel='noopener noreferrer'
-                className='text-light/90 hover:text-light/100 
-                  text-lg tablet:text-xl laptop:text-2xl'
-              >
-                {social.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </FadeContent>
     </div>
   )
 }
