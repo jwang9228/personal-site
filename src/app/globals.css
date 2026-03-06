@@ -1,5 +1,32 @@
 @import "tailwindcss";
 
+/* Typescale */
+@utility text-base {
+  font-size: 1rem;
+  font-weight: 400;
+} 
+
+@utility text-sm {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+@utility text-lg {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+/* Color Palette */
+@theme {
+  --color-background: oklch(12.9% 0.042 264.695);
+  --color-primary: oklch(); /* TODO: make it variable, muted is just a lighter shade? */
+  --color-primary-muted: oklch();
+  --color-accent: oklch();
+}
+
+
+
+
 @property --border-angle {
   syntax: '<angle>';
   inherits: false;
