@@ -18,14 +18,20 @@
 
 /* Color Palette */
 @theme {
-  --color-background: oklch(12.9% 0.042 264.695);
-  --color-primary: oklch(); /* TODO: make it variable, muted is just a lighter shade? */
-  --color-primary-muted: oklch();
-  --color-accent: oklch();
+  --color-background: oklch(0.1 0.0088 11.12);
+  --color-primary: oklch(0.9 0.0088 11.12);
+  --color-primary-muted: oklch(0.7067 0.0088 11.12);
+  --color-accent: oklch(0.5933 0.1823 282.01);
 }
 
-
-
+/* Responsive Breakpoints */
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-mobile: 299px;
+  --breakpoint-tablet: 767px;
+  --breakpoint-laptop: 1024px;
+  --breakpoint-desktop: 1199px;
+}
 
 @property --border-angle {
   syntax: '<angle>';
@@ -36,11 +42,6 @@
 @theme inline {
   --color-dark: #0a0a0a;
   --color-light: #d4d4d8; /* zinc-300 */
-  --breakpoint-*: initial;
-  --breakpoint-mobile: 299px;
-  --breakpoint-tablet: 767px;
-  --breakpoint-laptop: 1024px;
-  --breakpoint-desktop: 1199px;
 
   --animate-rotate-border: border-rotate 3s linear infinite;
   @keyframes border-rotate {
