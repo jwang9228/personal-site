@@ -51,6 +51,7 @@ export default function RootLayout({children}) {
         />
         */}
       </FadeContent>
+      {/*
       <FadeContent duration={400} 
         className='flex justify-center w-full gap-x-5 tablet:gap-x-7 laptop:gap-x-10
           animate-drop-down [animation-delay:0s] [animation-duration:0.7s]'
@@ -74,6 +75,7 @@ export default function RootLayout({children}) {
           </Link>
         ))}
       </FadeContent>
+      */}
       <main className='py-14 tablet:py-16 laptop:py-20'>
         {children}
       </main>

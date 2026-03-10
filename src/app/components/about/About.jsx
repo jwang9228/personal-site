@@ -43,6 +43,12 @@ export default function About() {
 
   return (
     <main className='flex flex-col gap-y-6 laptop:gap-y-10'>
+      <header className='flex flex-col gap-y-3'>
+        <h1 className='text-xl'>Justin Wang</h1>
+        <h2>Full Stack Developer〡Design Enthusiast</h2>
+        <h2>Software Engineer at UIC Payments</h2>
+      </header>
+      {/*
       <header className='flex flex-col gap-y-0.5 tablet:gap-y-1.5 laptop:gap-y-2.5'>
         <FadeContent delay={500} duration={100}>
           <h1 className='inline-block overflow-hidden 
@@ -87,6 +93,7 @@ export default function About() {
           <Hobbies />
         </FadeContent>
       </section>
+      */}
     </main>
   )
 }
