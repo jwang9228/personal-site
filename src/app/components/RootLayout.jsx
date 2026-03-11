@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import Image from 'next/image';
 import Link from 'next/link';
 import FadeContent from './utils/FadeContent';
 
@@ -34,39 +33,26 @@ export default function RootLayout({children}) {
   if (!mounted) return null;
 
   return (
-    <div className='flex flex-col h-dvh
-      px-10 tablet:px-12 laptop:px-16 desktop:px-24 
-      py-6 tablet:py-8 laptop:py-10 desktop:py-12'
-    >
-      <FadeContent className='fixed inset-0 -z-10'>
-        {/*
-        <Image
-          src='/Polarity.png'
-          alt='Background'
-          fill
-          unoptimized
-          priority
-          quality={100}
-          className='object-cover'
-        />
-        */}
-      </FadeContent>
+    <div className='layout-root'>
       {/*
       <FadeContent duration={400} 
         className='flex justify-center w-full gap-x-5 tablet:gap-x-7 laptop:gap-x-10
           animate-drop-down [animation-delay:0s] [animation-duration:0.7s]'
       >
-        {tabs.map((tab, i) => (
+      */}
+      <header className='flex justify-center w-full gap-x-5 tablet:gap-x-7 laptop:gap-x-10'>
+        {tabs.map(tab => (
           <Link 
-            key={i} 
+            key={tab.label} 
             href={tab.href} 
             onClick={() => setActiveTab(tab.label)}
-            className={`group transition duration-200 text-lg tablet:text-xl laptop:text-2xl text-light/75
-              ${activeTab === tab.label && 'text-light/100'}`}
+            className={`group transition duration-200 text-base tablet:text-lg laptop:text-xl 
+              ${activeTab === tab.label ? 'text-primary' : 'text-primary-muted'}`
+            }
           >
             {tab.label}
             <span
-              className={`block h-0.5 bg-light/80 transition-all duration-300
+              className={`block h-0.5 bg-primary-muted transition-all duration-300
                 ${activeTab === tab.label
                   ? 'max-w-full'
                   : 'max-w-0 group-hover:max-w-full'
@@ -74,9 +60,9 @@ export default function RootLayout({children}) {
             />
           </Link>
         ))}
-      </FadeContent>
-      */}
-      <main className='py-14 tablet:py-16 laptop:py-20'>
+      </header>
+      {/*<main className='py-14 tablet:py-16 laptop:py-20'>*/}
+      <main>
         {children}
       </main>
     </div>

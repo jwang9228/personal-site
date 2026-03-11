@@ -34,21 +34,28 @@
   font-weight: 600;
 }
 
-/* Margins */
-@utility gap-section {
-  gap: 0.75rem;
-}
-
-@utility gap-group {
-  gap: 0.75rem;
-}
-
 /* Color Palette */
 @theme {
-  --color-background: oklch(0.1 0.0088 11.12);
-  --color-primary: oklch(0.9 0.0088 11.12);
-  --color-primary-muted: oklch(0.7067 0.0088 11.12);
+  --color-background: oklch(0.10 0.008 25);
+  --color-primary: oklch(0.96 0.008 25);
+  --color-primary-muted: oklch(0.75 0.008 25);
   --color-accent: oklch(0.5933 0.1823 282.01);
+}
+
+/* Margins and Spacing */
+@theme {
+  --spacing-group: 0.5rem;
+  --spacing-section: 0.75rem;
+}
+
+@utility layout-root {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+
+  @apply px-10 tablet:px-12 laptop:px-16 desktop:px-24;
+
+  @apply py-6 tablet:py-8 laptop:py-10 desktop:py-12;
 }
 
 /* Responsive Breakpoints */
