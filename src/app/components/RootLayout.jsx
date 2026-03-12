@@ -61,8 +61,7 @@ export default function RootLayout({children}) {
           </Link>
         ))}
       </header>
-      {/*<main className='py-14 tablet:py-16 laptop:py-20'>*/}
-      <main>
+      <main className='layout-children'>
         {children}
       </main>
     </div>

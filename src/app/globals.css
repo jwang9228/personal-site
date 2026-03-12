@@ -48,6 +48,7 @@
   --spacing-section: 0.75rem;
 }
 
+/* Application layout margins */
 @utility layout-root {
   display: flex;
   flex-direction: column;
@@ -56,6 +57,10 @@
   @apply px-10 tablet:px-12 laptop:px-16 desktop:px-24;
 
   @apply py-6 tablet:py-8 laptop:py-10 desktop:py-12;
+}
+
+@utility layout-children {
+  @apply py-14 tablet:py-16 laptop:py-20;
 }
 
 /* Responsive Breakpoints */
