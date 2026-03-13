@@ -44,10 +44,10 @@ export default function About() {
   return (
     <main className='flex flex-col gap-y-6 laptop:gap-y-10'>
       <header className='flex flex-col gap-section'>
-        <h1 className='text-xl'>Justin Wang</h1>
+        <h1 className='text-xl font-accent'>Justin Wang</h1>
         <section className='flex items-center gap-group'>
           <h2>Full Stack Developer</h2>
-          <h2>•</h2>
+          <h2 className='text-accent'>•</h2>
           <h2>Design Enthusiast</h2>
         </section>
         <h2 className='text-primary-muted'>Software Engineer at UIC Payments</h2>

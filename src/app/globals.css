@@ -11,6 +11,11 @@
     color: var(--color-primary);
     @apply text-base antialiased;
   }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-background);
+  }
 }
 
 /* Typescale */
@@ -34,12 +39,18 @@
   font-weight: 600;
 }
 
+/* Fonts */
+@theme {
+  --font-base: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-accent: var(--font-lora), ui-serif, Georgia, serif;
+}
+
 /* Color Palette */
 @theme {
   --color-background: oklch(0.10 0.008 25);
   --color-primary: oklch(0.96 0.008 25);
   --color-primary-muted: oklch(0.75 0.008 25);
-  --color-accent: oklch(0.5933 0.1823 282.01);
+  --color-accent: oklch(0.78 0.17 65);
 }
 
 /* Margins and Spacing */
