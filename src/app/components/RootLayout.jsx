@@ -40,13 +40,13 @@ export default function RootLayout({children}) {
           animate-drop-down [animation-delay:0s] [animation-duration:0.7s]'
       >
       */}
-      <header className='flex justify-center w-full gap-x-5 tablet:gap-x-7 laptop:gap-x-10'>
+      <header className='flex justify-center w-full gap-base'>
         {tabs.map(tab => (
           <Link 
             key={tab.label} 
             href={tab.href} 
             onClick={() => setActiveTab(tab.label)}
-            className={`group transition duration-200 text-base tablet:text-lg laptop:text-xl 
+            className={`group transition duration-200
               ${activeTab === tab.label ? 'text-primary' : 'text-primary-muted'}`
             }
           >

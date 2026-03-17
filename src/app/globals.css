@@ -39,9 +39,13 @@
   font-weight: 600;
 }
 
+@utility text-glow {
+  text-shadow: 0 0 10px var(--color-accent);
+}
+
 /* Fonts */
 @theme {
-  --font-base: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-base: var(--font-plus_jakarta_sans), ui-sans-serif, system-ui, sans-serif;
   --font-accent: var(--font-lora), ui-serif, Georgia, serif;
 }
 
@@ -55,8 +59,9 @@
 
 /* Margins and Spacing */
 @theme {
-  --spacing-group: 0.5rem;
-  --spacing-section: 0.75rem;
+  --spacing-sm: 0.625rem;
+  --spacing-base: 1.125rem;
+  --spacing-lg: 1.5rem;
 }
 
 /* Application layout margins */
@@ -65,7 +70,7 @@
   flex-direction: column;
   height: 100dvh;
 
-  @apply px-10 tablet:px-12 laptop:px-16 desktop:px-24;
+  @apply px-8 tablet:px-10 laptop:px-14 desktop:px-20;
 
   @apply py-6 tablet:py-8 laptop:py-10 desktop:py-12;
 }
