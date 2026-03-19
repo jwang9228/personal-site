@@ -42,15 +42,17 @@ export default function About() {
   if (!mounted) return null;
 
   return (
-    <main className='flex flex-col gap-y-6 laptop:gap-y-10'>
+    <main className='flex flex-col'>
       <header className='flex flex-col gap-base'>
-        <h1 className='text-xl font-accent tracking-wider'>Justin Wang</h1>
-        <section className='flex items-center gap-sm'>
-          <h2>Full Stack Dev</h2>
-          <h2 className='text-accent'>•</h2>
+        <h1 className='font-accent text-primary-muted text-lg uppercase tracking-widest'>Justin Wang</h1>
+        <section className='flex flex-col text-2xl gap-xs'>
+          <h2 className='flex items-baseline gap-sm'>
+            Full Stack Developer
+            <span className='font-accent font-normal text-primary/90 text-xl'>&</span>
+          </h2>
           <h2>Design Enthusiast</h2>
         </section>
-        <h2 className='text-primary-muted'>Software Engineer at UIC Payments</h2>
+        <h2 className='text-lg text-primary/95'>Software Engineer at UIC Payments</h2>
       </header>
       {/*
       <header className='flex flex-col gap-y-0.5 tablet:gap-y-1.5 laptop:gap-y-2.5'>

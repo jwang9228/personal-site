@@ -15,6 +15,7 @@ export default function RootLayout({children}) {
 
   const tabs = [
     {label: 'about', href: '/'},
+    {label: 'work', href: '/'},
     {label: 'experience', href: '/experience'},
     {label: 'projects', href: '/projects'}
   ];
@@ -34,33 +35,27 @@ export default function RootLayout({children}) {
 
   return (
     <div className='layout-root'>
-      {/*
-      <FadeContent duration={400} 
-        className='flex justify-center w-full gap-x-5 tablet:gap-x-7 laptop:gap-x-10
-          animate-drop-down [animation-delay:0s] [animation-duration:0.7s]'
-      >
-      */}
-      <header className='flex justify-center w-full gap-base'>
+      <nav className='flex justify-center w-full gap-lg'>
         {tabs.map(tab => (
           <Link 
             key={tab.label} 
             href={tab.href} 
             onClick={() => setActiveTab(tab.label)}
-            className={`group transition duration-200
-              ${activeTab === tab.label ? 'text-primary' : 'text-primary-muted'}`
+            className={`group transition-colors duration-300
+              ${activeTab === tab.label ? 'text-primary' : 'text-primary-muted hover:text-primary'}`
             }
           >
             {tab.label}
             <span
-              className={`block h-0.5 bg-primary-muted transition-all duration-300
+              className={`block h-0.5 transition-all duration-300 ease-out
                 ${activeTab === tab.label
-                  ? 'max-w-full'
-                  : 'max-w-0 group-hover:max-w-full'
+                  ? 'max-w-full bg-primary/80'
+                  : 'max-w-0 bg-primary-muted group-hover:max-w-full'
                 }`}
             />
           </Link>
         ))}
-      </header>
+      </nav>
       <main className='layout-children'>
         {children}
       </main>
