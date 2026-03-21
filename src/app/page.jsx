@@ -1,7 +1,7 @@
 import About from './components/about/About';
 
 export const metadata = {
-  title: 'About',
+  title: 'About | Justin Wang',
   description: "Justin Wang's personal information, with a brief showcase of hobbies and interests."
 };
 

@@ -30,7 +30,7 @@
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
-  letter-spacing: 0.05em;
+  letter-spacing: 0em;
 }
 
 @utility text-base {
@@ -61,10 +61,6 @@
   letter-spacing: -0.04em;
 }
 
-@utility text-glow {
-  text-shadow: 0 0 10px var(--color-accent);
-}
-
 /* Margins and Spacing */
 @theme {
   --spacing-xxs: 0.125rem;
@@ -72,6 +68,7 @@
   --spacing-sm: 0.625rem;
   --spacing-base: 1.125rem;
   --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
 }
 
 /* Fonts */
@@ -86,7 +83,7 @@
   --color-primary: oklch(0.87 0.008 25);
   --color-primary-muted: oklch(0.65 0.008 25);
   --color-disabled: oklch(0.38 0.008 25);
-  --color-accent: oklch(0.78 0.17 65);
+  --color-accent: oklch(0.76 0.06 55);
 }
 
 /* Application layout margins */

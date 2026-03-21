@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
-export default function Header() {
+export default function HeaderNav() {
   const pathname = usePathname();
   const [activeTab, setActiveTab] = useState(pathname === '/' 
     ? 'about' 
@@ -30,7 +30,7 @@ export default function Header() {
           key={tab.label} 
           href={tab.href} 
           onClick={() => setActiveTab(tab.label)}
-          className={`group transition-colors duration-300
+          className={`group transition-colors duration-300 text-sm
             ${activeTab === tab.label ? 'text-primary' : 'text-primary-muted hover:text-primary'}`
           }
         >
@@ -38,7 +38,7 @@ export default function Header() {
           <span
             className={`block h-0.5 transition-all duration-300 ease-out
               ${activeTab === tab.label
-                ? 'max-w-full bg-primary/80'
+                ? 'max-w-full bg-primary/75'
                 : 'max-w-0 bg-primary-muted group-hover:max-w-full'
               }`}
           />

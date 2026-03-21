@@ -1,12 +1,12 @@
 'use client';
 
-import Header from './Header';
+import HeaderNav from './HeaderNav';
 import Footer from './Footer';
 
 export default function RootLayout({children}) {
   return (
     <div className='layout-root'>
-      <Header />
+      <HeaderNav />
       <main className='layout-children'>
         {children}
       </main>
