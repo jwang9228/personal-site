@@ -36,7 +36,7 @@ export default function Footer() {
                   rel={footerSection.isExternal ? 'noopener noreferrer' : undefined}
                   className='group flex justify-between items-center w-full gap-sm'
                 >
-                  <p className='text-primary group-hover:text-accent transition-colors duration-300'>
+                  <p className='text-primary group-hover:text-accent font-medium transition-colors duration-300'>
                     {link.label}
                   </p>
                   {footerSection.isExternal && 

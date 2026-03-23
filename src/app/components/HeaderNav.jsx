@@ -30,7 +30,7 @@ export default function HeaderNav() {
           key={tab.label} 
           href={tab.href} 
           onClick={() => setActiveTab(tab.label)}
-          className={`group transition-colors duration-300 text-sm
+          className={`group transition-colors duration-300
             ${activeTab === tab.label ? 'text-primary' : 'text-primary-muted hover:text-primary'}`
           }
         >
