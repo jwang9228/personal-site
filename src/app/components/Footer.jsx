@@ -14,15 +14,15 @@ export default function Footer() {
     {
       sectionLabel: 'ELSEWHERE',
       sectionLinks: [
-        {label: 'LinkedIn', href: 'https://www.linkedin.com/in/justin-n-wang/'},
-        {label: 'Resume', href: '/experience/WangResume.pdf'}
+        {label: 'linkedin', href: 'https://www.linkedin.com/in/justin-n-wang/'},
+        {label: 'resume', href: '/experience/WangResume.pdf'}
       ],
       isExternal: true
     }
   ];
 
   return (
-    <footer className='flex flex-col gap-lg'>
+    <footer className='flex flex-col gap-lg animate-fade-in'>
       <section className='flex'>
         {footerSections.map(footerSection => (
           <section key={footerSection.sectionLabel} className='flex flex-col gap-base w-1/2'>
@@ -49,7 +49,7 @@ export default function Footer() {
           </section>
         ))}
       </section>
-      <span className='text-xs text-primary-muted'>
+      <span className='text-xs text-primary-muted tracking-widest uppercase'>
         &copy; 2026 Justin Wang
       </span>
     </footer>

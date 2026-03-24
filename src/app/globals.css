@@ -100,7 +100,7 @@
 @utility layout-children {
   flex-grow: 1;
 
-  @apply py-14 tablet:py-16 laptop:py-20;
+  @apply py-10 tablet:py-12 laptop:py-16;
 }
 
 /* Responsive Breakpoints */
@@ -113,21 +113,30 @@
 }
 
 /* Custom Animations */ 
-@property --border-angle {
-  syntax: '<angle>';
-  inherits: false;
-  initial-value: 0deg;
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-@theme {
-  --animate-rotate-border: border-rotate 3s linear infinite;
-  @keyframes border-rotate {
-    to { --border-angle: 360deg; }
-  }
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-  --animate-drop-down: drop-down ease-out forwards;
-  @keyframes drop-down {
-    0% { transform: translateY(-5px); }
-    100% { transform: translateY(0); }
-  }
+@keyframes ambient-bloom {
+  from { opacity: 0; filter: blur(80px); transform: scale(0.85); }
+  to { opacity: 1; filter: blur(120px); transform: scale(1); }
+}
+
+@utility animate-fade-in {
+  animation: fade-in 0.4s ease-out forwards;
+}
+
+@utility animate-fade-up {
+  animation: fade-up 1.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@utility animate-bloom {
+  animation: ambient-bloom 1.7s ease-in-out 0.1s both;
+  will-change: opacity, filter, transform;
 }
