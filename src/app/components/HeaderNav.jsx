@@ -4,11 +4,11 @@ import Link from 'next/link';
 export default function HeaderNav() {
   const pathname = usePathname();
 
-  const currentSection = pathname === '/' ? 'about' : pathname.slice(1).split('/')[0];
+  const currentSection = pathname === '/' ? 'work' : pathname.slice(1).split('/')[0];
 
   const tabs = [
-    {label: 'about', href: '/'},
-    {label: 'work', href: '/experience'}
+    {label: 'work', href: '/'},
+    {label: 'about', href: '/experience'}
   ];
 
   return (

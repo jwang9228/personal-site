@@ -1,12 +1,16 @@
-import About from './components/about/About';
+import Techstack from './components/Techstack';
+import Title from './components/Title';
 
 export const metadata = {
-  title: 'About | Justin Wang',
-  description: "Justin Wang's personal information, with a brief showcase of hobbies and interests."
+  title: 'Developer | Justin Wang',
+  description: "Justin Wang's developer portfolio landing page"
 };
 
 export default function Page() {
   return (
-    <About />
+    <>
+      <Title />
+      <Techstack />
+    </>
   );
 };

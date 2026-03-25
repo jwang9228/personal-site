@@ -6,8 +6,8 @@ export default function Footer() {
     {
       sectionLabel: 'REVISIT',
       sectionLinks: [
-        {label: 'about', href: '/'},
-        {label: 'work', href: '/'}
+        {label: 'work', href: '/'},
+        {label: 'about', href: '/'}
       ],
       isExternal: false
     },
