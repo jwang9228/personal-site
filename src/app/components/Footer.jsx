@@ -1,32 +1,20 @@
+import { RiArrowRightUpLine } from 'react-icons/ri';
+import { FOOTER_NAV } from '../lib/navigation';
+import { COPYRIGHT } from '../lib/constants';
+import Fade from './utils/Fade';
 import Link from 'next/link';
-import { RiArrowRightUpLine } from "react-icons/ri";
 
 export default function Footer() {
-  const footerSections = [
-    {
-      sectionLabel: 'REVISIT',
-      sectionLinks: [
-        {label: 'work', href: '/'},
-        {label: 'about', href: '/'}
-      ],
-      isExternal: false
-    },
-    {
-      sectionLabel: 'ELSEWHERE',
-      sectionLinks: [
-        {label: 'linkedin', href: 'https://www.linkedin.com/in/justin-n-wang/'},
-        {label: 'resume', href: '/experience/WangResume.pdf'}
-      ],
-      isExternal: true
-    }
-  ];
-
   return (
-    <footer className='flex flex-col gap-lg animate-fade-in'>
+    <Fade
+      type='in' as='footer'
+      inView
+      className='flex flex-col gap-lg'
+    >
       <section className='flex'>
-        {footerSections.map(footerSection => (
+        {FOOTER_NAV.map(footerSection => (
           <section key={footerSection.sectionLabel} className='flex flex-col gap-base w-1/2'>
-            <span className='text-xs text-primary-muted'>{footerSection.sectionLabel}</span>
+            <span className='text-xs text-primary-muted uppercase'>{footerSection.sectionLabel}</span>
             <nav className='flex flex-col gap-sm w-fit'>
               {footerSection.sectionLinks.map(link => (
                 <Link 
@@ -36,7 +24,7 @@ export default function Footer() {
                   rel={footerSection.isExternal ? 'noopener noreferrer' : undefined}
                   className='group flex justify-between items-center w-full gap-sm'
                 >
-                  <p className='text-primary group-hover:text-accent font-medium transition-colors duration-300'>
+                  <p className='text-primary group-hover:text-accent font-medium transition-colors duration-300 lowercase'>
                     {link.label}
                   </p>
                   {footerSection.isExternal && 
@@ -50,8 +38,8 @@ export default function Footer() {
         ))}
       </section>
       <span className='text-xs text-primary-muted tracking-widest uppercase'>
-        &copy; 2026 Justin Wang
+        {COPYRIGHT}
       </span>
-    </footer>
+    </Fade>
   )
 };

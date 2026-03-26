@@ -1,26 +1,26 @@
 import { usePathname } from 'next/navigation';
+import { HEADER_NAV } from '../lib/navigation';
+import Fade from './utils/Fade';
 import Link from 'next/link';
 
 export default function HeaderNav() {
   const pathname = usePathname();
-
-  const currentSection = pathname === '/' ? 'work' : pathname.slice(1).split('/')[0];
-
-  const tabs = [
-    {label: 'work', href: '/'},
-    {label: 'about', href: '/experience'}
-  ];
+  const currentSection = pathname === '/' ? HEADER_NAV[0].label : pathname.slice(1).split('/')[0];
 
   return (
-    <nav className='flex justify-center w-full gap-xl animate-fade-in'>
-      {tabs.map(tab => {
+    <Fade
+      type='in' as='nav'
+      inView
+      className='flex justify-center w-full gap-xl'
+    >
+      {HEADER_NAV.map(tab => {
         const isActive = currentSection === tab.label;
 
         return (
           <Link 
             key={tab.label} 
             href={tab.href} 
-            className={`group transition-colors duration-300
+            className={`group transition-colors duration-300 lowercase
               ${isActive ? 'text-primary' : 'text-primary-muted hover:text-primary'}`
             }
           >
@@ -35,6 +35,6 @@ export default function HeaderNav() {
           </Link>
         )
     })}
-    </nav>
+    </Fade>
   )
 };
