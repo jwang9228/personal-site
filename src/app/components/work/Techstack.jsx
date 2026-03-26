@@ -1,5 +1,6 @@
+'use client';
 import { motion } from 'motion/react';
-import { TILE_NAV } from '@/app/lib/navigation';
+import { TECHSTACK_LAYER_NAV } from '@/app/lib/navigation';
 import { 
   ANIM, 
   TECHSTACK_PAGE_DELAY, 
@@ -9,7 +10,7 @@ import {
 } from '@/app/lib/animations';
 import Fade from '../utils/Fade';
 
-export default function Techstack() {
+export default function Techstack({ activeLayer, setActiveLayer }) {
   return (
     <Fade
       type='up'
@@ -18,59 +19,65 @@ export default function Techstack() {
       <motion.div
         variants={ANIM.techstackVariants}
         style={ANIM.techstackStyle}
-        className={`relative ${ANIM.tileStyle.tileSize}`}
+        className={`relative ${ANIM.techstackLayerStyle.size}`}
       >
-        {TILE_NAV.map((tile, i) => {
-          const targetZ = i * ANIM.tileStyle.zSpacing;
-          const reverseIndex = TILE_NAV.length - 1 - i;
+        {TECHSTACK_LAYER_NAV.map((layer, i) => {
+          const layersLastIndex = TECHSTACK_LAYER_NAV.length - 1;
+          const reverseIndex = layersLastIndex - i;
           const textRevealDelay = TECHSTACK_PAGE_DELAY + (reverseIndex * TECHSTACK_STAGGER) + TEXT_REVEAL_BUFFER;
-          const isTopTile = i === TILE_NAV.length - 1;
+          const targetZ = i * ANIM.techstackLayerStyle.zSpacing;
+          const isTopLayer = i === layersLastIndex;
+          const isActive = layer === activeLayer;
 
           return (
             <motion.div 
               custom={{ targetZ }}
-              variants={ANIM.tileVariants} 
-              key={tile.label}
-              className='absolute inset-0 flex items-end justify-start p-4 cursor-pointer transform-3d'
+              variants={ANIM.techstackLayerVariants} 
+              key={layer}
+
+              onClick={() => {!isActive && setActiveLayer(layer)}}
+
+              className={`absolute inset-0 flex items-end justify-start p-4 transform-3d
+                ${isActive ? 'cursor-default' : 'cursor-pointer'}`}
             >
               <div 
                 className={`absolute inset-0 border-2
-                  ${tile.isActive 
+                  ${isActive
                     ? 'border-accent/50 bg-accent/20 shadow-2xl' 
                     : 'border-primary-muted/80 bg-background/90 shadow-xl'}`} 
               />
 
               <motion.span 
-                initial={{ opacity: isTopTile ? 1 : 0 }}
+                initial={{ opacity: isTopLayer ? 1 : 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ 
-                  delay: isTopTile ? 0 : textRevealDelay, 
+                  delay: isTopLayer ? 0 : textRevealDelay, 
                   duration: TEXT_FADE_DURATION 
                 }}
-                className='relative z-10 block translate-z-px 
+                className='relative z-10 block translate-z-px
                   text-sm tracking-widest uppercase text-primary/80 font-bold'
               >
-                {tile.label}
+                {layer}
               </motion.span>
               
               <div 
                 style={{ 
                   transformOrigin: 'left', 
                   transform: 'rotateY(90deg)',
-                  width: `${ANIM.tileStyle.wallThickness}px`
+                  width: `${ANIM.techstackLayerStyle.wallThickness}px`
                 }}
                 className={`absolute top-0 left-0 h-full border-2 border-l-0 brightness-75
-                  ${tile.isActive ? 'border-accent/50 bg-accent/20' : 'border-primary-muted/80 bg-background/90'}`} 
+                  ${isActive ? 'border-accent/50 bg-accent/20' : 'border-primary-muted/80 bg-background/90'}`} 
               />
               
               <div 
                 style={{ 
                   transformOrigin: 'bottom', 
                   transform: 'rotateX(90deg)',
-                  height: `${ANIM.tileStyle.wallThickness}px`
+                  height: `${ANIM.techstackLayerStyle.wallThickness}px`
                 }}
                 className={`absolute bottom-0 left-0 w-full border-2 border-b-0 brightness-50
-                  ${tile.isActive ? 'border-accent/50 bg-accent/20' : 'border-primary-muted/80 bg-background/90'}`} 
+                  ${isActive ? 'border-accent/50 bg-accent/20' : 'border-primary-muted/80 bg-background/90'}`} 
               />
             </motion.div>
           )

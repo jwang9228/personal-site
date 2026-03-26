@@ -3,7 +3,7 @@
 import HeaderNav from './navigation/HeaderNav';
 import Footer from './navigation/Footer';
 
-export default function RootLayout({children}) {
+export default function RootLayout({ children }) {
   return (
     <div className='layout-root'>
       <HeaderNav />

@@ -22,8 +22,4 @@ export const FOOTER_NAV = [
   }
 ];
 
-export const TILE_NAV = [
-  { label: 'Project' },
-  { label: 'Experience' },
-  { label: 'Home', isActive: true }
-];
+export const TECHSTACK_LAYER_NAV = ['Project', 'Experience', 'Home'];

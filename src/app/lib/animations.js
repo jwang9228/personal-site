@@ -3,12 +3,11 @@ export const TECHSTACK_PAGE_DELAY = 0.4;
 export const TEXT_REVEAL_BUFFER = 0.2;
 export const TEXT_FADE_DURATION = 0.3;
 
-const TILE_SIZE = 'size-48';
-const TILE_PX_GAP = 80;
-const TILE_WALL_THICKNESS = 12;
-
-const TILE_DAMPNESS = 18;
-const TILE_STIFFNESS = 120;
+const TECHSTACK_LAYER_SIZE = 'size-48';
+const TECHSTACK_LAYER_PX_GAP = 80;
+const TECHSTACK_LAYER_WALL_THICKNESS = 12;
+const TECHSTACK_LAYER_DAMPNESS = 18;
+const TECHSTACK_LAYER_STIFFNESS = 120;
 
 const FADE_UP_PX_TRANSLATION = 20;
 const FADE_UP_DURATION = 0.6;
@@ -34,22 +33,22 @@ export const ANIM = {
     transformStyle: 'preserve-3d'
   },
 
-  tileVariants: {
+  techstackLayerVariants: {
     hidden: { z: 0 }, 
     show: ({ targetZ }) => ({
       z: targetZ,
       transition: { 
         type: 'spring', 
-        damping: TILE_DAMPNESS, 
-        stiffness: TILE_STIFFNESS 
+        damping: TECHSTACK_LAYER_DAMPNESS, 
+        stiffness: TECHSTACK_LAYER_STIFFNESS 
       }
     })
   },
 
-  tileStyle: {
-    tileSize: TILE_SIZE,
-    zSpacing: TILE_PX_GAP,
-    wallThickness: TILE_WALL_THICKNESS,
+  techstackLayerStyle: {
+    size: TECHSTACK_LAYER_SIZE,
+    zSpacing: TECHSTACK_LAYER_PX_GAP,
+    wallThickness: TECHSTACK_LAYER_WALL_THICKNESS,
   },
 
   fadeUpVariants: {
