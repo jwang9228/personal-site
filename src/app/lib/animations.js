@@ -1,17 +1,20 @@
-export const TECHSTACK_STAGGER = 0.15;
-export const TECHSTACK_PAGE_DELAY = 1.0;
-export const TEXT_REVEAL_BUFFER = 0.15;
+export const TECHSTACK_STAGGER = 0.1;
+export const TECHSTACK_PAGE_DELAY = 0.4;
+export const TEXT_REVEAL_BUFFER = 0.2;
 export const TEXT_FADE_DURATION = 0.3;
 
 const TILE_SIZE = 'size-48';
 const TILE_PX_GAP = 80;
 const TILE_WALL_THICKNESS = 12;
-const TILE_DAMPNESS = 20;
-const TILE_STIFFNESS = 100;
+
+const TILE_DAMPNESS = 18;
+const TILE_STIFFNESS = 120;
 
 const FADE_UP_PX_TRANSLATION = 20;
-const FADE_UP_DURATION = 0.8;
+const FADE_UP_DURATION = 0.6;
 const FADE_UP_EASE = 'easeOut';
+
+const FADE_IN_DURATION = 0.25;
 
 export const ANIM = {
   techstackVariants: {
@@ -66,7 +69,7 @@ export const ANIM = {
     show: {
       opacity: 1,
       transition: {
-        duration: 0.4,
+        duration: FADE_IN_DURATION,
         ease: 'easeOut'
       }
     }

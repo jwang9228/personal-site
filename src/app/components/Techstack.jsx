@@ -32,11 +32,15 @@ export default function Techstack() {
               custom={{ targetZ }}
               variants={ANIM.tileVariants} 
               key={tile.label}
-              className={`absolute inset-0 flex items-end justify-start p-4 cursor-pointer transform-3d
-                border-2 ${tile.isActive 
-                  ? 'border-accent/50 bg-accent/20 shadow-2xl' 
-                  : 'border-primary-muted/80 bg-background/90 shadow-xl'} `}
+              className='absolute inset-0 flex items-end justify-start p-4 cursor-pointer transform-3d'
             >
+              <div 
+                className={`absolute inset-0 border-2
+                  ${tile.isActive 
+                    ? 'border-accent/50 bg-accent/20 shadow-2xl' 
+                    : 'border-primary-muted/80 bg-background/90 shadow-xl'}`} 
+              />
+
               <motion.span 
                 initial={{ opacity: isTopTile ? 1 : 0 }}
                 animate={{ opacity: 1 }}
@@ -44,7 +48,8 @@ export default function Techstack() {
                   delay: isTopTile ? 0 : textRevealDelay, 
                   duration: TEXT_FADE_DURATION 
                 }}
-                className='block translate-z-px text-sm tracking-widest uppercase text-primary/80 font-bold'
+                className='relative z-10 block translate-z-px 
+                  text-sm tracking-widest uppercase text-primary/80 font-bold'
               >
                 {tile.label}
               </motion.span>
