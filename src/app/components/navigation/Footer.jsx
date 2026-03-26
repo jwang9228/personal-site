@@ -1,7 +1,7 @@
 import { RiArrowRightUpLine } from 'react-icons/ri';
-import { FOOTER_NAV } from '../lib/navigation';
-import { COPYRIGHT } from '../lib/constants';
-import Fade from './utils/Fade';
+import { FOOTER_NAV } from '@/app/lib/navigation';
+import { COPYRIGHT } from '@/app/lib/constants';
+import Fade from '../utils/Fade';
 import Link from 'next/link';
 
 export default function Footer() {

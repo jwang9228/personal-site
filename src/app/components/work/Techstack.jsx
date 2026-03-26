@@ -1,14 +1,13 @@
-'use client';
 import { motion } from 'motion/react';
-import { TILE_NAV } from '../lib/navigation';
+import { TILE_NAV } from '@/app/lib/navigation';
 import { 
   ANIM, 
   TECHSTACK_PAGE_DELAY, 
   TECHSTACK_STAGGER, 
   TEXT_REVEAL_BUFFER,
   TEXT_FADE_DURATION
-} from '../lib/animations';
-import Fade from './utils/Fade';
+} from '@/app/lib/animations';
+import Fade from '../utils/Fade';
 
 export default function Techstack() {
   return (
@@ -60,7 +59,7 @@ export default function Techstack() {
                   transform: 'rotateY(90deg)',
                   width: `${ANIM.tileStyle.wallThickness}px`
                 }}
-                className={`absolute top-0 left-0 h-full border-2 brightness-75
+                className={`absolute top-0 left-0 h-full border-2 border-l-0 brightness-75
                   ${tile.isActive ? 'border-accent/50 bg-accent/20' : 'border-primary-muted/80 bg-background/90'}`} 
               />
               
@@ -70,7 +69,7 @@ export default function Techstack() {
                   transform: 'rotateX(90deg)',
                   height: `${ANIM.tileStyle.wallThickness}px`
                 }}
-                className={`absolute bottom-0 left-0 w-full border-2 brightness-50
+                className={`absolute bottom-0 left-0 w-full border-2 border-b-0 brightness-50
                   ${tile.isActive ? 'border-accent/50 bg-accent/20' : 'border-primary-muted/80 bg-background/90'}`} 
               />
             </motion.div>

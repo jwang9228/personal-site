@@ -15,11 +15,12 @@ const plus_jakarta_sans = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
+  metadataBase: new URL('https://justinnwang.com'),
   title: {
     template: '%s | Justin Wang',
-    default: 'Justin Wang'
+    default: 'Justin Wang | Software Engineer'
   },
-  description: "Justin Wang's Personal Site",
+  description: 'Developer portfolio of Justin Wang.'
 };
 
 export const viewport = {

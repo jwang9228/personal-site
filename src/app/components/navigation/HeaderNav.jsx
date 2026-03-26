@@ -1,6 +1,6 @@
 import { usePathname } from 'next/navigation';
-import { HEADER_NAV } from '../lib/navigation';
-import Fade from './utils/Fade';
+import { HEADER_NAV } from '@/app/lib/navigation';
+import Fade from '../utils/Fade';
 import Link from 'next/link';
 
 export default function HeaderNav() {

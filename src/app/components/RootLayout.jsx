@@ -1,7 +1,7 @@
 'use client';
 
-import HeaderNav from './HeaderNav';
-import Footer from './Footer';
+import HeaderNav from './navigation/HeaderNav';
+import Footer from './navigation/Footer';
 
 export default function RootLayout({children}) {
   return (

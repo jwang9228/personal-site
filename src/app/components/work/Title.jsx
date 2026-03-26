@@ -1,7 +1,5 @@
-'use client';
-
-import { DEV_NAME, MAIN_TITLE, SECONDARY_TITLE, CURRENT_POSITION } from '../lib/constants';
-import Fade from './utils/Fade';
+import { DEV_NAME, MAIN_TITLE, SECONDARY_TITLE, CURRENT_POSITION } from '@/app/lib/constants';
+import Fade from '../utils/Fade';
 
 export default function Title() {
   return (
