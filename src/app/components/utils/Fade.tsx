@@ -1,15 +1,26 @@
 import { ANIM } from '@/app/lib/animations';
 import { motion } from 'motion/react';
+import { ReactNode, ElementType } from 'react';
+
+type ValidTag = 'div' | 'section' | 'main' | 'span' | 'header' | 'footer' | 'nav';
+
+interface FadeProps {
+  children: ReactNode;
+  type: 'up' | 'in';
+  as: ValidTag;
+  inView?: boolean;
+  className?: string;
+}
 
 export default function Fade({
   children,
-  className = '',
-  type = 'up',
-  as = 'section',
+  type,
+  as,
   inView = false,
-  ...props
-}) {
-  const Component = motion[as];
+  className = '',
+}: FadeProps) {
+  const Component = motion[as] as ElementType;
+
   const selectedVariant = type === 'up' ? ANIM.fadeUpVariants : ANIM.fadeInVariants;
 
   // If inView true, apply scroll-trigger props - only apply animation when component
@@ -25,7 +36,6 @@ export default function Fade({
       variants={selectedVariant} 
       className={className}
       {...triggerProps}
-      {...props}
     >
       {children}
     </Component>

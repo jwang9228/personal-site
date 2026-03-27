@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { TbLocation } from 'react-icons/tb';
-import FadeContent from '../../utils/FadeContent';
 
 export default function Trails() {
   const [deviceView, setDeviceView] = useState(
@@ -55,7 +54,7 @@ export default function Trails() {
 							{Array.from({ length: deviceView.columns}, (_, col) => (
 								<li key={col} className='grid gap-2.5'>
 									{Array.from({ length: (spot[deviceView.view].length / deviceView.columns) }, (_, i) => (
-										<FadeContent 
+										<div
                         key={i + col * (spot[deviceView.view].length / deviceView.columns)} 
                         delay={15 * (i + col * (spot[deviceView.view].length / deviceView.columns))}>
 											<img
@@ -68,7 +67,7 @@ export default function Trails() {
                         }.webp`}
                         loading='lazy'
 												alt={`Trail Image ${i + col * (spot[deviceView.view].length / deviceView.columns)}`} />										
-										</FadeContent>
+										</div>
 									))}
 								</li>
 							))}

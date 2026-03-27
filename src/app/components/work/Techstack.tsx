@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'motion/react';
-import { TECHSTACK_LAYER_NAV } from '@/app/lib/navigation';
+import { TECHSTACK_LAYER_NAV, TechstackLayer } from '@/app/lib/navigation';
 import { 
   ANIM, 
   TECHSTACK_PAGE_DELAY, 
@@ -10,10 +10,15 @@ import {
 } from '@/app/lib/animations';
 import Fade from '../utils/Fade';
 
-export default function Techstack({ activeLayer, setActiveLayer }) {
+interface TechstackProps {
+  activeLayer: TechstackLayer;
+  setActiveLayer: (layer: TechstackLayer) => void;
+}
+
+export default function Techstack({ activeLayer, setActiveLayer } : TechstackProps) {
   return (
     <Fade
-      type='up'
+      type='up' as='section'
       className='relative w-full flex items-center justify-center pt-40'
     >
       <motion.div
@@ -85,4 +90,4 @@ export default function Techstack({ activeLayer, setActiveLayer }) {
       </motion.div>
     </Fade>
   )
-};
+}

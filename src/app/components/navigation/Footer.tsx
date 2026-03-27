@@ -7,8 +7,7 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <Fade
-      type='in' as='footer'
-      inView
+      type='in' as='footer' inView
       className='flex flex-col gap-lg'
     >
       <section className='flex'>
@@ -42,4 +41,4 @@ export default function Footer() {
       </span>
     </Fade>
   )
-};
+}

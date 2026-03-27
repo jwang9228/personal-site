@@ -1,7 +1,6 @@
 import { AiOutlinePython } from 'react-icons/ai';
 import { FaJava } from 'react-icons/fa6';
 import { RiJavascriptLine } from 'react-icons/ri';
-import FadeContent from '../utils/FadeContent';
 import Link from 'next/link';
 
 export default function Experience() {
@@ -72,7 +71,7 @@ export default function Experience() {
     <ul className='flex flex-col gap-y-6 tablet:gap-y-8 laptop:gap-y-10'>
       {experiences.map(experience => (
         <li key={experience.company} className='flex flex-col gap-y-4 tablet:gap-y-6 laptop:gap-y-8'>
-          <FadeContent delay={500} duration={1500} 
+          <div delay={500} duration={1500} 
             className='flex items-center gap-x-4.5 tablet:gap-x-5 laptop:gap-x-6'>
               <Link
                 href={experience.link}
@@ -87,9 +86,9 @@ export default function Experience() {
               <h2 className='text-xl tablet:text-2xl laptop:text-3xl font-medium'>{experience.company}</h2>
               <h3 className='text-lg tablet:text-xl laptop:text-2xl font-light'>{experience.location}</h3>
             </header>
-          </FadeContent>
+          </div>
           {experience.positions.map((position, i) => (
-            <FadeContent key={position.title} delay={550 + (200 * i)} duration={1500}
+            <div key={position.title} delay={550 + (200 * i)} duration={1500}
               className='space-y-0.5 text-light'>
               <h4 className='text-lg tablet:text-xl laptop:text-2xl text-zinc-200'>{position.title}</h4>
               <h5 className='italic tablet:text-lg laptop:text-xl text-zinc-400'>{position.duration}</h5>
@@ -114,7 +113,7 @@ export default function Experience() {
                   </li>
                 ))}
               </ul>
-            </FadeContent>
+            </div>
           ))}
         </li>
       ))}

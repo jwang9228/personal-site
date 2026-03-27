@@ -1,14 +1,16 @@
 'use client';
-import { motion } from 'motion/react';
+import { motion, Variants } from 'motion/react';
 import { useState } from 'react';
-import { TECHSTACK_LAYER_NAV } from '@/app/lib/navigation';
+import { TECHSTACK_LAYER_NAV, TechstackLayer } from '@/app/lib/navigation';
 import Techstack from './Techstack';
 import Title from './Title';
 
 export default function Work() {
-  const [activeLayer, setActiveLayer] = useState(TECHSTACK_LAYER_NAV.at(-1));
+  const [activeLayer, setActiveLayer] = useState<TechstackLayer>(
+    TECHSTACK_LAYER_NAV[TECHSTACK_LAYER_NAV.length - 1]
+  );
 
-  const pageVariants = {
+  const pageVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,

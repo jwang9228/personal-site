@@ -9,8 +9,7 @@ export default function HeaderNav() {
 
   return (
     <Fade
-      type='in' as='nav'
-      inView
+      type='in' as='nav' inView
       className='flex justify-center w-full gap-xl'
     >
       {HEADER_NAV.map(tab => {
@@ -37,4 +36,4 @@ export default function HeaderNav() {
     })}
     </Fade>
   )
-};
+}

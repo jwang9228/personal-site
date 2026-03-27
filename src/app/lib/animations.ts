@@ -1,3 +1,5 @@
+import { Variants } from 'motion/react';
+
 export const TECHSTACK_STAGGER = 0.1;
 export const TECHSTACK_PAGE_DELAY = 0.4;
 export const TEXT_REVEAL_BUFFER = 0.2;
@@ -15,6 +17,10 @@ const FADE_UP_EASE = 'easeOut';
 
 const FADE_IN_DURATION = 0.25;
 
+interface LayerCustomProps {
+  targetZ: number;
+};
+
 export const ANIM = {
   techstackVariants: {
     hidden: {},
@@ -25,17 +31,17 @@ export const ANIM = {
         staggerDirection: -1
       }
     }
-  },
+  } satisfies Variants,
 
   techstackStyle: {
     rotateX: 60,
     rotateZ: -45,
     transformStyle: 'preserve-3d'
-  },
+  } as const,
 
   techstackLayerVariants: {
     hidden: { z: 0 }, 
-    show: ({ targetZ }) => ({
+    show: ({ targetZ }: LayerCustomProps) => ({
       z: targetZ,
       transition: { 
         type: 'spring', 
@@ -43,13 +49,13 @@ export const ANIM = {
         stiffness: TECHSTACK_LAYER_STIFFNESS 
       }
     })
-  },
+  } satisfies Variants,
 
   techstackLayerStyle: {
     size: TECHSTACK_LAYER_SIZE,
     zSpacing: TECHSTACK_LAYER_PX_GAP,
     wallThickness: TECHSTACK_LAYER_WALL_THICKNESS,
-  },
+  } as const,
 
   fadeUpVariants: {
     hidden: { opacity: 0, y: FADE_UP_PX_TRANSLATION },
@@ -61,7 +67,7 @@ export const ANIM = {
         ease: FADE_UP_EASE
       }
     }
-  },
+  } satisfies Variants,
 
   fadeInVariants: {
     hidden: { opacity: 0 },
@@ -72,5 +78,5 @@ export const ANIM = {
         ease: 'easeOut'
       }
     }
-  }
+  } satisfies Variants
 };
