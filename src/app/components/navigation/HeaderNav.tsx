@@ -1,3 +1,4 @@
+'use client';
 import { usePathname } from 'next/navigation';
 import { HEADER_NAV } from '@/app/lib/navigation';
 import Fade from '../utils/Fade';

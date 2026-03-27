@@ -1,6 +1,7 @@
+'use client';
 import { ANIM } from '@/app/lib/animations';
 import { motion } from 'motion/react';
-import { ReactNode, ElementType } from 'react';
+import { ReactNode, ElementType, memo } from 'react';
 
 type ValidTag = 'div' | 'section' | 'main' | 'span' | 'header' | 'footer' | 'nav';
 
@@ -12,7 +13,7 @@ interface FadeProps {
   className?: string;
 }
 
-export default function Fade({
+function Fade({
   children,
   type,
   as,
@@ -41,3 +42,5 @@ export default function Fade({
     </Component>
   )
 }
+
+export default memo(Fade);

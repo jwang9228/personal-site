@@ -1,5 +1,3 @@
-'use client';
-
 import { ChildrenProps } from '../lib/constants';
 import HeaderNav from './navigation/HeaderNav';
 import Footer from './navigation/Footer';

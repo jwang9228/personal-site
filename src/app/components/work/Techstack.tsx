@@ -16,6 +16,11 @@ interface TechstackProps {
 }
 
 export default function Techstack({ activeLayer, setActiveLayer } : TechstackProps) {
+  const layersLastIndex = TECHSTACK_LAYER_NAV.length - 1;
+  const layerCustomProps = TECHSTACK_LAYER_NAV.map((_, i) => ({
+   targetZ: i * ANIM.techstackLayerStyle.zSpacing
+  }));
+
   return (
     <Fade
       type='up' as='section'
@@ -27,16 +32,16 @@ export default function Techstack({ activeLayer, setActiveLayer } : TechstackPro
         className={`relative ${ANIM.techstackLayerStyle.size}`}
       >
         {TECHSTACK_LAYER_NAV.map((layer, i) => {
-          const layersLastIndex = TECHSTACK_LAYER_NAV.length - 1;
           const reverseIndex = layersLastIndex - i;
-          const textRevealDelay = TECHSTACK_PAGE_DELAY + (reverseIndex * TECHSTACK_STAGGER) + TEXT_REVEAL_BUFFER;
-          const targetZ = i * ANIM.techstackLayerStyle.zSpacing;
           const isTopLayer = i === layersLastIndex;
           const isActive = layer === activeLayer;
 
+          const textRevealDelay = isTopLayer ? 0 
+            : TECHSTACK_PAGE_DELAY + (reverseIndex * TECHSTACK_STAGGER) + TEXT_REVEAL_BUFFER;
+
           return (
             <motion.div 
-              custom={{ targetZ }}
+              custom={layerCustomProps[i]}
               variants={ANIM.techstackLayerVariants} 
               key={layer}
 
@@ -65,29 +70,35 @@ export default function Techstack({ activeLayer, setActiveLayer } : TechstackPro
                 {layer}
               </motion.span>
               
-              <div 
-                style={{ 
-                  transformOrigin: 'left', 
-                  transform: 'rotateY(90deg)',
-                  width: `${ANIM.techstackLayerStyle.wallThickness}px`
-                }}
-                className={`absolute top-0 left-0 h-full border-2 border-l-0 brightness-75
-                  ${isActive ? 'border-accent/50 bg-accent/20' : 'border-primary-muted/80 bg-background/90'}`} 
-              />
+              <TechstackWall wallOrientation='left' isActive={isActive} />
               
-              <div 
-                style={{ 
-                  transformOrigin: 'bottom', 
-                  transform: 'rotateX(90deg)',
-                  height: `${ANIM.techstackLayerStyle.wallThickness}px`
-                }}
-                className={`absolute bottom-0 left-0 w-full border-2 border-b-0 brightness-50
-                  ${isActive ? 'border-accent/50 bg-accent/20' : 'border-primary-muted/80 bg-background/90'}`} 
-              />
+              <TechstackWall wallOrientation='bottom' isActive={isActive} />
             </motion.div>
           )
         })}
       </motion.div>
     </Fade>
+  )
+}
+
+function TechstackWall({
+  wallOrientation,
+  isActive
+}: { wallOrientation: 'left' | 'bottom', isActive: boolean }) {
+  return (
+    <div
+      style={{
+        transformOrigin: wallOrientation,
+        transform: wallOrientation === 'left' ? 'rotateY(90deg)' : 'rotateX(90deg)',
+        width: wallOrientation === 'left' ? `${ANIM.techstackLayerStyle.wallThickness}px` : undefined,
+        height: wallOrientation === 'left' ? undefined : `${ANIM.techstackLayerStyle.wallThickness}px`,
+      }}
+      className={`absolute left-0 border-2 
+        ${wallOrientation === 'left' 
+          ? 'top-0 h-full border-l-0 brightness-75' 
+          : 'bottom-0 w-full border-b-0 brightness-50'}
+        ${isActive ? 'border-accent/50 bg-accent/20' : 'border-primary-muted/80 bg-background/90'}
+      `}
+    />
   )
 }

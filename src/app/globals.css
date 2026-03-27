@@ -20,7 +20,7 @@
 
 /* Typescale */
 @utility text-xs {
-  font-size: 0.25rem;
+  font-size: 0.75rem;
   font-weight: 500;
   line-height: 1.6;
   letter-spacing: 0.1em;
@@ -50,14 +50,14 @@
 @utility text-xl {
   font-size: 1.625rem;
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.1;
   letter-spacing: -0.03em;
 }
 
 @utility text-2xl {
   font-size: 2rem;
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.1;
   letter-spacing: -0.04em;
 }
 
@@ -82,8 +82,7 @@
   --color-background: oklch(0.10 0.008 25);
   --color-primary: oklch(0.87 0.008 25);
   --color-primary-muted: oklch(0.65 0.008 25);
-  --color-disabled: oklch(0.38 0.008 25);
-  --color-accent: oklch(0.76 0.06 55);
+  --color-accent: oklch(0.76 0.08 55);
 }
 
 /* Application layout margins */
@@ -106,7 +105,7 @@
 /* Responsive Breakpoints */
 @theme {
   --breakpoint-*: initial;
-  --breakpoint-mobile: 299px;
+  --breakpoint-mobile: 320px;
   --breakpoint-tablet: 767px;
   --breakpoint-laptop: 1024px;
   --breakpoint-desktop: 1199px;
