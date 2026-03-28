@@ -1,12 +1,12 @@
 'use client';
 import { usePathname } from 'next/navigation';
 import { HEADER_NAV } from '@/app/lib/navigation';
+import { motion } from 'motion/react';
 import Fade from '../utils/Fade';
 import Link from 'next/link';
 
 export default function HeaderNav() {
   const pathname = usePathname();
-  const currentSection = pathname === '/' ? HEADER_NAV[0].label : pathname.slice(1).split('/')[0];
 
   return (
     <Fade
@@ -14,7 +14,7 @@ export default function HeaderNav() {
       className='flex justify-center w-full gap-xl'
     >
       {HEADER_NAV.map(tab => {
-        const isActive = currentSection === tab.label;
+        const isActive = pathname === tab.href;
 
         return (
           <Link 
@@ -25,13 +25,12 @@ export default function HeaderNav() {
             }
           >
             {tab.label}
-            <span
-              className={`block h-0.5 transition-all duration-300 ease-out
-                ${isActive
-                  ? 'max-w-full bg-primary/75'
-                  : 'max-w-0 bg-primary-muted group-hover:max-w-full'
-                }`}
-            />
+            {isActive && (
+              <motion.span
+                layoutId='header-nav-underline'
+                className='block h-0.5 bg-primary/75'
+              />
+            )}
           </Link>
         )
     })}

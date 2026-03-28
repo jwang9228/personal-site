@@ -89,7 +89,7 @@
 @utility layout-root {
   display: flex;
   flex-direction: column;
-  height: 100dvh;
+  min-height: 100dvh;
 
   @apply px-8 tablet:px-10 laptop:px-14 desktop:px-20;
 

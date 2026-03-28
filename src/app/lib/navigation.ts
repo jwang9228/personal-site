@@ -14,7 +14,7 @@ const RESUME_LINK = '/experience/WangResume.pdf';
 
 export const HEADER_NAV: NavItem[] = [
   { label: 'Work', href: '/' },
-  { label: 'About', href: '/experience' }
+  { label: 'About', href: '/about' }
 ];
 
 export const FOOTER_NAV: FooterSection[] = [

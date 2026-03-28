@@ -50,11 +50,11 @@ export default function Techstack({ activeLayer, setActiveLayer } : TechstackPro
               className={`absolute inset-0 flex items-end justify-start p-4 transform-3d
                 ${isActive ? 'cursor-default' : 'cursor-pointer'}`}
             >
-              <div 
-                className={`absolute inset-0 border-2
+              <motion.div
+                className={`absolute inset-0 border-2 transition-colors duration-300
                   ${isActive
                     ? 'border-accent/50 bg-accent/20 shadow-2xl' 
-                    : 'border-primary-muted/80 bg-background/90 shadow-xl'}`} 
+                    : 'border-primary-muted/80 bg-background/75 shadow-xl'}`} 
               />
 
               <motion.span 
@@ -86,18 +86,18 @@ function TechstackWall({
   isActive
 }: { wallOrientation: 'left' | 'bottom', isActive: boolean }) {
   return (
-    <div
+    <motion.div
       style={{
         transformOrigin: wallOrientation,
         transform: wallOrientation === 'left' ? 'rotateY(90deg)' : 'rotateX(90deg)',
         width: wallOrientation === 'left' ? `${ANIM.techstackLayerStyle.wallThickness}px` : undefined,
         height: wallOrientation === 'left' ? undefined : `${ANIM.techstackLayerStyle.wallThickness}px`,
       }}
-      className={`absolute left-0 border-2 
+      className={`absolute left-0 border-2 transition-colors duration-300
         ${wallOrientation === 'left' 
           ? 'top-0 h-full border-l-0 brightness-75' 
           : 'bottom-0 w-full border-b-0 brightness-50'}
-        ${isActive ? 'border-accent/50 bg-accent/20' : 'border-primary-muted/80 bg-background/90'}
+        ${isActive ? 'border-accent/50 bg-accent/20' : 'border-primary-muted/80 bg-background/75'}
       `}
     />
   )

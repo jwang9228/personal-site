@@ -1,9 +1,12 @@
 import { Variants } from 'motion/react';
 
 export const TECHSTACK_STAGGER = 0.1;
-export const TECHSTACK_PAGE_DELAY = 0.3;
+export const TECHSTACK_PAGE_DELAY = 0.6;
 export const TEXT_REVEAL_BUFFER = 0.2;
 export const TEXT_FADE_DURATION = 0.3;
+
+const PAGE_STAGGER = 0.2;
+const PAGE_DELAY = 0.1;
 
 const TECHSTACK_LAYER_SIZE = 'size-48';
 const TECHSTACK_LAYER_PX_GAP = 80;
@@ -27,8 +30,8 @@ export const ANIM = {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2, 
-        delayChildren: 0.1
+        staggerChildren: PAGE_STAGGER, 
+        delayChildren: PAGE_DELAY
       }
     }
   } satisfies Variants,

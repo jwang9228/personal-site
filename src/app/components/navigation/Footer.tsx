@@ -36,7 +36,7 @@ export default function Footer() {
           </section>
         ))}
       </section>
-      <span className='text-xs text-primary-muted tracking-widest uppercase'>
+      <span className='text-xs text-primary-muted uppercase'>
         {COPYRIGHT}
       </span>
     </Fade>
