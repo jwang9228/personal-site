@@ -1,5 +1,5 @@
 'use client';
-import { ANIM } from '@/app/lib/animations';
+import { FADE_UP_VARIANTS, FADE_IN_VARIANTS } from '@/app/lib/animations';
 import { motion } from 'motion/react';
 import { ReactNode, ElementType, memo } from 'react';
 
@@ -22,7 +22,7 @@ function Fade({
 }: FadeProps) {
   const Component = motion[as] as ElementType;
 
-  const selectedVariant = type === 'up' ? ANIM.fadeUpVariants : ANIM.fadeInVariants;
+  const selectedVariant = type === 'up' ? FADE_UP_VARIANTS : FADE_IN_VARIANTS;
 
   // If inView true, apply scroll-trigger props - only apply animation when component
   // is in the viewport, only render once and when at least 20% of the component is on screen
