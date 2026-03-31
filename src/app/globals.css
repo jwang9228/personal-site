@@ -90,16 +90,16 @@
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
+}
 
-  @apply px-8 tablet:px-10 laptop:px-14 desktop:px-20;
-
-  @apply py-6 tablet:py-8 laptop:py-10 desktop:py-12;
+@utility layout-px {
+  @apply px-6 tablet:px-10 laptop:px-14 desktop:px-20;
 }
 
 @utility layout-children {
   flex-grow: 1;
 
-  @apply py-10 tablet:py-12 laptop:py-16;
+  @apply layout-px py-8;
 }
 
 /* Responsive Breakpoints */

@@ -9,7 +9,9 @@ export default function RootLayout({ children }: ChildrenProps) {
       <main className='layout-children'>
         {children}
       </main>
-      <Footer />
+      <div className='layout-px'>
+        <Footer />
+      </div>
     </div>
   )
 };

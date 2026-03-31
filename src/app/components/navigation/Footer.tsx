@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <Fade
       type='in' as='footer' inView
-      className='flex flex-col gap-lg'
+      className='flex flex-col gap-lg mb-6'
     >
       <section className='flex'>
         {FOOTER_NAV.map(footerSection => (
