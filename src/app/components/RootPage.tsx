@@ -1,6 +1,6 @@
 'use client';
-import { useRef } from 'react';
-import { useInView } from 'motion/react';
+import { useRef, useState } from 'react';
+import { useMotionValueEvent, useScroll } from 'motion/react';
 import { LightModeContext } from '../lib/context';
 import { motion } from 'motion/react';
 import { PAGE_VARIANTS } from '@/app/lib/animations';
@@ -12,9 +12,14 @@ import About from './about/About';
 import Footer from './navigation/Footer';
 
 export default function RootPage() {
-  const lightModeRef = useRef(null);
-  const isLightMode = useInView(lightModeRef, {
-    margin: '-61px 0px -90% 0px'
+  const { scrollY } = useScroll();
+  const lightModeRef = useRef<HTMLDivElement>(null);
+  const [isLightMode, setIsLightMode] = useState(false);
+
+  useMotionValueEvent(scrollY, 'change', () => {
+    const el = lightModeRef.current;
+    if (!el) return;
+    setIsLightMode(el.getBoundingClientRect().top <= 61);
   });
 
   return (
@@ -26,7 +31,7 @@ export default function RootPage() {
             <Hero />
             <Work />
             <Projects />
-            <div ref={lightModeRef} className='bg-primary'>
+            <div ref={lightModeRef} className='text-background bg-primary'>
               <About />
               <Footer />
             </div>
