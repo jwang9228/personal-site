@@ -1,17 +1,20 @@
 'use client';
+import { useLightMode } from '@/app/lib/context';
 import { usePathname } from 'next/navigation';
 import { DEV_NAME } from '@/app/lib/constants';
 import { HEADER_NAV } from '@/app/lib/navigation';
-import Fade from '../utils/Fade';
 import Link from 'next/link';
 
 export default function HeaderNav() {
+  const isLightMode = useLightMode();
+  console.log('isLightMode:', isLightMode);
   const pathname = usePathname();
 
   return (
-    <Fade
-      type='in' as='header' inView
-      className='flex py-4 border-b border-primary-muted/30'
+    <header
+      className={`sticky top-0 z-50 flex py-4 
+        border-b border-primary-muted/30 backdrop-blur-sm
+      `}
     >
       <nav className='flex justify-between w-full layout-px'>
         <Link 
@@ -38,6 +41,6 @@ export default function HeaderNav() {
           })}
         </section>
       </nav>
-    </Fade>
+    </header>
   )
 }

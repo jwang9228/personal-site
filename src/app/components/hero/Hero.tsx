@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <Fade 
       type='up' as='section'
-      className='flex flex-col gap-base'
+      className='flex flex-col gap-base layout-px layout-py'
     >
       <section className='flex flex-col text-2xl gap-xs'>
         <h1 className='flex items-baseline gap-sm'>

@@ -1,6 +1,5 @@
 import { Lora, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
-import RootLayout from './components/RootLayout';
 import { Metadata, Viewport } from 'next';
 import { ChildrenProps } from './lib/constants';
 
@@ -34,7 +33,7 @@ export default function Layout({ children } : ChildrenProps) {
   return (
     <html lang='en' className={`${plus_jakarta_sans.variable} ${lora.variable}`}>
       <body className='font-base antialiased'>
-        <RootLayout children={children} />
+        {children}
       </body>
     </html>
   );

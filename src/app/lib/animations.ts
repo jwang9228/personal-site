@@ -16,7 +16,7 @@ export const PAGE_VARIANTS: Variants = {
 };
 
 // --- Techstack ---
-export const TECHSTACK_PADDING_TOP = 'pt-40';
+export const TECHSTACK_PADDING_VERTICAL = 'pt-36 pb-6';
 export const TECHSTACK_STAGGER = 0.1;
 export const TECHSTACK_PAGE_DELAY = 0.6;
 export const TEXT_REVEAL_BUFFER = 0.2;

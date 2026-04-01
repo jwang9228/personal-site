@@ -80,9 +80,10 @@
 /* Color Palette */
 @theme {
   --color-background: oklch(0.10 0.008 25);
-  --color-primary: oklch(0.87 0.008 25);
+  --color-primary: oklch(0.89 0.008 25);
   --color-primary-muted: oklch(0.65 0.008 25);
   --color-accent: oklch(0.76 0.08 55);
+  --color-accent-dark: oklch(0.42 0.14 55);
 }
 
 /* Application layout margins */
@@ -96,10 +97,8 @@
   @apply px-6 tablet:px-10 laptop:px-14 desktop:px-20;
 }
 
-@utility layout-children {
-  flex-grow: 1;
-
-  @apply layout-px py-8;
+@utility layout-py {
+  @apply py-8;
 }
 
 /* Responsive Breakpoints */

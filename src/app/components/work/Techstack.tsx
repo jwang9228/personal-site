@@ -2,7 +2,7 @@
 import { motion } from 'motion/react';
 import { TECHSTACK_LAYER_NAV, TechstackLayer } from '@/app/lib/navigation';
 import {
-  TECHSTACK_PADDING_TOP,
+  TECHSTACK_PADDING_VERTICAL,
   TECHSTACK_VARIANTS,
   TECHSTACK_STYLE,
   TECHSTACK_LAYER_VARIANTS,
@@ -30,7 +30,7 @@ export default function Techstack({ activeLayer, setActiveLayer } : TechstackPro
   return (
     <Fade
       type='up' as='section'
-      className={`relative w-full flex items-center justify-center ${TECHSTACK_PADDING_TOP}`}
+      className={`relative w-full flex items-center justify-center ${TECHSTACK_PADDING_VERTICAL}`}
     >
       <motion.div
         variants={TECHSTACK_VARIANTS}

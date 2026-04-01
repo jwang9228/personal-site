@@ -1,44 +1,41 @@
 import { RiArrowRightUpLine } from 'react-icons/ri';
 import { FOOTER_NAV } from '@/app/lib/navigation';
 import { COPYRIGHT } from '@/app/lib/constants';
-import Fade from '../utils/Fade';
 import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <Fade
-      type='in' as='footer' inView
-      className='flex flex-col gap-lg mb-6'
-    >
-      <section className='flex'>
+    <footer className='flex flex-col gap-lg layout-px layout-py'>
+      <div className='grid grid-cols-2'>
         {FOOTER_NAV.map(footerSection => (
-          <section key={footerSection.sectionLabel} className='flex flex-col gap-base w-1/2'>
-            <span className='text-xs text-primary-muted uppercase'>{footerSection.sectionLabel}</span>
+          <section key={footerSection.sectionLabel} className='flex flex-col gap-base'>
+            <span className='text-xs text-background/55 font-medium uppercase'>
+              {footerSection.sectionLabel}
+            </span>
             <nav className='flex flex-col gap-sm w-fit'>
               {footerSection.sectionLinks.map(link => (
-                <Link 
-                  key={link.label} 
+                <Link
+                  key={link.label}
                   href={link.href}
-                  target={footerSection.isExternal ? '_blank' : undefined} 
+                  target={footerSection.isExternal ? '_blank' : undefined}
                   rel={footerSection.isExternal ? 'noopener noreferrer' : undefined}
-                  className='group flex justify-between items-center w-full gap-sm'
+                  className='group flex items-center gap-sm text-background/85
+                    hover:text-accent-dark transition-colors duration-300 lowercase'
                 >
-                  <p className='text-primary group-hover:text-accent font-medium transition-colors duration-300 lowercase'>
-                    {link.label}
-                  </p>
-                  {footerSection.isExternal && 
-                    <RiArrowRightUpLine className='translate-y-xxs text-lg 
-                      text-primary/85 group-hover:text-accent/85 transition-colors duration-300'/>
+                  {link.label}
+                  {footerSection.isExternal &&
+                    <RiArrowRightUpLine className='translate-y-xxs text-lg opacity-75
+                      group-hover:opacity-100 transition-opacity duration-300'/>
                   }
                 </Link>
               ))}
             </nav>
           </section>
         ))}
-      </section>
-      <span className='text-xs text-primary-muted uppercase'>
+      </div>
+      <span className='text-xs text-background/55 font-medium uppercase'>
         {COPYRIGHT}
       </span>
-    </Fade>
+    </footer>
   )
 }
