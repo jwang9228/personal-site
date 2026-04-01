@@ -1,13 +1,29 @@
 'use client';
 import { useLightMode } from '@/app/lib/context';
-import { usePathname } from 'next/navigation';
 import { DEV_NAME } from '@/app/lib/constants';
-import { HEADER_NAV } from '@/app/lib/navigation';
+import { HEADER_NAV, WORK_LABEL, ABOUT_LABEL, HEADER_HEIGHT } from '@/app/lib/navigation';
 import Link from 'next/link';
 
 export default function HeaderNav() {
   const isLightMode = useLightMode();
-  const pathname = usePathname();
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth'})
+  };
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, label: string) => {
+    e.preventDefault(); 
+
+    if (label === WORK_LABEL) {
+      scrollToTop()
+    } 
+
+    if (label === ABOUT_LABEL) {
+      const el = document.getElementById(ABOUT_LABEL);
+      if (!el) return;
+      window.scrollTo({ top: el.offsetTop - HEADER_HEIGHT, behavior: 'smooth' });
+    }
+  };
 
   return (
     <header
@@ -17,24 +33,30 @@ export default function HeaderNav() {
       `}
     >
       <nav className='flex justify-between w-full layout-px'>
-        <Link 
-          href={'/'}
-          className={`font-accent text-lg uppercase tracking-widest
+        <button
+          onClick={scrollToTop}
+          className={`font-accent text-lg uppercase tracking-widest cursor-pointer
             ${isLightMode ? 'text-background' : 'text-primary'}`}
         >
           {DEV_NAME}
-        </Link>
+        </button>
+
         <section className='flex gap-lg'>
           {HEADER_NAV.map(tab => {
-            const isActive = pathname === tab.href;
-            const lightModeStyle = isActive ? 'text-background/80 font-medium' : 'text-background/50 hover:text-background/80';
-            const darkModeStyle = isActive ? 'text-primary font-medium' : 'text-primary-muted hover:text-primary';
+            const lightModeStyle = tab.label === ABOUT_LABEL 
+              ? 'text-background/80 font-medium' 
+              : 'text-background/50 hover:text-background/80';
+
+            const darkModeStyle = tab.label === WORK_LABEL 
+              ? 'text-primary font-medium' 
+              : 'text-primary-muted hover:text-primary';
 
             return (
-              <Link 
-                key={tab.label} 
-                href={tab.href} 
-                className={`group hover:transition-colors hover:duration-300 lowercase
+              <Link
+                href={tab.href}
+                key={tab.label}
+                onClick={(e) => handleNavClick(e, tab.label)}
+                className={`transition-colors duration-300 lowercase cursor-pointer
                   ${isLightMode ? lightModeStyle : darkModeStyle}`
                 }
               >

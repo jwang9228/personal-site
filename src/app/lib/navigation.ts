@@ -1,3 +1,8 @@
+export const WORK_LABEL = 'work';
+export const ABOUT_LABEL = 'about';
+const LINKEDIN_LINK = 'https://www.linkedin.com/in/justin-n-wang/';
+const RESUME_LINK = '/experience/WangResume.pdf';
+
 export interface NavItem {
   label: string;
   href: string;
@@ -9,12 +14,11 @@ export interface FooterSection {
   sectionLinks: NavItem[];
 }
 
-const LINKEDIN_LINK = 'https://www.linkedin.com/in/justin-n-wang/';
-const RESUME_LINK = '/experience/WangResume.pdf';
+export const HEADER_HEIGHT = 61;
 
 export const HEADER_NAV: NavItem[] = [
-  { label: 'Work', href: '/' },
-  { label: 'About', href: '/about' }
+  { label: WORK_LABEL, href: '/' },
+  { label: ABOUT_LABEL, href: `#${ABOUT_LABEL}` }
 ];
 
 export const FOOTER_NAV: FooterSection[] = [

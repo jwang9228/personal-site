@@ -4,6 +4,7 @@ import { useMotionValueEvent, useScroll } from 'motion/react';
 import { LightModeContext } from '../lib/context';
 import { motion } from 'motion/react';
 import { PAGE_VARIANTS } from '@/app/lib/animations';
+import { ABOUT_LABEL, HEADER_HEIGHT } from '../lib/navigation';
 import HeaderNav from './navigation/HeaderNav';
 import Hero from './hero/Hero';
 import Work from './work/Work';
@@ -19,7 +20,7 @@ export default function RootPage() {
   useMotionValueEvent(scrollY, 'change', () => {
     const el = lightModeRef.current;
     if (!el) return;
-    setIsLightMode(el.getBoundingClientRect().top <= 61);
+    setIsLightMode(el.getBoundingClientRect().top <= HEADER_HEIGHT);
   });
 
   return (
@@ -31,7 +32,7 @@ export default function RootPage() {
             <Hero />
             <Work />
             <Projects />
-            <div ref={lightModeRef} className='text-background bg-primary'>
+            <div ref={lightModeRef} id={ABOUT_LABEL} className='text-background bg-primary'>
               <About />
               <Footer />
             </div>
