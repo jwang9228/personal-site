@@ -20,7 +20,7 @@ export default function RootPage() {
   useMotionValueEvent(scrollY, 'change', () => {
     const el = lightModeRef.current;
     if (!el) return;
-    setIsLightMode(el.getBoundingClientRect().top <= HEADER_HEIGHT);
+    setIsLightMode(Math.round(el.getBoundingClientRect().top) <= HEADER_HEIGHT);
   });
 
   return (

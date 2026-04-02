@@ -1,29 +1,13 @@
 'use client';
 import { useLightMode } from '@/app/lib/context';
 import { DEV_NAME } from '@/app/lib/constants';
-import { HEADER_NAV, WORK_LABEL, ABOUT_LABEL, HEADER_HEIGHT } from '@/app/lib/navigation';
+import { HEADER_NAV, WORK_LABEL, ABOUT_LABEL, useNavClick } from '@/app/lib/navigation';
 import Link from 'next/link';
 
 export default function HeaderNav() {
   const isLightMode = useLightMode();
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth'})
-  };
-
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, label: string) => {
-    e.preventDefault(); 
-
-    if (label === WORK_LABEL) {
-      scrollToTop()
-    } 
-
-    if (label === ABOUT_LABEL) {
-      const el = document.getElementById(ABOUT_LABEL);
-      if (!el) return;
-      window.scrollTo({ top: el.offsetTop - HEADER_HEIGHT, behavior: 'smooth' });
-    }
-  };
+  const { handleNavClick, scrollToTop } = useNavClick();
 
   return (
     <header

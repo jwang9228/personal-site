@@ -1,9 +1,12 @@
+'use client';
 import { RiArrowRightUpLine } from 'react-icons/ri';
-import { FOOTER_NAV } from '@/app/lib/navigation';
+import { FOOTER_NAV, useNavClick } from '@/app/lib/navigation';
 import { COPYRIGHT } from '@/app/lib/constants';
 import Link from 'next/link';
 
 export default function Footer() {
+  const { handleNavClick } = useNavClick();
+
   return (
     <footer className='flex flex-col gap-lg layout-px layout-py'>
       <div className='grid grid-cols-2'>
@@ -19,6 +22,7 @@ export default function Footer() {
                   href={link.href}
                   target={footerSection.isExternal ? '_blank' : undefined}
                   rel={footerSection.isExternal ? 'noopener noreferrer' : undefined}
+                  onClick={footerSection.isExternal ? undefined : (e) => handleNavClick(e, link.label)}
                   className='group flex items-center gap-sm text-background/85
                     hover:text-accent-dark transition-colors duration-300 lowercase'
                 >

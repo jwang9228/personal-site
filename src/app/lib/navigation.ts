@@ -40,3 +40,23 @@ export const FOOTER_NAV: FooterSection[] = [
 export const TECHSTACK_LAYER_NAV = ['Project', 'Experience', 'Home'] as const;
 
 export type TechstackLayer = typeof TECHSTACK_LAYER_NAV[number];
+
+export function useNavClick() {
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, label: string) => {
+    e.preventDefault();
+    if (label === WORK_LABEL) {
+      scrollToTop();
+    } else if (label === ABOUT_LABEL) {
+      const el = document.getElementById(ABOUT_LABEL);
+      if (!el) return;
+      window.scrollTo({ 
+        top: el.getBoundingClientRect().top + window.scrollY - HEADER_HEIGHT, 
+        behavior: 'smooth' 
+      });
+    }
+  };
+
+  return { handleNavClick, scrollToTop };
+ }
