@@ -1,4 +1,5 @@
 import Fade from '../utils/Fade';
+import { ABOUT_ACTIVE_SECTION } from '@/app/lib/constants';
 
 export default function About() {
   return (
@@ -17,7 +18,7 @@ export default function About() {
 
       {/* ROW 2 */}
       <div className='laptop:col-span-1 border border-background/10 rounded-2xl p-base'>
-        Row 2 Column 1 (Active - 1/3 width)
+        {ABOUT_ACTIVE_SECTION}
       </div>
       
       <div className='laptop:col-span-2 border border-background/10 rounded-2xl p-base'>
