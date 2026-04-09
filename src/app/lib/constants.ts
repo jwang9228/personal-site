@@ -6,7 +6,15 @@ export const MAIN_TITLE = 'Full Stack Developer';
 export const SECONDARY_TITLE = 'Design Enthusiast';
 export const CURRENT_POSITION = 'Software Engineer at UIC Payments';
 
-export const ABOUT_ACTIVE_SECTION = 'Trying to stay more active, less screen time. My routine:'
+interface AboutSection {
+  sectionLabel: string,
+  sectionDescription: string
+}
+
+export const ABOUT_ACTIVE_SECTION: AboutSection = {
+  sectionLabel: 'Exercise Routine',
+  sectionDescription: 'Less screen time, more active.'
+}
 
 export interface ChildrenProps {
   children: ReactNode;
