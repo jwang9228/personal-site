@@ -7,13 +7,28 @@ export const SECONDARY_TITLE = 'Design Enthusiast';
 export const CURRENT_POSITION = 'Software Engineer at UIC Payments';
 
 interface AboutSection {
-  sectionLabel: string,
-  sectionDescription: string
+  header: string,
+  title: string
+}
+
+export const ABOUT_ME_SECTION: AboutSection = {
+  header: '',
+  title: ''
 }
 
 export const ABOUT_ACTIVE_SECTION: AboutSection = {
-  sectionLabel: 'Exercise Routine',
-  sectionDescription: 'Less screen time, more active.'
+  header: 'Offline Discipline',
+  title: 'Routine by design.'
+}
+
+export const ABOUT_GAMES_SECTION: AboutSection = {
+  header: '',
+  title: ''
+}
+
+export const ABOUT_PC_SECTION: AboutSection = {
+  header: 'Custom Hardware',
+  title: 'Surviving RAMageddon...'
 }
 
 export interface ChildrenProps {

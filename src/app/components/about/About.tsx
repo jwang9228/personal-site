@@ -20,6 +20,7 @@ export default function About() {
       {/* ROW 2 */}
       <div className='laptop:col-span-1 border border-background/10 rounded-2xl p-base'>
         { /* TODO: some sortr of calendar where each day same color = same exercise, search "this week ui" */}
+        { /* TODO: should the header be capitalized? */ }
       </div>
       
       <div className='laptop:col-span-2 border border-background/10 rounded-2xl p-base'>
