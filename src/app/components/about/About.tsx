@@ -1,31 +1,83 @@
 import Fade from '../utils/Fade';
-import { ABOUT_ACTIVE_SECTION } from '@/app/lib/constants';
+import { 
+  AboutSectionLabels,
+  ABOUT_ME_SECTION, 
+  ABOUT_GAMES_SECTION, 
+  ABOUT_ACTIVE_SECTION,
+  ABOUT_PC_SECTION
+} from '@/app/lib/constants';
+import Active from './Active';
 
 export default function About() {
   return (
     <Fade type='up' as='div' inView 
       className='grid grid-cols-1 tablet:grid-cols-3 gap-lg auto-rows-auto tablet:auto-rows-[384px] layout-px layout-py'
     >
-      {/* TODO: what animations to use? */} 
-      {/* ROW 1 */}
-      <div className='laptop:col-span-2 border border-background/10 rounded-2xl p-base'>
-        Row 1 Column 1 (Bio - 2/3 width)
-      </div>
-      
-      <div className='laptop:col-span-1 border border-background/10 rounded-2xl p-base'>
-        { /*  TODO: some game library / achievement section */}
-        Row 1 Column 2 (Games - 1/3 width)
-      </div>
+      {/* TODO: what entry/load animations to use? */ } 
+      {/* TODO: fix the above styling */ }
 
-      {/* ROW 2 */}
-      <div className='laptop:col-span-1 border border-background/10 rounded-2xl p-base'>
-        { /* TODO: some sortr of calendar where each day same color = same exercise, search "this week ui" */}
-        { /* TODO: should the header be capitalized? */ }
-      </div>
+      <AboutSection
+        containerStyle='laptop:col-span-2'
+        aboutSectionLabels={ABOUT_ME_SECTION}
+        layout='split'
+        content={
+          <div>{/* TODO: biography */}</div>
+        }
+      />
       
-      <div className='laptop:col-span-2 border border-background/10 rounded-2xl p-base'>
-        Row 2 Column 2 (PC Build - 2/3 width)
-      </div>
+      <AboutSection
+        containerStyle='laptop:col-span-1'
+        aboutSectionLabels={ABOUT_GAMES_SECTION}
+        layout='stack'
+        content={
+          <div>{/* TODO: game 'library'/'achievement' */}</div>
+        }
+      />
+
+      <AboutSection 
+        containerStyle='laptop:col-span-1'
+        aboutSectionLabels={ABOUT_ACTIVE_SECTION}
+        layout='stack'
+        content={<Active />}
+      />
+
+      <AboutSection
+        containerStyle='laptop:col-span-2'
+        aboutSectionLabels={ABOUT_PC_SECTION}
+        layout='split'
+        content={
+          <div>{/* TODO: peripherals and pc specs, maybe image of setup */}</div>
+        }
+      />
+    
     </Fade>
+  )
+}
+
+interface AboutSectionProps {
+  containerStyle: string,
+  aboutSectionLabels: AboutSectionLabels,
+  layout: 'stack' | 'split',
+  content: React.ReactNode
+}
+
+function AboutSection({ 
+  containerStyle, 
+  aboutSectionLabels, 
+  layout,
+  content 
+} : AboutSectionProps) {
+  return (
+    <section className={`${containerStyle} border border-background/15 
+      rounded-2xl p-base`}
+    >
+      <header className={`flex flex-col gap-xs ${layout === 'split' ? '' : ''}`}>
+        <p className='text-sm font-medium'>{aboutSectionLabels.header}</p>
+        <h3 className='text-xl text-background/80 font-accent'>{aboutSectionLabels.title}</h3>
+      </header>
+      <div className={`${layout === 'split' ? '' : ''}`}>
+        {content}
+      </div>
+    </section>
   )
 }
