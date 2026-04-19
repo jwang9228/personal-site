@@ -13,27 +13,12 @@ export interface AboutSectionLabels {
 
 export const ABOUT_ME_SECTION: AboutSectionLabels = {
   header: 'Current Snapshot',
-  title: 'Optimizing layouts, setups, and competitive gameplay'
+  title: 'TODO'
 }
 
 export const ABOUT_ACTIVE_SECTION: AboutSectionLabels = {
   header: 'Offline Discipline',
   title: 'Routine by design'
-}
-
-export const ABOUT_GAMES_SECTION: AboutSectionLabels = {
-  header: 'Matchmaking...',
-  title: 'Competitive: In Queue'
-}
-
-export const ABOUT_PC_SECTION: AboutSectionLabels = {
-  header: 'Aesthetic Setups',
-  title: 'Surviving RAMageddon'
-}
-
-interface DayIntensityMapping {
-  dayLabel: string,
-  intensityClass: string;
 }
 
 export const ACTIVE_INTENSITY_HEATMAP: DayIntensityMapping[] = [
@@ -49,6 +34,29 @@ export const ACTIVE_INTENSITY_HEATMAP: DayIntensityMapping[] = [
 export const ACTIVE_ACTIVITIES = [
   'Badminton', 'Squash', 'Swimming', 'Weights'
 ];
+
+export const ABOUT_GAMES_SECTION: AboutSectionLabels = {
+  header: 'Matchmaking...',
+  title: 'Competitive: In Queue'
+}
+
+export const MAIN_GAME = 'Overwatch';
+
+export const MAIN_GAME_TAG = 'SirRacha#11210';
+
+export const ABOUT_GAMES = [
+  'Honkai: Star Rail', 'Clash Royale', 'Brawl Stars'
+];
+
+export const ABOUT_PC_SECTION: AboutSectionLabels = {
+  header: 'Aesthetic Setups',
+  title: 'Surviving RAMageddon'
+}
+
+interface DayIntensityMapping {
+  dayLabel: string,
+  intensityClass: string;
+}
 
 export interface ChildrenProps {
   children: ReactNode;

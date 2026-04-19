@@ -3,7 +3,7 @@ import { ACTIVE_INTENSITY_HEATMAP, ACTIVE_ACTIVITIES } from '@/app/lib/constants
 export default function Active() {
   return (
     <section className='flex flex-col gap-base'>
-      <ol className='flex justify-between px-xs pt-xl'>
+      <ol className='flex justify-between px-xs'>
         {ACTIVE_INTENSITY_HEATMAP.map((dayIntensityMapping, i) => (
           <li 
             key={i}
@@ -20,7 +20,7 @@ export default function Active() {
         {ACTIVE_ACTIVITIES.map(activity => (
           <li
             key={activity}
-            className='text-sm text-background/85 rounded-full
+            className='text-xs text-background/80 rounded-full
               bg-background/5 px-sm py-xs'
           >
             {activity}

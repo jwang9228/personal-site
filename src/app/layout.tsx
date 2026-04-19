@@ -1,4 +1,8 @@
-import { Lora, Plus_Jakarta_Sans } from 'next/font/google';
+import { 
+  Lora, 
+  Plus_Jakarta_Sans,
+  JetBrains_Mono
+} from 'next/font/google';
 import './globals.css';
 import { Metadata, Viewport } from 'next';
 import { ChildrenProps } from './lib/constants';
@@ -12,6 +16,12 @@ const lora = Lora({
 const plus_jakarta_sans = Plus_Jakarta_Sans({
   subsets: ['latin'],
   variable: '--font-plus_jakarta_sans',
+  display: 'swap',
+})
+
+const jetbrains_mono = JetBrains_Mono({ 
+  subsets: ['latin'], 
+  variable: '--font-mono',
   display: 'swap',
 })
 
@@ -31,7 +41,11 @@ export const viewport: Viewport = {
 
 export default function Layout({ children } : ChildrenProps) {
   return (
-    <html lang='en' className={`${plus_jakarta_sans.variable} ${lora.variable}`}>
+    <html 
+      lang='en' 
+      className={`${plus_jakarta_sans.variable} ${lora.variable}
+        ${jetbrains_mono.variable}`}
+    >
       <body className='font-base antialiased'>
         {children}
       </body>

@@ -75,6 +75,7 @@
 @theme {
   --font-base:    var(--font-plus_jakarta_sans), ui-sans-serif, system-ui, sans-serif;
   --font-accent:  var(--font-lora), ui-serif, Georgia, serif;
+  --font-mono:    var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 /* Color Palette */

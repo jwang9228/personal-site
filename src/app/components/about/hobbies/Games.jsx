@@ -2,6 +2,7 @@ import { AiOutlineTag } from 'react-icons/ai';
 import { IoTrophyOutline, IoShieldHalf } from 'react-icons/io5';
 import { TbStars } from 'react-icons/tb';
 
+/*
 export default function Games() {
   const showRank = false;
   const games = [
@@ -66,3 +67,4 @@ export default function Games() {
     </section>
   )
 }
+  */

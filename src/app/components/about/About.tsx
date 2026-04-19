@@ -7,6 +7,7 @@ import {
   ABOUT_PC_SECTION
 } from '@/app/lib/constants';
 import Active from './Active';
+import Games from './Games';
 
 export default function About() {
   return (
@@ -29,9 +30,7 @@ export default function About() {
         containerStyle='laptop:col-span-1'
         aboutSectionLabels={ABOUT_GAMES_SECTION}
         layout='stack'
-        content={
-          <div>{/* TODO: game 'library'/'achievement' */}</div>
-        }
+        content={<Games />}
       />
 
       <AboutSection 
@@ -68,14 +67,18 @@ function AboutSection({
   content 
 } : AboutSectionProps) {
   return (
-    <section className={`${containerStyle} border border-background/15 
-      rounded-2xl p-base`}
+    <section className={`${containerStyle} bg-white/90
+      border border-background/10 rounded-2xl p-base`}
     >
       <header className={`flex flex-col gap-xs ${layout === 'split' ? '' : ''}`}>
-        <p className='text-sm font-medium'>{aboutSectionLabels.header}</p>
-        <h3 className='text-xl text-background/80 font-accent'>{aboutSectionLabels.title}</h3>
+        <p className='text-xs text-background/70 font-medium uppercase'>
+          {aboutSectionLabels.header}
+        </p>
+        <h3 className='text-xl text-background/85 font-accent'>
+          {aboutSectionLabels.title}
+        </h3>
       </header>
-      <div className={`${layout === 'split' ? '' : ''}`}>
+      <div className={`pt-lg ${layout === 'split' ? '' : ''}`}>
         {content}
       </div>
     </section>
