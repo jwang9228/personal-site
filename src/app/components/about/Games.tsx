@@ -1,8 +1,7 @@
 import { 
-  MAIN_GAME, MAIN_GAME_TAG, ABOUT_GAMES 
+  MAIN_GAME, MAIN_GAME_TAG, GAMES
 } from '@/app/lib/constants';
 import { motion } from 'motion/react';
-import { useState, useEffect } from 'react';
 import { useQueueTimer } from '../utils/useQueueTimer';
 
 export default function Games() {
@@ -40,7 +39,7 @@ export default function Games() {
       </div>
 
       <ol className='flex flex-wrap gap-x-base gap-y-sm'>
-        {ABOUT_GAMES.map(game => (
+        {GAMES.map(game => (
           <li 
             key={game}
             className='text-xs text-background/80 rounded-full

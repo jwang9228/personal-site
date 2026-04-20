@@ -8,6 +8,7 @@ import {
 } from '@/app/lib/constants';
 import Active from './Active';
 import Games from './Games';
+import PC from './PC';
 
 export default function About() {
   return (
@@ -44,9 +45,7 @@ export default function About() {
         containerStyle='laptop:col-span-2'
         aboutSectionLabels={ABOUT_PC_SECTION}
         layout='split'
-        content={
-          <div>{/* TODO: peripherals and pc specs, maybe image of setup */}</div>
-        }
+        content={<PC />}
       />
     
     </Fade>
