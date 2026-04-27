@@ -14,8 +14,15 @@ export interface AboutSectionLabels {
 /* About Me Section */ 
 export const ABOUT_ME_SECTION: AboutSectionLabels = {
   header: 'Current Snapshot',
-  title: 'TODO'
+  title: 'Iterating toward those just-right moments'
 };
+
+export const ABOUT_ME_STATEMENT = [
+  "Whether I'm shipping Android apps at work or prototyping web layouts at home,",
+  "I'm always chasing that sweet spot where solid logic meets clean design."
+].join(' ');
+
+export const ABOUT_ME_LOCATION = 'BASED // Pleasanton, CA [PT]'
 
 /* Active Section */
 export const ABOUT_ACTIVE_SECTION: AboutSectionLabels = {
@@ -53,25 +60,42 @@ export const MAIN_GAME = 'Overwatch';
 export const MAIN_GAME_TAG = 'SirRacha#11210';
 
 export const GAMES = [
-  'Honkai: Star Rail', 'Clash Royale', 'Brawl Stars'
+  'Honkai: Star Rail', 'Battlefield 6', 'Clash Royale'
 ];
 
 /* PC Parts Section */
 interface PCPart {
   partName: string,
-  partValue: string
+  partValues: PCValue[]
 };
 
+interface PCValue {
+  value: string,
+  detail?: string
+}
+
 export const PC_PARTS: PCPart[] = [
-  { partName: 'Case', partValue: 'Fractal Terra (Jade)' },
-  { partName: 'CPU', partValue: 'AMD Ryzen 7 7800X3D' },
-  { partName: 'GPU', partValue: 'NVIDIA RTX 5070 Ti'},
-  { partName: 'Display', partValue: 'MSI 27" QD-OLED (1440p 360Hz)' },
-  { partName: 'Input', partValue: 'Razer Huntsman V3 Pro Mini • Finalmouse ULX (Aceu) • GLSSWRKS Polarity' }
+  {partName: 'Case', partValues: [
+    {value: 'Fractal Terra', detail: 'Jade'}
+  ]},
+  {partName: 'CPU', partValues: [
+    {value: 'AMD Ryzen 7 7800X3D'}
+  ]},
+  {partName: 'GPU', partValues: [
+    {value: 'NVIDIA RTX 5070 Ti'}
+  ]},
+  {partName: 'Display', partValues: [
+    {value: 'MSI 27" QD-OLED', detail: '1440p 360Hz'}
+  ]},
+  {partName: 'Input', partValues: [
+    {value: 'Razer Huntsman V3 Pro Mini'},
+    {value: 'Finalmouse ULX', detail: 'Aceu'},
+    {value: 'GLSSWRKS Polarity'}
+  ]}
 ];
 
 export const ABOUT_PC_SECTION: AboutSectionLabels = {
-  header: 'Aesthetic Setups',
+  header: 'Optimizing thermals',
   title: 'Surviving RAMageddon'
 };
 

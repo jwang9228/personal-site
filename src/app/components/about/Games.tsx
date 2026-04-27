@@ -9,7 +9,7 @@ export default function Games() {
 
   return (
     <section className='flex flex-col gap-lg'>
-      <div className='flex items-center justify-between px-xs'>
+      <div className='flex items-center justify-between pl-xs'>
         <div className='flex items-center gap-sm'>
           <motion.span 
             className='block size-1.5 bg-accent-dark 
@@ -25,8 +25,8 @@ export default function Games() {
               ease: 'easeInOut'
             }}
           />
-          <hgroup className='flex items-baseline gap-sm'>
-            <h3 className='text-lg leading-none'>{MAIN_GAME}</h3>
+          <hgroup className='flex items-baseline gap-1.5'>
+            <h3 className='leading-none'>{MAIN_GAME}</h3>
             <h4 className='text-xs text-background/60 leading-none'>
               {MAIN_GAME_TAG}
             </h4>

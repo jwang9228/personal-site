@@ -1,20 +1,56 @@
 'use client';
-import { motion } from 'motion/react';
+import { Transition, Variants, motion } from 'motion/react';
 import { TECHSTACK_LAYER_NAV, TechstackLayer } from '@/app/lib/navigation';
-import {
-  TECHSTACK_PADDING_VERTICAL,
-  TECHSTACK_VARIANTS,
-  TECHSTACK_STYLE,
-  TECHSTACK_LAYER_VARIANTS,
-  TECHSTACK_LAYER_STYLE,
-  TECHSTACK_PAGE_DELAY,
-  TECHSTACK_STAGGER,
-  TECHSTACK_TAP_SCALE,
-  TECHSTACK_TAP_SPRING,
-  TEXT_REVEAL_BUFFER,
-  TEXT_FADE_DURATION
-} from '@/app/lib/animations';
 import Fade from '../utils/Fade';
+
+const TECHSTACK_PADDING_VERTICAL = 'pt-36 pb-6';
+const TECHSTACK_STAGGER = 0.1;
+const TECHSTACK_PAGE_DELAY = 0.6;
+const TEXT_REVEAL_BUFFER = 0.2;
+const TEXT_FADE_DURATION = 0.3;
+
+const TECHSTACK_LAYER_SIZE = 'size-48';
+const TECHSTACK_LAYER_PX_GAP = 85;
+const TECHSTACK_LAYER_WALL_THICKNESS = 12;
+const TECHSTACK_LAYER_SPRING = { type: 'spring', damping: 22, stiffness: 140 } satisfies Transition;
+
+const TECHSTACK_TAP_SCALE     = 0.94;
+const TECHSTACK_TAP_SPRING    = { type: 'spring', damping: 30, stiffness: 400 } satisfies Transition;
+
+interface LayerCustomProps {
+  targetZ: number;
+}
+
+const TECHSTACK_VARIANTS: Variants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: TECHSTACK_STAGGER,
+      delayChildren: TECHSTACK_PAGE_DELAY,
+      staggerDirection: -1
+    }
+  }
+};
+
+const TECHSTACK_STYLE = {
+  rotateX: 60,
+  rotateZ: -45,
+  transformStyle: 'preserve-3d'
+} as const;
+
+const TECHSTACK_LAYER_VARIANTS = {
+  hidden: { z: 0 },
+  show: ({ targetZ }: LayerCustomProps) => ({
+    z: targetZ,
+    transition: TECHSTACK_LAYER_SPRING
+  })
+} satisfies Variants;
+
+const TECHSTACK_LAYER_STYLE = {
+  size: TECHSTACK_LAYER_SIZE,
+  zSpacing: TECHSTACK_LAYER_PX_GAP,
+  wallThickness: TECHSTACK_LAYER_WALL_THICKNESS,
+} as const;
 
 interface TechstackProps {
   activeLayer: TechstackLayer;

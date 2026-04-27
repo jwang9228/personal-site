@@ -1,9 +1,8 @@
 'use client';
 import { useRef, useState } from 'react';
-import { useMotionValueEvent, useScroll } from 'motion/react';
+import { useMotionValueEvent, useScroll, Variants } from 'motion/react';
 import { LightModeContext } from '../lib/context';
 import { motion } from 'motion/react';
-import { PAGE_VARIANTS } from '@/app/lib/animations';
 import { ABOUT_LABEL, HEADER_HEIGHT } from '../lib/navigation';
 import HeaderNav from './navigation/HeaderNav';
 import Hero from './hero/Hero';
@@ -11,6 +10,19 @@ import Work from './work/Work';
 import Projects from './projects/Projects';
 import About from './about/About';
 import Footer from './navigation/Footer';
+
+const PAGE_STAGGER = 0.2;
+const PAGE_DELAY = 0.1;
+const PAGE_VARIANTS: Variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: PAGE_STAGGER,
+      delayChildren: PAGE_DELAY
+    }
+  }
+};
 
 export default function RootPage() {
   const { scrollY } = useScroll();

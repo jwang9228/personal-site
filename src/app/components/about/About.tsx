@@ -9,51 +9,66 @@ import {
 import Active from './Active';
 import Games from './Games';
 import PC from './PC';
+import AboutMe from './AboutMe';
+import { motion } from 'motion/react';
+
+const ABOUT_SECTION_VARIANTS = {
+  hidden: { opacity: 0 },
+  show: { 
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
 
 export default function About() {
   return (
-    <Fade type='up' as='div' inView 
-      className='grid grid-cols-1 tablet:grid-cols-3 gap-lg auto-rows-auto tablet:auto-rows-[384px] layout-px layout-py'
+    <motion.div
+      variants={ABOUT_SECTION_VARIANTS}
+      initial='hidden'
+      whileInView='show'
+      viewport={{ once: true, amount: 0.2 }}
+      className='grid grid-cols-1 tablet:grid-cols-5
+        gap-sm layout-px layout-py-about'
     >
-      {/* TODO: what entry/load animations to use? */ } 
-      {/* TODO: fix the above styling */ }
-
-      <AboutSection
-        containerStyle='laptop:col-span-2'
-        aboutSectionLabels={ABOUT_ME_SECTION}
-        layout='split'
-        content={
-          <div>{/* TODO: biography */}</div>
-        }
-      />
+      <Fade className='tablet:col-span-3'>
+        <AboutSection
+          aboutSectionLabels={ABOUT_ME_SECTION}
+          layout='split'
+          content={<AboutMe />}
+        />
+      </Fade>
       
-      <AboutSection
-        containerStyle='laptop:col-span-1'
-        aboutSectionLabels={ABOUT_GAMES_SECTION}
-        layout='stack'
-        content={<Games />}
-      />
+      <Fade className='tablet:col-span-2'>
+        <AboutSection
+          aboutSectionLabels={ABOUT_GAMES_SECTION}
+          layout='stack'
+          content={<Games />}
+        />
+      </Fade>
 
-      <AboutSection 
-        containerStyle='laptop:col-span-1'
-        aboutSectionLabels={ABOUT_ACTIVE_SECTION}
-        layout='stack'
-        content={<Active />}
-      />
+      <Fade className='tablet:col-span-2'>
+        <AboutSection 
+          aboutSectionLabels={ABOUT_ACTIVE_SECTION}
+          layout='stack'
+          content={<Active />}
+        />
+      </Fade>
 
-      <AboutSection
-        containerStyle='laptop:col-span-2'
-        aboutSectionLabels={ABOUT_PC_SECTION}
-        layout='split'
-        content={<PC />}
-      />
-    
-    </Fade>
+      <Fade className='tablet:col-span-3'>
+        <AboutSection
+          aboutSectionLabels={ABOUT_PC_SECTION}
+          layout='split'
+          content={<PC />}
+        />
+      </Fade>
+    </motion.div>
   )
 }
 
 interface AboutSectionProps {
-  containerStyle: string,
+  containerStyle?: string,
   aboutSectionLabels: AboutSectionLabels,
   layout: 'stack' | 'split',
   content: React.ReactNode
@@ -66,7 +81,7 @@ function AboutSection({
   content 
 } : AboutSectionProps) {
   return (
-    <section className={`${containerStyle} bg-white/90
+    <section className={`${containerStyle} h-full bg-white/90
       border border-background/10 rounded-2xl p-base`}
     >
       <header className={`flex flex-col gap-xs ${layout === 'split' ? '' : ''}`}>
