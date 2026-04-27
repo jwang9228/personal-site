@@ -29,10 +29,10 @@ export default function About() {
       initial='hidden'
       whileInView='show'
       viewport={{ once: true, amount: 0.2 }}
-      className='grid grid-cols-1 tablet:grid-cols-5
+      className='grid grid-cols-1 tablet:grid-cols-12
         gap-sm layout-px layout-py-about'
     >
-      <Fade className='tablet:col-span-3'>
+      <Fade className='tablet:col-span-7'>
         <AboutSection
           aboutSectionLabels={ABOUT_ME_SECTION}
           layout='split'
@@ -40,7 +40,7 @@ export default function About() {
         />
       </Fade>
       
-      <Fade className='tablet:col-span-2'>
+      <Fade className='tablet:col-span-5'>
         <AboutSection
           aboutSectionLabels={ABOUT_GAMES_SECTION}
           layout='stack'
@@ -48,7 +48,7 @@ export default function About() {
         />
       </Fade>
 
-      <Fade className='tablet:col-span-2'>
+      <Fade className='tablet:col-span-5'>
         <AboutSection 
           aboutSectionLabels={ABOUT_ACTIVE_SECTION}
           layout='stack'
@@ -56,7 +56,7 @@ export default function About() {
         />
       </Fade>
 
-      <Fade className='tablet:col-span-3'>
+      <Fade className='tablet:col-span-7'>
         <AboutSection
           aboutSectionLabels={ABOUT_PC_SECTION}
           layout='split'
