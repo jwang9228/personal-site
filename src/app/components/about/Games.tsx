@@ -27,23 +27,22 @@ export default function Games() {
           />
           <hgroup className='flex items-baseline gap-1.5'>
             <h3 className='leading-none'>{MAIN_GAME}</h3>
-            <h4 className='text-xs text-background/60 leading-none'>
+            <h4 className='text-xs text-background/65 leading-none'>
               {MAIN_GAME_TAG}
             </h4>
           </hgroup>
         </div>
-        <time className='text-xs text-accent-dark/80
-          font-mono font-medium translate-y-0.5'>
+        <time className='text-xs text-accent-dark/70
+          font-mono translate-y-0.5'>
             [{queueTime}]
         </time>
       </div>
-
       <ol className='flex flex-wrap gap-x-base gap-y-sm'>
         {GAMES.map(game => (
           <li 
             key={game}
-            className='text-xs text-background/80 rounded-full
-              bg-background/5 px-sm py-xs'
+            className='text-xs text-background/70 font-normal rounded-full
+              bg-background/6 px-sm py-xs'
           >
             {game}
           </li>

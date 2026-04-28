@@ -20,8 +20,8 @@ export default function Active() {
         {ACTIVE_ACTIVITIES.map(activity => (
           <li
             key={activity}
-            className='text-xs text-background/80 rounded-full
-              bg-background/5 px-sm py-xs'
+            className='text-xs text-background/70 font-normal rounded-full
+              bg-background/6 px-sm py-xs'
           >
             {activity}
           </li>

@@ -8,11 +8,11 @@ export default function Footer() {
   const { handleNavClick } = useNavClick();
 
   return (
-    <footer className='flex flex-col gap-lg layout-px layout-py'>
+    <footer className='flex flex-col gap-xl layout-px layout-py'>
       <div className='grid grid-cols-2'>
         {FOOTER_NAV.map(footerSection => (
           <section key={footerSection.sectionLabel} className='flex flex-col gap-base'>
-            <span className='text-xs text-background/55 font-medium uppercase'>
+            <span className='text-xs text-background/55 uppercase'>
               {footerSection.sectionLabel}
             </span>
             <nav className='flex flex-col gap-sm w-fit'>
@@ -23,13 +23,13 @@ export default function Footer() {
                   target={footerSection.isExternal ? '_blank' : undefined}
                   rel={footerSection.isExternal ? 'noopener noreferrer' : undefined}
                   onClick={footerSection.isExternal ? undefined : (e) => handleNavClick(e, link.label)}
-                  className='group flex items-center gap-sm text-background/85
+                  className='group flex items-center gap-sm text-sm text-background/70
                     hover:text-accent-dark transition-colors duration-300 lowercase'
                 >
                   {link.label}
                   {footerSection.isExternal &&
                     <RiArrowRightUpLine className='translate-y-xxs text-lg opacity-75
-                      group-hover:opacity-100 transition-opacity duration-300'/>
+                      group-hover:opacity-90 transition-opacity duration-300'/>
                   }
                 </Link>
               ))}
@@ -37,7 +37,7 @@ export default function Footer() {
           </section>
         ))}
       </div>
-      <span className='text-xs text-background/55 font-medium uppercase'>
+      <span className='text-xs text-background/55 font-medium'>
         {COPYRIGHT}
       </span>
     </footer>

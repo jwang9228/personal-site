@@ -85,10 +85,10 @@ function AboutSection({
       border border-background/10 rounded-2xl p-base`}
     >
       <header className={`flex flex-col gap-xs ${layout === 'split' ? '' : ''}`}>
-        <p className='text-xs text-background/70 font-medium uppercase'>
+        <p className='text-xs text-background/70 uppercase'>
           {aboutSectionLabels.header}
         </p>
-        <h3 className='text-xl text-background/85 font-accent'>
+        <h3 className='text-xl text-background/80 font-accent'>
           {aboutSectionLabels.title}
         </h3>
       </header>
