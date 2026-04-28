@@ -22,10 +22,10 @@ export default function PC() {
                 >
                   <span className='text-sm text-background/80'>{values.value}</span>
                   {values.detail && (
-                    <div className='flex gap-x-1.5 text-xs font-mono text-background/45 uppercase'>
+                    <span className='flex gap-x-1.5 text-xs font-mono text-primary-muted'>
                       <span>//</span>
                       <span>{values.detail}</span>
-                    </div>
+                    </span>
                   )}
                 </p>
               ))}

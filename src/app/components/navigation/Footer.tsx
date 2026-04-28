@@ -8,8 +8,9 @@ export default function Footer() {
   const { handleNavClick } = useNavClick();
 
   return (
-    <footer className='flex flex-col gap-xl layout-px layout-py'>
-      <div className='grid grid-cols-2'>
+    <footer className='flex flex-col tablet:items-center border-t border-primary-muted/25
+      gap-xl layout-px layout-py'>
+      <div className='grid grid-cols-2 tablet:gap-12'>
         {FOOTER_NAV.map(footerSection => (
           <section key={footerSection.sectionLabel} className='flex flex-col gap-base'>
             <span className='text-xs text-background/55 uppercase'>
@@ -37,7 +38,7 @@ export default function Footer() {
           </section>
         ))}
       </div>
-      <span className='text-xs text-background/55 font-medium'>
+      <span className='text-xs text-background/55 tablet:text-center'>
         {COPYRIGHT}
       </span>
     </footer>

@@ -30,7 +30,7 @@ export default function About() {
       whileInView='show'
       viewport={{ once: true, amount: 0.2 }}
       className='grid grid-cols-1 tablet:grid-cols-12
-        gap-sm layout-px layout-py-about'
+        gap-1.5 layout-px-about layout-py'
     >
       <Fade className='tablet:col-span-7'>
         <AboutSection
@@ -82,7 +82,7 @@ function AboutSection({
 } : AboutSectionProps) {
   return (
     <section className={`${containerStyle} h-full bg-white/90
-      border border-background/10 rounded-2xl p-base`}
+      border border-primary-muted/35 rounded-2xl p-base`}
     >
       <header className={`flex flex-col gap-xs ${layout === 'split' ? '' : ''}`}>
         <p className='text-xs text-background/70 uppercase'>

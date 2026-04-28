@@ -98,8 +98,8 @@
   @apply px-6;
 }
 
-@utility layout-py-about {
-  @apply pt-8 pb-4;
+@utility layout-px-about {
+  @apply px-5;
 }
 
 @utility layout-py {

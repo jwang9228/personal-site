@@ -1,4 +1,5 @@
 import { ACTIVE_INTENSITY_HEATMAP, ACTIVE_ACTIVITIES } from '@/app/lib/constants';
+import PillList from '../utils/PillList';
 
 export default function Active() {
   return (
@@ -16,17 +17,7 @@ export default function Active() {
           </li>
         ))}
       </ol>
-      <ol className='flex flex-wrap gap-x-base gap-y-sm'>
-        {ACTIVE_ACTIVITIES.map(activity => (
-          <li
-            key={activity}
-            className='text-xs text-background/70 font-normal rounded-full
-              bg-background/6 px-sm py-xs'
-          >
-            {activity}
-          </li>
-        ))}
-      </ol>
+      <PillList items={ACTIVE_ACTIVITIES} />
     </section>
   )
 }

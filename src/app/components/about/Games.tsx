@@ -3,6 +3,7 @@ import {
 } from '@/app/lib/constants';
 import { motion } from 'motion/react';
 import { useQueueTimer } from '../utils/useQueueTimer';
+import PillList from '../utils/PillList';
 
 export default function Games() {
   const queueTime = useQueueTimer();
@@ -37,17 +38,7 @@ export default function Games() {
             [{queueTime}]
         </time>
       </div>
-      <ol className='flex flex-wrap gap-x-base gap-y-sm'>
-        {GAMES.map(game => (
-          <li 
-            key={game}
-            className='text-xs text-background/70 font-normal rounded-full
-              bg-background/6 px-sm py-xs'
-          >
-            {game}
-          </li>
-        ))}
-      </ol>
+      <PillList items={GAMES} />
     </section>
   )
 }

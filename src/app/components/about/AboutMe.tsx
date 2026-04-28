@@ -6,7 +6,7 @@ export default function AboutMe() {
       <p className='text-sm text-background/90 leading-relaxed'>
         {ABOUT_ME_STATEMENT}
       </p>
-      <p className='text-xs text-background/50 font-mono 
+      <p className='text-xs text-primary-muted font-mono 
         uppercase tracking-widest'>
         {ABOUT_ME_LOCATION}
       </p>
