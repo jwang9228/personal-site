@@ -3,7 +3,7 @@ import { PC_PARTS } from '@/app/lib/constants'
 export default function PC() {
   return (
     <section className='flex flex-col w-full'>
-      <ol className='flex flex-col gap-y-sm'>
+      <ul className='flex flex-col gap-y-sm'>
         {PC_PARTS.map(pcPart => (
           <li 
             key={pcPart.partName}
@@ -32,7 +32,7 @@ export default function PC() {
             </div>
           </li>
         ))}
-      </ol>
+      </ul>
     </section>
   )
 }

@@ -95,11 +95,11 @@
 }
 
 @utility layout-px {
-  @apply px-6;
+  @apply px-6 max-w-7xl mx-auto w-full;
 }
 
-@utility layout-px-about {
-  @apply px-5;
+@utility layout-x-about {
+  @apply px-5 max-w-7xl mx-auto w-full;
 }
 
 @utility layout-py {
