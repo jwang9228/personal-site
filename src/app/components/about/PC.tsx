@@ -17,7 +17,7 @@ function PartsList({ parts } : { parts: PCPart[] }) {
       {parts.map(pcPart => (
         <li 
           key={pcPart.partName}
-          className='grid grid-cols-3 items-baseline gap-x-lg'
+          className='grid grid-cols-3 items-baseline gap-x-base'
         >
           <p className='col-span-1 text-xs text-background/60 text-right
             uppercase font-mono'>
