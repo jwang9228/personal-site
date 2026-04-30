@@ -9,7 +9,7 @@ export default function Footer() {
 
   return (
     <footer className='flex flex-col tablet:items-center border-t border-primary-muted/25
-      gap-xl layout-py'>
+      gap-lg layout-py'>
       <div className='grid grid-cols-2 tablet:flex tablet:justify-center w-full 
         tablet:gap-24 laptop:gap-32 layout-px'>
         {FOOTER_NAV.map(footerSection => (

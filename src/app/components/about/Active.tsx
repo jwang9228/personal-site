@@ -12,7 +12,7 @@ export default function Active() {
               text-sm font-accent font-medium'
           >
             {dayIntensityMapping.dayLabel}
-            <span className={`block size-1.5 bg-accent-dark rounded-full
+            <span className={`block size-2 bg-accent-dark rounded-full
               ${dayIntensityMapping.intensityClass}`} />
           </li>
         ))}
