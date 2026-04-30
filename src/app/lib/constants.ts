@@ -64,7 +64,7 @@ export const GAMES = [
 ];
 
 /* PC Parts Section */
-interface PCPart {
+export interface PCPart {
   partName: string,
   partValues: PCValue[]
 };
@@ -74,7 +74,7 @@ interface PCValue {
   detail?: string
 }
 
-export const PC_PARTS: PCPart[] = [
+export const BUILD_PARTS: PCPart[] = [
   {partName: 'Case', partValues: [
     {value: 'Fractal Terra', detail: 'Jade'}
   ]},
@@ -83,7 +83,10 @@ export const PC_PARTS: PCPart[] = [
   ]},
   {partName: 'GPU', partValues: [
     {value: 'NVIDIA RTX 5070 Ti'}
-  ]},
+  ]}
+];
+
+export const PERIPHERALS: PCPart[] = [
   {partName: 'Display', partValues: [
     {value: 'MSI 27" QD-OLED', detail: '1440p 360Hz'}
   ]},
@@ -92,7 +95,7 @@ export const PC_PARTS: PCPart[] = [
     {value: 'Finalmouse ULX', detail: 'Aceu'},
     {value: 'GLSSWRKS Polarity'}
   ]}
-];
+]
 
 export const ABOUT_PC_SECTION: AboutSectionLabels = {
   header: 'Optimizing thermals',
