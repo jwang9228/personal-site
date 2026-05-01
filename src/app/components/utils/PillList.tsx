@@ -9,7 +9,7 @@ export default function PillList({ items }: PillListProps) {
         <li
           key={item}
           className='text-xs text-background/70 font-normal rounded-full
-            bg-primary-muted/15 px-3 py-xs select-none'
+            bg-primary-muted/15 px-3 py-xxs select-none'
         >
           {item}
         </li>

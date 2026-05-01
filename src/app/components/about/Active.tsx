@@ -4,7 +4,7 @@ import PillList from '../utils/PillList';
 export default function Active() {
   return (
     <section className='flex flex-col gap-base'>
-      <ul className='flex justify-between px-xs'>
+      <ul className='flex justify-between px-xxs'>
         {ACTIVE_INTENSITY_HEATMAP.map((dayIntensityMapping, i) => (
           <li 
             key={i}

@@ -8,13 +8,15 @@ export default function Hero() {
       className='flex flex-col gap-base layout-px layout-py'
     >
       <section className='flex flex-col text-2xl gap-xs'>
-        <h1 className='flex items-baseline gap-sm'>
-          {MAIN_TITLE}
-          <span className='font-accent font-normal text-primary/85 text-xl'>&</span>
+        <h1 className='flex flex-col gap-xs'>
+          <span className='flex items-baseline gap-sm'>
+            {MAIN_TITLE}
+            <span className='font-accent font-normal text-primary/85 text-xl'>&</span>
+          </span>
+          <span>{SECONDARY_TITLE}</span>
         </h1>
-        <h2>{SECONDARY_TITLE}</h2>
       </section>
-      <h2 className='text-lg text-primary/95'>{CURRENT_POSITION}</h2>
+      <p className='text-lg text-primary/95'>{CURRENT_POSITION}</p>
     </Fade>
   )
 }

@@ -9,9 +9,9 @@ export default function Games() {
   const queueTime = useQueueTimer();
 
   return (
-    <section className='flex flex-col gap-lg'>
-      <div className='flex items-center justify-between pl-xs'>
-        <div className='flex items-center gap-sm'>
+    <section className='flex flex-col gap-base'>
+      <div className='flex items-center justify-between pl-xxs gap-x-sm'>
+        <div className='flex items-center gap-sm min-w-0'>
           <motion.span 
             className='block size-1.5 bg-accent-dark 
               rounded-full translate-y-px'
@@ -26,9 +26,10 @@ export default function Games() {
               ease: 'easeInOut'
             }}
           />
-          <hgroup className='flex items-baseline gap-1.5'>
-            <h3 className='leading-none'>{MAIN_GAME}</h3>
-            <h4 className='text-xs text-background/65 leading-none'>
+          <hgroup className='flex items-baseline gap-1.5 min-w-0'>
+            <h3 className='leading-none shrink-0'>{MAIN_GAME}</h3>
+            <h4 className='text-xs text-background/65 
+              truncate leading-none'>
               {MAIN_GAME_TAG}
             </h4>
           </hgroup>

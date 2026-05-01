@@ -15,6 +15,7 @@ export interface FooterSection {
 }
 
 export const HEADER_HEIGHT = 61;
+export const SCROLL_OFFSET = 14;
 
 export const HEADER_NAV: NavItem[] = [
   { label: WORK_LABEL, href: '/' },
@@ -52,7 +53,8 @@ export function useNavClick() {
       const el = document.getElementById(ABOUT_LABEL);
       if (!el) return;
       window.scrollTo({ 
-        top: el.getBoundingClientRect().top + window.scrollY - HEADER_HEIGHT, 
+        top: el.getBoundingClientRect().top + window.scrollY 
+          - HEADER_HEIGHT + SCROLL_OFFSET, 
         behavior: 'smooth' 
       });
     }

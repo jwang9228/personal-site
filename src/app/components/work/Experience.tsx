@@ -1,7 +1,7 @@
 import { EXPERIENCES } from '@/app/lib/constants';
 import Image from 'next/image';
 import Link from 'next/link';
-import { RiArrowRightUpLine } from 'react-icons/ri';
+import { PiArrowUpRight } from 'react-icons/pi';
 
 export default function Experience() {
   return (
@@ -25,8 +25,8 @@ export default function Experience() {
                 transition-colors group-hover:text-accent'
               >
                 {experience.company}
-                <RiArrowRightUpLine className='translate-y-xxs 
-                  text-primary/85 group-hover:text-accent' />
+                <PiArrowUpRight className='translate-y-xxs 
+                  text-primary/80 group-hover:text-accent' />
               </h3>
               <p className='text-xs text-primary/80'>
                 {experience.location}

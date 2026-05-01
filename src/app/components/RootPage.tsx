@@ -44,7 +44,11 @@ export default function RootPage() {
             <Hero />
             <Work />
             <Projects />
-            <div ref={lightModeRef} id={ABOUT_LABEL} className='text-background bg-primary'>
+            <div 
+              ref={lightModeRef} id={ABOUT_LABEL} 
+              className='text-background bg-primary 
+                rounded-t-2xl tablet:rounded-t-3xl laptop:rounded-t-4xl'
+            >
               <About />
               <Footer />
             </div>

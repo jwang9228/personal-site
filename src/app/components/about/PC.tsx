@@ -28,11 +28,15 @@ function PartsList({ parts } : { parts: PCPart[] }) {
               <p 
                 key={values.value}
                 className='flex flex-wrap 
-                  items-baseline gap-x-2 gap-y-xs'
+                  items-baseline gap-x-2 gap-y-xxs'
               >
-                <span className='text-sm text-background/80'>{values.value}</span>
+                <span className='text-sm text-background/80'>
+                  {values.value}
+                </span>
                 {values.detail && (
-                  <span className='flex gap-x-1.5 text-xs font-mono text-primary-muted'>
+                  <span className='flex gap-x-1.5 text-xs 
+                    font-mono text-primary-muted'
+                  >
                     <span>//</span>
                     <span>{values.detail}</span>
                   </span>

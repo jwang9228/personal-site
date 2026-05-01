@@ -1,5 +1,5 @@
 export const DEV_NAME = 'Justin Wang';
-export const COPYRIGHT = `\u00A9 ${new Date().getFullYear()} ${DEV_NAME} - All rights reserved.`;
+export const COPYRIGHT = `\u00A9 ${new Date().getFullYear()} ${DEV_NAME} - All rights reserved`;
 export const MAIN_TITLE = 'Full Stack Developer';
 export const SECONDARY_TITLE = 'Design Enthusiast';
 export const CURRENT_POSITION = 'Software Engineer at UIC Payments';
@@ -115,7 +115,7 @@ export const PERIPHERALS: PCPart[] = [
     {value: 'MSI 27" QD-OLED', detail: '1440p 360Hz'}
   ]},
   {partName: 'Input', partValues: [
-    {value: 'Razer Huntsman V3 Pro Mini'},
+    {value: 'Razer Huntsman V3 Pro', detail: 'Mini 60%'},
     {value: 'Finalmouse ULX', detail: 'Aceu'},
     {value: 'GLSSWRKS Polarity'}
   ]}
