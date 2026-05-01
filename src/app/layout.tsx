@@ -5,7 +5,7 @@ import {
 } from 'next/font/google';
 import './globals.css';
 import { Metadata, Viewport } from 'next';
-import { ChildrenProps } from './lib/constants';
+import { ReactNode } from 'react';
 
 const lora = Lora({ 
   subsets: ['latin'],
@@ -39,7 +39,7 @@ export const viewport: Viewport = {
   initialScale: 1,
 }
 
-export default function Layout({ children } : ChildrenProps) {
+export default function Layout({ children } : { children: ReactNode }) {
   return (
     <html 
       lang='en' 

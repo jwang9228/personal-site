@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { TECHSTACK_LAYER_NAV, TechstackLayer } from '@/app/lib/navigation';
 import Techstack from './Techstack';
+import Experience from './Experience';
 
 export default function Work() {
   const [activeLayer, setActiveLayer] = useState<TechstackLayer>(
@@ -9,8 +10,9 @@ export default function Work() {
   );
 
   return (
-    <section>
-      <Techstack activeLayer={activeLayer} setActiveLayer={setActiveLayer} />
+    <section className='layout-px layout-py'>
+      <Experience />
+      { /* <Techstack activeLayer={activeLayer} setActiveLayer={setActiveLayer} /> */ }
     </section>
   );
 };

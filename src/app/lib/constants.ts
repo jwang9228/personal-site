@@ -1,11 +1,35 @@
-import { ReactNode } from 'react';
-
 export const DEV_NAME = 'Justin Wang';
 export const COPYRIGHT = `\u00A9 ${new Date().getFullYear()} ${DEV_NAME} - All rights reserved.`;
 export const MAIN_TITLE = 'Full Stack Developer';
 export const SECONDARY_TITLE = 'Design Enthusiast';
 export const CURRENT_POSITION = 'Software Engineer at UIC Payments';
 
+/* Experience Interfaces */
+interface ExperienceSection {
+  company: string, 
+  logo: string,
+  link: string, 
+  location: string,
+  industry: string
+};
+
+interface Position {
+  title: string,
+  duration: string,
+  skills: string[]
+}
+
+export const EXPERIENCES: ExperienceSection[] = [
+  {
+    company: 'UIC Payments',
+    logo: 'UIC.jpg',
+    link: 'https://uicpaymentsinc.com/',
+    location: 'Fremont, CA', 
+    industry: 'Fintech',
+  }
+];
+
+/* About Section Interface */
 export interface AboutSectionLabels {
   header: string,
   title: string
@@ -22,7 +46,7 @@ export const ABOUT_ME_STATEMENT = [
   "I'm always chasing that sweet spot where solid logic meets clean design."
 ].join(' ');
 
-export const ABOUT_ME_LOCATION = 'BASED // Pleasanton, CA [PT]'
+export const ABOUT_ME_LOCATION = 'BASED // Pleasanton, CA [PT]';
 
 /* Active Section */
 export const ABOUT_ACTIVE_SECTION: AboutSectionLabels = {
@@ -72,7 +96,7 @@ export interface PCPart {
 interface PCValue {
   value: string,
   detail?: string
-}
+};
 
 export const BUILD_PARTS: PCPart[] = [
   {partName: 'Case', partValues: [
@@ -95,13 +119,9 @@ export const PERIPHERALS: PCPart[] = [
     {value: 'Finalmouse ULX', detail: 'Aceu'},
     {value: 'GLSSWRKS Polarity'}
   ]}
-]
+];
 
 export const ABOUT_PC_SECTION: AboutSectionLabels = {
   header: 'Optimizing thermals',
   title: 'Surviving RAMageddon'
-};
-
-export interface ChildrenProps {
-  children: ReactNode;
 };
