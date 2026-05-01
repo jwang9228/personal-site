@@ -14,13 +14,17 @@ export default function Experience() {
             rel='noopener noreferrer'
             className='group flex items-center gap-5'
           >
-            <Image
-              src={`/experience/${experience.logo}`} 
-              alt={`${experience.company}`}
-              width={48}
-              height={48}
-              className='rounded-lg' />
-            <div className='flex flex-col gap-y-1.5'>
+            <div className='flex items-center justify-center shrink-0 size-13
+              bg-white rounded-xl overflow-hidden'
+            >
+              <Image
+                src={`/experience/${experience.logo}`} 
+                alt={`${experience.company}`}
+                width={48}
+                height={48}
+                className='object-contain size-full p-1.5' />
+            </div>
+            <div className='flex flex-col gap-y-2'>
               <h3 className='flex items-center gap-x-2 text-lg 
                 transition-colors group-hover:text-accent'
               >
