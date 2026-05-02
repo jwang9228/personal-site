@@ -13,7 +13,7 @@ export default function Games() {
       <div className='flex items-center justify-between pl-xxs gap-x-sm'>
         <div className='flex items-center gap-sm min-w-0'>
           <motion.span 
-            className='block size-1.5 bg-accent-dark 
+            className='block size-1.5 shrink-0 bg-accent-dark 
               rounded-full translate-y-px'
             animate={{
               opacity: [0.25, 1],

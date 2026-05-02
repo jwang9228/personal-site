@@ -10,7 +10,8 @@ export default function Work() {
   );
 
   return (
-    <section className='layout-px layout-py'>
+    <section className='flex flex-col gap-y-6 layout-px layout-py'>
+      <p className='text-xs text-primary/85 uppercase'>Experience</p>
       <Experience />
       { /* <Techstack activeLayer={activeLayer} setActiveLayer={setActiveLayer} /> */ }
     </section>

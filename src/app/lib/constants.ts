@@ -5,19 +5,21 @@ export const SECONDARY_TITLE = 'Design Enthusiast';
 export const CURRENT_POSITION = 'Software Engineer at UIC Payments';
 
 /* Experience Interfaces */
-interface ExperienceSection {
+export interface ExperienceSection {
   company: string, 
   logo: string,
   link: string, 
   location: string,
-  industry: string
+  industry: string,
+  positions: Position[]
 };
 
-interface Position {
+export interface Position {
   title: string,
   duration: string,
+  description: string,
   skills: string[]
-}
+};
 
 export const EXPERIENCES: ExperienceSection[] = [
   {
@@ -26,6 +28,14 @@ export const EXPERIENCES: ExperienceSection[] = [
     link: 'https://uicpaymentsinc.com/',
     location: 'Fremont, CA', 
     industry: 'Fintech',
+    positions: [
+      {
+        title: 'Software Engineer',
+        duration: "Oct 2025 - Present",
+        description: 'Sample job description',
+        skills: ['Android', 'Kotlin', 'Jetpack Compose']
+      }
+    ]
   }
 ];
 
