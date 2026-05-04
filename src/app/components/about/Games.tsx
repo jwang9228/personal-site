@@ -39,7 +39,7 @@ export default function Games() {
             [{queueTime}]
         </time>
       </div>
-      <PillList items={GAMES} />
+      <PillList items={GAMES} lightVariant />
     </section>
   )
 }

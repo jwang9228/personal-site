@@ -30,7 +30,7 @@ export default function About() {
       whileInView='show'
       viewport={{ once: true, amount: 0.2 }}
       className='grid grid-cols-1 tablet:grid-cols-12
-        gap-2 layout-x-about layout-py'
+        gap-sm tablet:gap-2 layout-x-about layout-py'
     >
       <Fade className='tablet:col-span-7'>
         <AboutSection

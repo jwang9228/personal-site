@@ -6,13 +6,16 @@ import PillList from '../utils/PillList';
 
 export default function Experience() {
   return (
-    <ul className='flex'>
+    <ul className='flex flex-col gap-y-xl'>
       {EXPERIENCES.map(experience => (
-        <div className='flex flex-col gap-base w-full'>
+        <div 
+          key={experience.company} 
+          className='flex flex-col gap-base w-full'
+        >
           <ExperienceHeader experience={experience} />
           <ul className='flex flex-col'>
             {experience.positions.map(position => (
-              <PositionSection position={position} />
+              <PositionSection key={position.duration} position={position} />
             ))}
           </ul>
         </div>
@@ -40,18 +43,16 @@ function ExperienceHeader({ experience } : { experience: ExperienceSection} ) {
             height={48}
             className='object-contain size-full p-1.5' />
         </div>
-        <div className='flex flex-col gap-y-2'>
-          <h3 className='flex items-center gap-x-2 text-lg 
+        <div className='flex flex-col gap-y-1.5'>
+          <h3 className='flex items-center gap-x-1.5 text-lg 
             transition-colors group-hover:text-accent'
           >
             {experience.company}
             <PiArrowUpRight className='translate-y-xxs 
-              text-primary/80 group-hover:text-accent' />
+              text-primary/70 group-hover:text-accent' />
           </h3>
           <p className='text-xs text-primary/80'>
             {experience.location}
-            <span className='inline-block -translate-y-xxs mx-2 text-primary-muted'>•</span>
-            {experience.industry}
           </p>
         </div>
       </Link>
@@ -71,7 +72,7 @@ function PositionSection({ position } : { position: Position }) {
           <span>{position.duration}</span>
         </span>
       </hgroup>
-      <p className='text-sm text-primary/85'>{position.description}</p>
+      <p className='text-sm text-primary/85 leading-relaxed'>{position.description}</p>
       <PillList items={position.skills} />
     </section>
   )

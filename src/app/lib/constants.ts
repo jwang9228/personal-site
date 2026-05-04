@@ -10,7 +10,6 @@ export interface ExperienceSection {
   logo: string,
   link: string, 
   location: string,
-  industry: string,
   positions: Position[]
 };
 
@@ -26,14 +25,43 @@ export const EXPERIENCES: ExperienceSection[] = [
     company: 'UIC Payments',
     logo: 'UIC.jpg',
     link: 'https://uicpaymentsinc.com/',
-    location: 'Fremont, CA', 
-    industry: 'Fintech',
+    location: 'Fremont, CA',
     positions: [
       {
         title: 'Software Engineer',
-        duration: "Oct 2025 - Present",
-        description: 'Sample job description',
-        skills: ['Android', 'Kotlin', 'Jetpack Compose']
+        duration: 'Oct 2025 - Present',
+        description: [
+          "I engineer secure, high-performance Point-of-Sale (POS) systems for native Android.",
+          "Currently, I am integrating UIC's payment engine directly with NEXGO hardware terminals,",
+          'delivering fault-tolerant transaction flows for reliable daily commerce.'
+        ].join(' '),
+        skills: ['Android (Kotlin)', 'Jetpack (Compose & Room)', 'NEXGO SDK']
+      }
+    ]
+  },
+  {
+    company: 'Agrofocal Technologies',
+    logo: 'Agrofocal.png',
+    link: 'https://agrofocal.ai',
+    location: 'San Jose, CA',
+    positions: [
+      {
+        title: 'Software Developer',
+        duration: 'Jan 2024 - Oct 2025',
+        description: '',
+        skills: []
+      },
+      {
+        title: 'Software Developer Intern',
+        duration: 'Jan 2023 - Dec 2023',
+        description: '',
+        skills: []
+      },
+      {
+        title: 'Software Developer Co-op',
+        duration: 'Jul 2022 - Dec 2022',
+        description: '',
+        skills: []
       }
     ]
   }

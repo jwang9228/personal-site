@@ -17,7 +17,7 @@ export default function Active() {
           </li>
         ))}
       </ul>
-      <PillList items={ACTIVE_ACTIVITIES} />
+      <PillList items={ACTIVE_ACTIVITIES} lightVariant />
     </section>
   )
 }
