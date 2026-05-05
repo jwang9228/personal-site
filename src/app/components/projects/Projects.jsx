@@ -20,7 +20,11 @@ export default function Projects() {
   ];
 
   return (
+    <>
+    {/*
     <Fade type='up' as='div' inView className='layout-px layout-py'>
     </Fade>
+    */}
+    </>
   )
 }

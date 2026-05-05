@@ -17,7 +17,12 @@ export interface Position {
   title: string,
   duration: string,
   description: string,
-  skills: string[]
+  skills: Skill[]
+};
+
+export interface Skill {
+  skill: string,
+  detail?: string
 };
 
 export const EXPERIENCES: ExperienceSection[] = [
@@ -35,7 +40,11 @@ export const EXPERIENCES: ExperienceSection[] = [
           "Currently, I am integrating UIC's payment engine directly with NEXGO hardware terminals,",
           'delivering fault-tolerant transaction flows for reliable daily commerce.'
         ].join(' '),
-        skills: ['Android (Kotlin)', 'Jetpack (Compose & Room)', 'NEXGO SDK']
+        skills: [
+          { skill: 'Android', detail: 'Kotlin' },
+          { skill: 'Jetpack', detail: 'Compose & Room' },
+          { skill: 'NEXGO SDK' }
+        ]
       }
     ]
   },
@@ -48,20 +57,38 @@ export const EXPERIENCES: ExperienceSection[] = [
       {
         title: 'Software Developer',
         duration: 'Jan 2024 - Oct 2025',
-        description: '',
-        skills: []
+        description: [
+          'Transitioned to full-stack development,',
+          'architecting React frontends and Flask APIs',
+          'integrated with AWS and MongoDB.'
+        ].join(' '),
+        skills: [
+          { skill: 'React', detail: 'Vite & Tailwind, Esri ArcGIS' },
+          { skill: 'Python', detail: 'Flask & AWS boto3, PyMongo' }
+        ]
       },
       {
         title: 'Software Developer Intern',
         duration: 'Jan 2023 - Dec 2023',
-        description: '',
-        skills: []
+        description: [
+          'Focused on computer vision infrastructure,',
+          'optimizing PyTorch models with TensorRT for high-performance inference.'
+        ].join(' '),
+        skills: [
+          { skill: 'Python', detail: 'OpenCV, PyTorch & TensorRT' }
+        ]
       },
       {
         title: 'Software Developer Co-op',
         duration: 'Jul 2022 - Dec 2022',
-        description: '',
-        skills: []
+        description: [
+          'Developed native Android camera application,',
+          'leveraging OpenGL, Camera2 API, and OpenCV',
+          'for real-time RTSP video streaming.'
+        ].join(' '),
+        skills: [
+          { skill: 'Java', detail: 'OpenGL, Camera2 API, OpenCV' }
+        ]
       }
     ]
   }

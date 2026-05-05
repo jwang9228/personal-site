@@ -2,25 +2,25 @@ import { EXPERIENCES, ExperienceSection, Position } from '@/app/lib/constants';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PiArrowUpRight } from 'react-icons/pi';
-import PillList from '../utils/PillList';
+import SkillsList from './SkillsList';
 
 export default function Experience() {
   return (
-    <ul className='flex flex-col gap-y-xl'>
+    <div className='flex flex-col gap-y-16'>
       {EXPERIENCES.map(experience => (
-        <div 
+        <div
           key={experience.company} 
           className='flex flex-col gap-base w-full'
         >
           <ExperienceHeader experience={experience} />
-          <ul className='flex flex-col'>
+          <ul className='flex flex-col gap-y-lg'>
             {experience.positions.map(position => (
               <PositionSection key={position.duration} position={position} />
             ))}
           </ul>
         </div>
       ))}
-    </ul>
+    </div>
   )
 }
 
@@ -66,14 +66,14 @@ function PositionSection({ position } : { position: Position }) {
       <hgroup className='flex flex-col tablet:flex-row items-baseline 
         gap-x-4 gap-y-xs font-mono'
       >
-        <h3>{position.title}</h3>
+        <h3 className='font-medium tracking-wider'>{position.title}</h3>
         <span className='flex gap-x-1.5 text-xs text-primary/80'>
           <span className='hidden tablet:block'>//</span>
           <span>{position.duration}</span>
         </span>
       </hgroup>
       <p className='text-sm text-primary/85 leading-relaxed'>{position.description}</p>
-      <PillList items={position.skills} />
+      <SkillsList skills={position.skills} /> 
     </section>
   )
 }
