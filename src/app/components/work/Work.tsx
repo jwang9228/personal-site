@@ -14,7 +14,8 @@ export default function Work() {
         <p className='text-xs text-primary/85 uppercase'>
           Experience
         </p>
-        <div className='h-px laptop:h-[2px] w-full bg-linear-to-r from-primary/30 via-primary/25 to-transparent' />
+        <div className='h-px laptop:h-[2px] w-full 
+          bg-linear-to-r from-primary/30 via-primary/25 to-primary/15 tablet:to-primary/5' />
       </div>
       <Experience />
     </section>

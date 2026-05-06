@@ -1,7 +1,7 @@
 import { EXPERIENCES, ExperienceSection, Position } from '@/app/lib/constants';
+import { PiArrowUpRight } from 'react-icons/pi';
 import Image from 'next/image';
 import Link from 'next/link';
-import { PiArrowUpRight } from 'react-icons/pi';
 import SkillsList from './SkillsList';
 
 export default function Experience() {
@@ -62,7 +62,12 @@ function ExperienceHeader({ experience } : { experience: ExperienceSection} ) {
 
 function PositionSection({ position } : { position: Position }) {
   return (
-    <section className='flex flex-col gap-y-base'>
+    <section className='relative flex flex-col gap-y-base pl-7'>
+      <div className='absolute left-xxs top-3 bottom-0 flex flex-col items-center w-1.5'>
+        <div className='size-1.5 rounded-full bg-primary/60 shrink-0' />
+        <div className='w-px h-full 
+          bg-linear-to-b from-primary-muted/50 via primary-muted/50 to-primary-muted/25' />
+      </div>
       <hgroup className='flex flex-col tablet:flex-row items-baseline 
         gap-x-4 gap-y-xs font-mono'
       >

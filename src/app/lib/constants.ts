@@ -10,7 +10,8 @@ export interface ExperienceSection {
   logo: string,
   link: string, 
   location: string,
-  positions: Position[]
+  positions: Position[],
+  showcase?: React.ReactNode;
 };
 
 export interface Position {
@@ -41,8 +42,7 @@ export const EXPERIENCES: ExperienceSection[] = [
           'delivering fault-tolerant transaction flows for reliable daily commerce.'
         ].join(' '),
         skills: [
-          { skill: 'Android', detail: 'Kotlin' },
-          { skill: 'Jetpack', detail: 'Compose & Room' },
+          { skill: 'Android', detail: 'Kotlin & Jetpack Compose' },
           { skill: 'NEXGO SDK' }
         ]
       }
@@ -63,8 +63,9 @@ export const EXPERIENCES: ExperienceSection[] = [
           'integrated with AWS and MongoDB.'
         ].join(' '),
         skills: [
-          { skill: 'React', detail: 'Vite & Tailwind, Esri ArcGIS' },
-          { skill: 'Python', detail: 'Flask & AWS boto3, PyMongo' }
+          { skill: 'Web Apps', detail: 'React & Tailwind' },
+          { skill: 'Cloud Server', detail: 'Flask & AWS boto3' },
+          { skill: 'Database', detail: 'MongoDB' },
         ]
       },
       {
@@ -75,7 +76,7 @@ export const EXPERIENCES: ExperienceSection[] = [
           'optimizing PyTorch models with TensorRT for high-performance inference.'
         ].join(' '),
         skills: [
-          { skill: 'Python', detail: 'OpenCV, PyTorch & TensorRT' }
+          { skill: 'ML', detail: 'OpenCV (Python) & TensorRT' }
         ]
       },
       {
@@ -84,10 +85,11 @@ export const EXPERIENCES: ExperienceSection[] = [
         description: [
           'Developed native Android camera application,',
           'leveraging OpenGL, Camera2 API, and OpenCV',
-          'for real-time RTSP video streaming.'
+          'for real-time RTSP video streaming and inference.'
         ].join(' '),
         skills: [
-          { skill: 'Java', detail: 'OpenGL, Camera2 API, OpenCV' }
+          { skill: 'Android', detail: 'OpenGL, Camera2 API' },
+          { skill: 'ML', detail: 'OpenCV (Java)' }
         ]
       }
     ]

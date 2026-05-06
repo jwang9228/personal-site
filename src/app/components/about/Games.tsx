@@ -26,9 +26,9 @@ export default function Games() {
               ease: 'easeInOut'
             }}
           />
-          <hgroup className='flex items-baseline gap-1.5 min-w-0'>
+          <hgroup className='flex items-baseline gap-2 min-w-0'>
             <h3 className='leading-none shrink-0'>{MAIN_GAME}</h3>
-            <h4 className='text-xs text-background/65 
+            <h4 className='text-micro text-background/60 
               truncate leading-none'>
               {MAIN_GAME_TAG}
             </h4>
