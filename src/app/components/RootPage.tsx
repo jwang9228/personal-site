@@ -36,7 +36,7 @@ export default function RootPage() {
     setIsLightMode(Math.round(el.getBoundingClientRect().top) <= HEADER_HEIGHT);
   });
 
-  /* Update browser's address bar depending on dark/light mode */
+  /* Update browser's address bar depending on dark/light mode. NOTE: Removed for Safari 26.0 */
   useEffect(() => {
     const root = document.documentElement;
     const themeColor = isLightMode

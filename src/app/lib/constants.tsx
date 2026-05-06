@@ -1,3 +1,5 @@
+import UIC from '../components/work/UIC';
+
 export const DEV_NAME = 'Justin Wang';
 export const COPYRIGHT = `\u00A9 ${new Date().getFullYear()} ${DEV_NAME} - All rights reserved`;
 export const MAIN_TITLE = 'Full Stack Developer';
@@ -10,14 +12,14 @@ export interface ExperienceSection {
   logo: string,
   link: string, 
   location: string,
-  positions: Position[],
-  showcase?: React.ReactNode;
+  positions: Position[]
 };
 
 export interface Position {
   title: string,
   duration: string,
   description: string,
+  showcase?: React.ReactNode;
   skills: Skill[]
 };
 
@@ -41,6 +43,7 @@ export const EXPERIENCES: ExperienceSection[] = [
           "Currently, I am integrating UIC's payment engine directly with NEXGO hardware terminals,",
           'delivering fault-tolerant transaction flows for reliable daily commerce.'
         ].join(' '),
+        showcase: <UIC />,
         skills: [
           { skill: 'Android', detail: 'Kotlin & Jetpack Compose' },
           { skill: 'NEXGO SDK' }

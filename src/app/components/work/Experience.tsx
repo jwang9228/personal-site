@@ -78,6 +78,7 @@ function PositionSection({ position } : { position: Position }) {
         </span>
       </hgroup>
       <p className='text-sm text-primary/85 leading-relaxed'>{position.description}</p>
+      <>{position.showcase}</>
       <SkillsList skills={position.skills} /> 
     </section>
   )
