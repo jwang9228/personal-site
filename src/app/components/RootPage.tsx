@@ -1,5 +1,5 @@
 'use client';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { useMotionValueEvent, useScroll, Variants } from 'motion/react';
 import { LightModeContext } from '../lib/context';
 import { motion } from 'motion/react';
@@ -29,11 +29,27 @@ export default function RootPage() {
   const lightModeRef = useRef<HTMLDivElement>(null);
   const [isLightMode, setIsLightMode] = useState(false);
 
+  /* Set dark/light mode for header conditional styling depending on scroll position */
   useMotionValueEvent(scrollY, 'change', () => {
     const el = lightModeRef.current;
     if (!el) return;
     setIsLightMode(Math.round(el.getBoundingClientRect().top) <= HEADER_HEIGHT);
   });
+
+  /* Update browser's address bar depending on dark/light mode */
+  useEffect(() => {
+    const root = document.documentElement;
+    const themeColor = isLightMode
+      ? getComputedStyle(root).getPropertyValue('--color-primary').trim()
+      : getComputedStyle(root).getPropertyValue('--color-background').trim();
+    let metaTag = document.querySelector('meta[name="theme-color"]');
+    if (!metaTag) {
+      metaTag = document.createElement('meta');
+      metaTag.setAttribute('name', 'theme-color');
+      document.head.appendChild(metaTag);
+    }
+    metaTag.setAttribute('content', themeColor);
+  }, [isLightMode]);
 
   return (
     <LightModeContext.Provider value={isLightMode}>
