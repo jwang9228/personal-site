@@ -6,7 +6,7 @@ import { motion } from 'motion/react';
 import { ABOUT_LABEL, HEADER_HEIGHT } from '../lib/navigation';
 import HeaderNav from './navigation/HeaderNav';
 import Hero from './hero/Hero';
-import Work from './work/Work';
+import Experience from './work/Experience';
 import Projects from './projects/Projects';
 import About from './about/About';
 import Footer from './navigation/Footer';
@@ -58,7 +58,7 @@ export default function RootPage() {
         <main className='grow'>
           <motion.section variants={PAGE_VARIANTS} initial='hidden' animate='show'>
             <Hero />
-            <Work />
+            <Experience />
             <Projects />
             <div 
               ref={lightModeRef} id={ABOUT_LABEL} 

@@ -12,10 +12,10 @@ import PC from './PC';
 import AboutMe from './AboutMe';
 import { motion } from 'motion/react';
 
+// Fade ins are handled by children
 const ABOUT_SECTION_VARIANTS = {
-  hidden: { opacity: 0 },
+  hidden: {}, 
   show: { 
-    opacity: 1,
     transition: {
       staggerChildren: 0.2
     }
@@ -30,12 +30,11 @@ export default function About() {
       whileInView='show'
       viewport={{ once: true, amount: 0.2 }}
       className='grid grid-cols-1 tablet:grid-cols-12
-        gap-sm tablet:gap-2 layout-x-about layout-py'
+        gap-sm tablet:gap-2 layout-px layout-py'
     >
       <Fade className='tablet:col-span-7'>
         <AboutSection
           aboutSectionLabels={ABOUT_ME_SECTION}
-          layout='split'
           content={<AboutMe />}
         />
       </Fade>
@@ -43,7 +42,6 @@ export default function About() {
       <Fade className='tablet:col-span-5'>
         <AboutSection
           aboutSectionLabels={ABOUT_GAMES_SECTION}
-          layout='stack'
           content={<Games />}
         />
       </Fade>
@@ -51,7 +49,6 @@ export default function About() {
       <Fade className='tablet:col-span-5'>
         <AboutSection 
           aboutSectionLabels={ABOUT_ACTIVE_SECTION}
-          layout='stack'
           content={<Active />}
         />
       </Fade>
@@ -59,7 +56,6 @@ export default function About() {
       <Fade className='tablet:col-span-7'>
         <AboutSection
           aboutSectionLabels={ABOUT_PC_SECTION}
-          layout='split'
           content={<PC />}
         />
       </Fade>
@@ -70,21 +66,19 @@ export default function About() {
 interface AboutSectionProps {
   containerStyle?: string,
   aboutSectionLabels: AboutSectionLabels,
-  layout: 'stack' | 'split',
   content: React.ReactNode
 }
 
 function AboutSection({ 
   containerStyle, 
   aboutSectionLabels, 
-  layout,
   content 
 } : AboutSectionProps) {
   return (
     <section className={`${containerStyle} h-full bg-white/90
       border border-primary-muted/35 rounded-2xl px-base py-4.5`}
     >
-      <header className={`flex flex-col gap-xs ${layout === 'split' ? '' : ''}`}>
+      <header className='flex flex-col gap-xs'>
         <p className='text-xs text-background/70 uppercase'>
           {aboutSectionLabels.header}
         </p>
@@ -92,7 +86,7 @@ function AboutSection({
           {aboutSectionLabels.title}
         </h3>
       </header>
-      <div className={`pt-lg ${layout === 'split' ? '' : ''}`}>
+      <div className='pt-lg'>
         {content}
       </div>
     </section>

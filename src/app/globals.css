@@ -90,15 +90,11 @@
 }
 
 @utility layout-px {
-  @apply px-6 max-w-7xl mx-auto w-full;
-}
-
-@utility layout-x-about {
-  @apply px-5 max-w-7xl mx-auto w-full;
+  @apply px-5 tablet:px-6 laptop:px-8 max-w-7xl mx-auto w-full;
 }
 
 @utility layout-py {
-  @apply py-8;
+  @apply py-7;
 }
 
 /* Responsive Breakpoints */
