@@ -3,7 +3,7 @@ import { BUILD_PARTS, PCPart, PERIPHERALS } from '@/app/lib/constants'
 export default function PC() {
   return (
     <section className='flex flex-col w-full justify-center'>
-      <div className='grid grid-cols-1 laptop:grid-cols-2 gap-y-sm'>
+      <div className='grid grid-cols-1 laptop:grid-cols-2 gap-x-4 gap-y-sm'>
         <PartsList parts={BUILD_PARTS} />
         <PartsList parts={PERIPHERALS} />
       </div>

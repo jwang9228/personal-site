@@ -9,12 +9,12 @@ export default function Footer() {
 
   return (
     <footer className='flex flex-col tablet:items-center border-t border-primary-muted/25
-      gap-7 layout-py'>
+      gap-6 layout-py'>
       <div className='grid grid-cols-2 tablet:flex tablet:justify-center w-full 
         tablet:gap-24 laptop:gap-32 layout-px'>
         {FOOTER_NAV.map(footerSection => (
-          <section key={footerSection.sectionLabel} className='flex flex-col gap-4'>
-            <span className='text-xs text-background/55 uppercase'>
+          <section key={footerSection.sectionLabel} className='flex flex-col gap-3'>
+            <span className='text-micro text-background/55 uppercase'>
               {footerSection.sectionLabel}
             </span>
             <nav className='flex flex-col gap-sm w-fit'>
@@ -41,7 +41,7 @@ export default function Footer() {
           </section>
         ))}
       </div>
-      <span className='text-xs text-background/55 tablet:text-center layout-px'>
+      <span className='text-micro text-background/55 tablet:text-center layout-px'>
         {COPYRIGHT}
       </span>
     </footer>

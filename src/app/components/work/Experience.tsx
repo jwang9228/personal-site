@@ -68,7 +68,7 @@ function ExperienceHeader({ experience } : { experience: ExperienceSection} ) {
             alt={`${experience.company}`}
             width={48}
             height={48}
-            className='object-contain size-full p-1.5' />
+            className='object-contain size-13 p-1.5' />
         </div>
         <div className='flex flex-col gap-y-1.5'>
           <h3 className='flex items-center gap-x-1.5 text-lg 
@@ -105,8 +105,8 @@ function PositionSection({ position } : { position: Position }) {
         </span>
       </hgroup>
       <p className='text-sm text-primary/85 leading-relaxed'>{position.description}</p>
-      <>{position.showcase}</>
-      <SkillsList skills={position.skills} /> 
+      <SkillsList skills={position.skills} />
+      {position.showcase} 
     </Fade>
   )
 }

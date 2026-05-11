@@ -1,7 +1,7 @@
 import UIC from '../components/work/UIC';
 
 export const DEV_NAME = 'Justin Wang';
-export const COPYRIGHT = `\u00A9 ${new Date().getFullYear()} ${DEV_NAME} - All rights reserved`;
+export const COPYRIGHT = `\u00A9 ${new Date().getFullYear()} ${DEV_NAME}`;
 export const MAIN_TITLE = 'Full Stack Developer';
 export const SECONDARY_TITLE = 'Design Enthusiast';
 export const CURRENT_POSITION = 'Software Engineer at UIC Payments';
@@ -46,6 +46,7 @@ export const EXPERIENCES: ExperienceSection[] = [
         showcase: <UIC />,
         skills: [
           { skill: 'Android', detail: 'Kotlin & Jetpack Compose' },
+          { skill: 'Network', detail: 'TCP (XMl & JSON)' },
           { skill: 'NEXGO SDK' }
         ]
       }
