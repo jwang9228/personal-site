@@ -104,7 +104,9 @@ function PositionSection({ position } : { position: Position }) {
           <span>{position.duration}</span>
         </span>
       </hgroup>
-      <p className='text-sm text-primary/85 leading-relaxed'>{position.description}</p>
+      <p className='text-sm text-primary/85 leading-relaxed max-w-3xl'>
+        {position.description}
+      </p>
       <SkillsList skills={position.skills} />
       {position.showcase} 
     </Fade>

@@ -40,7 +40,7 @@ export const EXPERIENCES: ExperienceSection[] = [
         duration: 'Oct 2025 - Present',
         description: [
           "I engineer secure, high-performance Point-of-Sale (POS) systems for native Android.",
-          "Currently, I am integrating UIC's payment engine directly with NEXGO hardware terminals,",
+          "Currently integrating UIC's payment engine directly with NEXGO hardware terminals,",
           'delivering fault-tolerant transaction flows for reliable daily commerce.'
         ].join(' '),
         showcase: <UIC />,
