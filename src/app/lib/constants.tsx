@@ -187,8 +187,7 @@ export const PERIPHERALS: PCPart[] = [
   ]},
   {partName: 'Input', partValues: [
     {value: 'Razer Huntsman V3 Pro', detail: 'Mini 60%'},
-    {value: 'Finalmouse ULX', detail: 'Aceu'},
-    {value: 'GLSSWRKS Polarity'}
+    {value: 'Finalmouse ULX', detail: 'Aceu'}
   ]}
 ];
 
