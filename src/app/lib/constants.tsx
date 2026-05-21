@@ -73,27 +73,16 @@ export const EXPERIENCES: ExperienceSection[] = [
         ]
       },
       {
-        title: 'Software Developer Intern',
-        duration: 'Jan 2023 - Dec 2023',
+        title: 'Software Developer Intern & Co-op',
+        duration: 'Jul 2022 - Dec 2023',
         description: [
-          'Focused on computer vision infrastructure,',
+          'Developed a native Android camera application with real-time RTSP',
+          'video streaming, and built computer vision infrastructure by',
           'optimizing PyTorch models with TensorRT for high-performance inference.'
         ].join(' '),
         skills: [
-          { skill: 'ML', detail: 'OpenCV (Python) & TensorRT' }
-        ]
-      },
-      {
-        title: 'Software Developer Co-op',
-        duration: 'Jul 2022 - Dec 2022',
-        description: [
-          'Developed native Android camera application,',
-          'leveraging OpenGL, Camera2 API, and OpenCV',
-          'for real-time RTSP video streaming and inference.'
-        ].join(' '),
-        skills: [
           { skill: 'Android', detail: 'OpenGL, Camera2 API' },
-          { skill: 'ML', detail: 'OpenCV (Java)' }
+          { skill: 'ML', detail: 'OpenCV & TensorRT' }
         ]
       }
     ]
