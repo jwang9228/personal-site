@@ -22,7 +22,7 @@ export default function Experience() {
       variants={EXPERIENCE_CONTAINER_VARIANTS}
       initial='hidden'
       whileInView='show'
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0 }}
       className='flex flex-col gap-y-6 layout-px layout-py pb-16'
     >
       <Fade className='flex flex-col gap-y-3'>

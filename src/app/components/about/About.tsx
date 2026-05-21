@@ -28,7 +28,7 @@ export default function About() {
       variants={ABOUT_SECTION_VARIANTS}
       initial='hidden'
       whileInView='show'
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0 }}
       className='grid grid-cols-1 tablet:grid-cols-12
         gap-sm tablet:gap-2 layout-px layout-py'
     >
