@@ -63,6 +63,7 @@ export default function UIC() {
                 width={600} 
                 height={600}
                 className='w-full h-auto object-contain' 
+                priority
               />
               <div className='flex justify-center items-baseline
                 gap-x-sm whitespace-nowrap'>

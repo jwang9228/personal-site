@@ -10,8 +10,8 @@ const EXPERIENCE_CONTAINER_VARIANTS = {
   hidden: {},
   show: {
     transition: {
-      delayChildren: 0.4,
-      staggerChildren: 0.2
+      delayChildren: 0.8,
+      staggerChildren: 0.6
     }
   }
 };
