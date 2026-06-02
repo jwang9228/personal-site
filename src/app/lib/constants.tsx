@@ -1,7 +1,7 @@
 import UIC from '../components/work/UIC';
 
 export const DEV_NAME = 'Justin Wang';
-export const COPYRIGHT = `\u00A9 ${new Date().getFullYear()} ${DEV_NAME}`;
+export const COPYRIGHT = `\u00A9 ${new Date().getFullYear()} Designed by ${DEV_NAME}`;
 export const MAIN_TITLE = 'Full Stack Developer';
 export const SECONDARY_TITLE = 'Design Enthusiast';
 export const CURRENT_POSITION = 'Software Engineer at UIC Payments';

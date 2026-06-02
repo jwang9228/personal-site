@@ -4,7 +4,7 @@ import Fade from '../utils/Fade';
 export default function Hero() {
   return (
     <Fade 
-      type='up' as='section'
+      type='up' as='section' speed='ui'
       className='flex flex-col gap-base layout-px layout-py
         tablet:pt-9'
     >

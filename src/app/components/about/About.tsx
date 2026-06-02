@@ -80,9 +80,9 @@ function AboutSection({
       border border-primary-muted/35 rounded-2xl px-base py-4.5`}
     >
       <header className='flex flex-col gap-xs'>
-        <p className='text-xs text-background/70 uppercase'>
+        <h2 className='text-xs text-background/70 uppercase'>
           {aboutSectionLabels.header}
-        </p>
+        </h2>
         <h3 className='text-lg text-background/80 font-accent font-semibold'>
           {aboutSectionLabels.title}
         </h3>

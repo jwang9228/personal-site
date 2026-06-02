@@ -28,11 +28,11 @@ export default function Games() {
           />
           <hgroup className='flex items-baseline 
             gap-2 tablet:gap-3 min-w-0'>
-            <h3 className='leading-none shrink-0'>{MAIN_GAME}</h3>
-            <h4 className='text-micro tablet:text-xs
+            <h2 className='leading-none shrink-0'>{MAIN_GAME}</h2>
+            <h3 className='text-micro tablet:text-xs
               text-background/60 truncate leading-none'>
               {MAIN_GAME_TAG}
-            </h4>
+            </h3>
           </hgroup>
         </div>
         <time className='text-xs text-accent-dark/70

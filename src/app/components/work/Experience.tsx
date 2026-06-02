@@ -3,13 +3,12 @@ import { PiArrowUpRight } from 'react-icons/pi';
 import Image from 'next/image';
 import Link from 'next/link';
 import SkillsList from './SkillsList';
-import { motion } from 'motion/react';
 import Fade from '../utils/Fade';
 
 export default function Experience() {
   return (
     <section className='flex flex-col gap-y-6 layout-px layout-py pb-16'>
-      <Fade className='flex flex-col gap-y-3'>
+      <Fade speed='ui' className='flex flex-col gap-y-3'>
         <p className='text-xs text-primary/85 uppercase'>
           Experience
         </p>
@@ -19,16 +18,9 @@ export default function Experience() {
 
       <div className='flex flex-col gap-y-16'>
         {EXPERIENCES.map((experience, i) => (
-          <motion.div
+          <Fade
             key={experience.company} 
-            initial='hidden'
-            whileInView='show'
-            viewport={{ once: true }}
-            transition={{
-              // Only delay for first company. The rest fire immediately on scroll
-              delayChildren: i === 0 ? 0.4 : 0.1, 
-              staggerChildren: 0.2 
-            }}
+            inView={i > 0}
             className='flex flex-col gap-8 w-full'
           >
             <ExperienceHeader experience={experience} />
@@ -38,7 +30,7 @@ export default function Experience() {
                 <PositionSection key={position.duration} position={position} />
               ))}
             </ul>
-          </motion.div>
+          </Fade>
         ))}
       </div>
     </section>
@@ -65,13 +57,13 @@ function ExperienceHeader({ experience } : { experience: ExperienceSection} ) {
             className='object-contain size-13 p-1.5' />
         </div>
         <div className='flex flex-col gap-y-1.5'>
-          <h3 className='flex items-center gap-x-1.5 text-lg 
+          <h2 className='flex items-center gap-x-1.5 text-lg 
             transition-colors group-hover:text-accent'
           >
             {experience.company}
             <PiArrowUpRight className='translate-y-xxs 
               text-primary/70 group-hover:text-accent' />
-          </h3>
+          </h2>
           <p className='text-xs text-primary/80'>
             {experience.location}
           </p>

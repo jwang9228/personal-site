@@ -2,20 +2,34 @@
 import { motion, Variants } from 'motion/react';
 import { ReactNode, ElementType, memo } from 'react';
 
-const FADE_UP_PX_TRANSLATION = 20;
-const FADE_UP_DURATION = 0.8;
-const FADE_UP_EASE = [0.22, 1, 0.36, 1] as const;
-const FADE_IN_DURATION = 0.25;
+// Configurations
+const FADE_UP_UI_PX_TRANSLATION = 10;
+const FADE_UP_SECTION_PX_TRANSLATION = 25;
+const FADE_IN_DURATION = 0.3;
 
-const FADE_UP_VARIANTS: Variants = {
-  hidden: { opacity: 0, y: FADE_UP_PX_TRANSLATION },
+// UI Timing
+const UI_DURATION = 0.4;
+const UI_EASE = [0.2, 0.65, 0.3, 0.9] as const;
+
+// Section timing
+const SECTION_DURATION = 0.8;
+const SECTION_EASE = [0.25, 0.4, 0.25, 1] as const;
+
+const FADE_UP_UI_VARIANTS: Variants = {
+  hidden: { opacity: 0, y: FADE_UP_UI_PX_TRANSLATION },
   show: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: FADE_UP_DURATION,
-      ease: FADE_UP_EASE
-    }
+    transition: { duration: UI_DURATION, ease: UI_EASE }
+  }
+};
+
+const FADE_UP_SECTION_VARIANTS: Variants = {
+  hidden: { opacity: 0, y: FADE_UP_SECTION_PX_TRANSLATION },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: SECTION_DURATION, ease: SECTION_EASE }
   }
 };
 
@@ -23,10 +37,7 @@ export const FADE_IN_VARIANTS: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: {
-      duration: FADE_IN_DURATION,
-      ease: 'easeOut'
-    }
+    transition: { duration: FADE_IN_DURATION, ease: 'easeOut' }
   }
 };
 
@@ -34,6 +45,7 @@ type ValidTag = 'div' | 'section' | 'main' | 'span' | 'header' | 'footer' | 'nav
 
 interface FadeProps {
   children: ReactNode;
+  speed?: 'ui' | 'section';
   type?: 'up' | 'in';
   as?: ValidTag;
   inView?: boolean;
@@ -43,20 +55,26 @@ interface FadeProps {
 function Fade({
   children,
   type = 'up',
+  speed = 'section',
   as = 'div' as ValidTag,
   inView = false,
   className = '',
 }: FadeProps) {
   const Component = motion[as] as ElementType;
 
-  const selectedVariant = type === 'up' ? FADE_UP_VARIANTS : FADE_IN_VARIANTS;
+  let selectedVariant = FADE_UP_SECTION_VARIANTS;
+  if (type === 'in') {
+    selectedVariant = FADE_IN_VARIANTS;
+  } else if (speed === 'ui') {
+    selectedVariant = FADE_UP_UI_VARIANTS;
+  }
 
   // If inView true, apply scroll-trigger props - only apply animation when component
-  // is in the viewport, only render once and when at least 20% of the component is on screen
+  // is in the viewport, only render once and when at least 25% of the component is on screen
   const triggerProps = inView ? {
     initial: 'hidden',
     whileInView: 'show',
-    viewport: { once: true, amount: 0 }
+    viewport: { once: true, amount: 0.25 }
   } : {};
 
   return (
