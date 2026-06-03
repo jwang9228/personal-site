@@ -8,12 +8,10 @@ import Fade from '../utils/Fade';
 export default function Experience() {
   return (
     <section className='flex flex-col gap-y-6 layout-px layout-py pb-16'>
-      <Fade speed='ui' className='flex flex-col gap-y-3'>
-        <p className='text-xs text-primary/85 uppercase'>
+      <Fade speed='ui'>
+        <p className='text-xs text-primary/95 uppercase font-bold'>
           Experience
         </p>
-        <div className='h-px laptop:h-[2px] w-full 
-          bg-linear-to-r from-primary/30 via-primary/25 to-primary/15 tablet:to-primary/5' />
       </Fade>
 
       <div className='flex flex-col gap-y-16'>
@@ -25,7 +23,7 @@ export default function Experience() {
           >
             <ExperienceHeader experience={experience} />
             
-            <ul className='flex flex-col gap-y-lg'>
+            <ul className='flex flex-col gap-y-8'>
               {experience.positions.map(position => (
                 <PositionSection key={position.duration} position={position} />
               ))}
@@ -61,7 +59,7 @@ function ExperienceHeader({ experience } : { experience: ExperienceSection} ) {
             transition-colors group-hover:text-accent'
           >
             {experience.company}
-            <PiArrowUpRight className='translate-y-xxs 
+            <PiArrowUpRight className='translate-y-0.5 
               text-primary/70 group-hover:text-accent' />
           </h2>
           <p className='text-xs text-primary/80'>
@@ -75,14 +73,14 @@ function ExperienceHeader({ experience } : { experience: ExperienceSection} ) {
 
 function PositionSection({ position } : { position: Position }) {
   return (
-    <Fade as='section' className='relative flex flex-col gap-y-base pl-lg'>
+    <Fade as='section' className='relative flex flex-col gap-y-6 pl-8'>
       <div className='absolute left-1.5 top-3 bottom-0 flex flex-col items-center w-1.5'>
         <div className='size-1.5 rounded-full bg-primary/60 shrink-0' />
         <div className='w-px h-full 
           bg-linear-to-b from-primary-muted/50 via primary-muted/50 to-primary-muted/25' />
       </div>
       <hgroup className='flex flex-col tablet:flex-row items-baseline 
-        gap-x-4 gap-y-xs font-mono'
+        gap-x-4 gap-y-1 font-mono'
       >
         <h3 className='font-medium tracking-wider'>{position.title}</h3>
         <span className='flex gap-x-1.5 text-xs text-primary/80'>

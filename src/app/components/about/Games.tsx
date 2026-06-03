@@ -1,5 +1,5 @@
 import { 
-  MAIN_GAME, MAIN_GAME_TAG, GAMES
+  MAIN_GAME, GAMES
 } from '@/app/lib/constants';
 import { motion } from 'motion/react';
 import { useQueueTimer } from '../utils/useQueueTimer';
@@ -9,9 +9,9 @@ export default function Games() {
   const queueTime = useQueueTimer();
 
   return (
-    <section className='flex flex-col gap-base'>
-      <div className='flex items-center justify-between pl-xxs gap-x-sm'>
-        <div className='flex items-center gap-sm min-w-0'>
+    <section className='flex flex-col gap-6'>
+      <div className='flex items-center pl-0.5 gap-x-4'>
+        <div className='flex items-center gap-2.5 min-w-0'>
           <motion.span 
             className='block size-1.5 shrink-0 bg-accent-dark 
               rounded-full translate-y-px'
@@ -26,17 +26,10 @@ export default function Games() {
               ease: 'easeInOut'
             }}
           />
-          <hgroup className='flex items-baseline 
-            gap-2 tablet:gap-3 min-w-0'>
-            <h2 className='leading-none shrink-0'>{MAIN_GAME}</h2>
-            <h3 className='text-micro tablet:text-xs
-              text-background/60 truncate leading-none'>
-              {MAIN_GAME_TAG}
-            </h3>
-          </hgroup>
+          <p className='leading-none'>{MAIN_GAME}</p>
         </div>
         <time className='text-xs text-accent-dark/70
-          font-mono translate-y-0.5'>
+          font-mono translate-y-px'>
             [{queueTime}]
         </time>
       </div>

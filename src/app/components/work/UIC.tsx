@@ -10,17 +10,17 @@ const UICModels: UICModel[] = [
   { 
     name: 'N96', 
     label: 'Checkout',
-    sizeClass: 'w-3/5 tablet:w-1/3 laptop:w-1/6' 
+    sizeClass: 'w-1/2 tablet:w-1/3 laptop:w-1/6' 
   }, 
   { 
     name: 'CT20P', 
     label: 'Customer Payment',
-    sizeClass: 'w-3/5 tablet:w-1/3 laptop:w-1/5' 
+    sizeClass: 'w-1/2 tablet:w-1/3 laptop:w-1/5' 
   },
   { 
     name: 'EF20',
     label: 'Post-Auth Adjustments',
-    sizeClass: 'w-3/5 tablet:w-1/3 laptop:w-1/4' 
+    sizeClass: 'w-1/2 tablet:w-1/3 laptop:w-1/4' 
   } 
 ];
 
@@ -38,7 +38,7 @@ export default function UIC() {
   return (
     <div className='flex flex-col pt-7 w-full'>
       <div className='flex flex-col gap-y-3
-        pt-sm pb-14'
+        pt-2.5 pb-14'
       >
         <span className='font-mono uppercase text-xs text-primary/70'>
           // System Design
@@ -66,7 +66,7 @@ export default function UIC() {
                 priority
               />
               <div className='flex justify-center items-baseline
-                gap-x-sm whitespace-nowrap'>
+                gap-x-2.5 whitespace-nowrap'>
                 <span className='text-sm text-primary/75'>
                   {(i + 1).toString().padStart(2, '0')}.
                 </span>

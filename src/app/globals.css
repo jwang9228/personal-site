@@ -56,16 +56,6 @@
   --text-2xl--letter-spacing: -0.04em;
 }
 
-/* Margins and Spacing */
-@theme {
-  --spacing-xxs:    0.125rem; 
-  --spacing-xs:     0.25rem; 
-  --spacing-sm:     0.625rem; 
-  --spacing-base:   1.5rem; 
-  --spacing-lg:     2rem;     
-  --spacing-xl:     3rem;     
-}
-
 /* Fonts */
 @theme {
   --font-base:    var(--font-plus_jakarta_sans), ui-sans-serif, system-ui, sans-serif;
@@ -76,8 +66,8 @@
 /* Color Palette */
 @theme {
   --color-background:     oklch(0.10 0.003 25); 
-  --color-primary:        oklch(0.93 0.003 25);                                                                                                                                                                --color-primary: oklch(0.93 0.003 25);                                                                                                                                                                  
-  --color-primary-muted:  oklch(0.65 0.003 25);   
+  --color-primary:        oklch(0.9 0.003 25);                                                                                                                                                                --color-primary: oklch(0.93 0.003 25);                                                                                                                                                                  
+  --color-primary-muted:  oklch(0.60 0.003 25);   
   --color-accent:         oklch(0.78 0.10 65);
   --color-accent-dark:    oklch(0.45 0.15 65);
 }

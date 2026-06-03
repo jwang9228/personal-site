@@ -31,7 +31,7 @@ export default function About() {
       whileInView='show'
       viewport={{ once: true, amount: 0 }}
       className='grid grid-cols-1 tablet:grid-cols-12
-        gap-sm tablet:gap-2 layout-px layout-py'
+        gap-4 tablet:gap-2.5 layout-px layout-py'
     >
       <Fade className='tablet:col-span-7'>
         <AboutSection
@@ -77,9 +77,9 @@ function AboutSection({
 } : AboutSectionProps) {
   return (
     <section className={`${containerStyle} h-full bg-white/90
-      border border-primary-muted/35 rounded-2xl px-base py-4.5`}
+      border border-primary-muted/35 rounded-2xl px-6 py-4.5`}
     >
-      <header className='flex flex-col gap-xs'>
+      <header className='flex flex-col gap-1'>
         <h2 className='text-xs text-background/70 uppercase'>
           {aboutSectionLabels.header}
         </h2>
@@ -87,7 +87,7 @@ function AboutSection({
           {aboutSectionLabels.title}
         </h3>
       </header>
-      <div className='pt-lg'>
+      <div className='pt-8'>
         {content}
       </div>
     </section>

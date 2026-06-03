@@ -2,12 +2,11 @@ import { ABOUT_ME_LOCATION, ABOUT_ME_STATEMENT } from '@/app/lib/constants';
 
 export default function AboutMe() {
   return (
-    <section className='flex flex-col gap-y-base'>
+    <section className='flex flex-col gap-y-6'>
       <p className='text-sm text-background/90 leading-relaxed'>
         {ABOUT_ME_STATEMENT}
       </p>
-      <p className='text-xs text-primary-muted font-mono 
-        uppercase tracking-widest'>
+      <p className='text-xs text-primary-muted font-accent tracking-widest'>
         {ABOUT_ME_LOCATION}
       </p>
     </section>

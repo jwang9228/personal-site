@@ -1,10 +1,10 @@
 import UIC from '../components/work/UIC';
 
 export const DEV_NAME = 'Justin Wang';
-export const COPYRIGHT = `\u00A9 ${new Date().getFullYear()} Designed by ${DEV_NAME}`;
+export const DESIGN_STATEMENT = 'Designed and built with Next.js and Tailwind CSS'
+export const COPYRIGHT = `\u00A9 ${new Date().getFullYear()}`;
 export const MAIN_TITLE = 'Full Stack Developer';
-export const SECONDARY_TITLE = 'Design Enthusiast';
-export const CURRENT_POSITION = 'Software Engineer at UIC Payments';
+export const SECONDARY_TITLE = 'Design Engineer';
 
 /* Experience Interfaces */
 export interface ExperienceSection {
@@ -106,7 +106,7 @@ export const ABOUT_ME_STATEMENT = [
   "I'm always chasing that sweet spot where solid logic meets clean design."
 ].join(' ');
 
-export const ABOUT_ME_LOCATION = 'BASED // Pleasanton, CA [PT]';
+export const ABOUT_ME_LOCATION = 'BASED - Pleasanton, CA (PT)';
 
 /* Active Section */
 export const ABOUT_ACTIVE_SECTION: AboutSectionLabels = {
@@ -141,8 +141,6 @@ export const ABOUT_GAMES_SECTION: AboutSectionLabels = {
 
 export const MAIN_GAME = 'Overwatch';
 
-export const MAIN_GAME_TAG = 'SirRacha#11210';
-
 export const GAMES = [
   'Honkai: Star Rail', 'Battlefield 6', 'Clash Royale'
 ];
@@ -160,10 +158,10 @@ interface PCValue {
 
 export const BUILD_PARTS: PCPart[] = [
   {partName: 'Case', partValues: [
-    {value: 'Fractal Terra', detail: 'Jade'}
+    {value: 'Fractal Terra'}
   ]},
   {partName: 'CPU', partValues: [
-    {value: 'AMD Ryzen 7 7800X3D'}
+    {value: 'AMD 7800X3D'}
   ]},
   {partName: 'GPU', partValues: [
     {value: 'NVIDIA RTX 5070 Ti'}
@@ -172,15 +170,15 @@ export const BUILD_PARTS: PCPart[] = [
 
 export const PERIPHERALS: PCPart[] = [
   {partName: 'Display', partValues: [
-    {value: 'MSI 27" QD-OLED', detail: '1440p 360Hz'}
+    {value: 'MSI 27" 1440p QD-OLED'}
   ]},
   {partName: 'Input', partValues: [
-    {value: 'Razer Huntsman V3 Pro', detail: 'Mini 60%'},
-    {value: 'Finalmouse ULX', detail: 'Aceu'}
+    {value: 'Razer Huntsman V3 Pro'},
+    {value: 'Finalmouse ULX'}
   ]}
 ];
 
 export const ABOUT_PC_SECTION: AboutSectionLabels = {
   header: 'Optimizing thermals',
-  title: 'Surviving RAMageddon'
+  title: 'Daily Workstation'
 };

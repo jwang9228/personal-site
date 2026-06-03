@@ -1,49 +1,42 @@
-'use client';
 import { PiArrowUpRight } from 'react-icons/pi';
-import { FOOTER_NAV, useNavClick } from '@/app/lib/navigation';
-import { COPYRIGHT } from '@/app/lib/constants';
+import { FOOTER_NAV } from '@/app/lib/navigation';
+import { COPYRIGHT, DESIGN_STATEMENT, DEV_NAME } from '@/app/lib/constants';
 import Link from 'next/link';
 
 export default function Footer() {
-  const { handleNavClick } = useNavClick();
-
   return (
     <footer className='flex flex-col tablet:items-center border-t border-primary-muted/25
-      gap-6 layout-py'>
-      <div className='grid grid-cols-2 tablet:flex tablet:justify-center w-full 
-        tablet:gap-24 laptop:gap-32 layout-px'>
-        {FOOTER_NAV.map(footerSection => (
-          <section key={footerSection.sectionLabel} className='flex flex-col gap-3'>
-            <span className='text-micro text-background/55 uppercase'>
-              {footerSection.sectionLabel}
-            </span>
-            <nav className='flex flex-col gap-sm w-fit'>
-              {footerSection.sectionLinks.map(link => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  target={footerSection.isExternal ? '_blank' : undefined}
-                  rel={footerSection.isExternal ? 'noopener noreferrer' : undefined}
-                  onClick={footerSection.isExternal ? undefined : (e) => handleNavClick(e, link.label)}
-                  className='group flex items-center gap-2 text-sm text-background/70
-                    hover:text-accent-dark transition-colors duration-300 lowercase'
-                >
-                  {link.label}
-                  {footerSection.isExternal &&
-                    <PiArrowUpRight 
-                      size={18}
-                      className='translate-y-xxs opacity-75
-                        group-hover:opacity-90 transition-opacity duration-300'/>
-                  }
-                </Link>
-              ))}
-            </nav>
-          </section>
-        ))}
+      gap-7 layout-px layout-py'>
+      <div className='flex justify-between items-baseline gap-x-12'>
+        <span className='text-micro text-background/60 font-semibold uppercase'>
+          {FOOTER_NAV.label}
+        </span>
+        <nav className='flex gap-8'>
+          {FOOTER_NAV.links.map(link => (
+            <Link
+              key={link.label}
+              href={link.href}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='group flex items-center gap-2 text-sm text-background/75
+                hover:text-accent-dark transition-colors duration-300 lowercase'
+            >
+              {link.label}
+              <PiArrowUpRight 
+                size={18}
+                className='translate-y-0.5 opacity-75
+                  group-hover:opacity-90 transition-opacity duration-300'/>
+            </Link>
+          ))}
+        </nav>
       </div>
-      <span className='text-micro text-background/55 tablet:text-center layout-px'>
-        {COPYRIGHT}
-      </span>
+      <div className='flex flex-col gap-y-1.5 
+        text-micro text-background/55 tablet:text-center'>
+        {DESIGN_STATEMENT}
+        <span>
+          {COPYRIGHT} <span className='pl-0.5'>{DEV_NAME}</span>
+        </span>
+      </div>
     </footer>
   )
 }

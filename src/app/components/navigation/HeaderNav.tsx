@@ -25,7 +25,7 @@ export default function HeaderNav() {
           {DEV_NAME}
         </button>
 
-        <section className='flex gap-lg tablet:gap-8 laptop:gap-10'>
+        <section className='flex gap-8 laptop:gap-10'>
           {HEADER_NAV.map(tab => {
             const lightModeStyle = tab.label === ABOUT_LABEL 
               ? 'text-background/80 font-medium' 

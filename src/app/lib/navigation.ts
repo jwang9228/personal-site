@@ -8,10 +8,9 @@ export interface NavItem {
   href: string;
 }
 
-export interface FooterSection {
-  sectionLabel: string;
-  isExternal: boolean;
-  sectionLinks: NavItem[];
+export interface FooterNav {
+  label: string;
+  links: NavItem[];
 }
 
 export const HEADER_HEIGHT = 61;
@@ -22,21 +21,13 @@ export const HEADER_NAV: NavItem[] = [
   { label: ABOUT_LABEL, href: `#${ABOUT_LABEL}` }
 ];
 
-export const FOOTER_NAV: FooterSection[] = [
-  { 
-    sectionLabel: 'Revisit',
-    isExternal: false,
-    sectionLinks: HEADER_NAV
-  },
-  {
-    sectionLabel: 'Elsewhere',
-    isExternal: true,
-    sectionLinks: [
-      { label: 'LinkedIn', href: LINKEDIN_LINK },
-      { label: 'Resume', href: RESUME_LINK }
-    ]
-  }
-];
+export const FOOTER_NAV: FooterNav = {
+  label: 'Elsewhere',
+  links: [
+    { label: 'LinkedIn', href: LINKEDIN_LINK },
+    { label: 'Resume', href: RESUME_LINK }
+  ]
+}
 
 export const TECHSTACK_LAYER_NAV = ['Project', 'Experience', 'Home'] as const;
 

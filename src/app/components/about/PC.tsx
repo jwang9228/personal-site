@@ -3,9 +3,13 @@ import { BUILD_PARTS, PCPart, PERIPHERALS } from '@/app/lib/constants'
 export default function PC() {
   return (
     <section className='flex flex-col w-full justify-center'>
-      <div className='grid grid-cols-1 laptop:grid-cols-2 gap-x-4 gap-y-sm'>
-        <PartsList parts={BUILD_PARTS} />
-        <PartsList parts={PERIPHERALS} />
+      <div className='grid grid-cols-1 laptop:grid-cols-12 gap-x-4 gap-y-2.5'>
+        <div className='tablet:col-span-5'>
+          <PartsList parts={BUILD_PARTS} />
+        </div>
+        <div className='tablet:col-span-7'>
+          <PartsList parts={PERIPHERALS} />
+        </div>
       </div>
     </section>
   )
@@ -13,11 +17,11 @@ export default function PC() {
 
 function PartsList({ parts } : { parts: PCPart[] }) {
   return (
-    <ul className='flex flex-col gap-y-sm'>
+    <ul className='flex flex-col gap-y-2.5'>
       {parts.map(pcPart => (
         <li 
           key={pcPart.partName}
-          className='grid grid-cols-3 items-baseline gap-x-base'
+          className='grid grid-cols-3 items-baseline gap-x-6'
         >
           <p className='col-span-1 text-xs text-background/60 text-right
             uppercase font-mono'>
@@ -25,23 +29,12 @@ function PartsList({ parts } : { parts: PCPart[] }) {
           </p>
           <div className='col-span-2 flex flex-col gap-y-1.5'>
             {pcPart.partValues.map(values => (
-              <p 
-                key={values.value}
-                className='flex flex-wrap 
-                  items-baseline gap-x-2 gap-y-xxs'
+              <span 
+                key={values.value} 
+                className='text-xs text-background/70'
               >
-                <span className='text-sm text-background/80'>
-                  {values.value}
-                </span>
-                {values.detail && (
-                  <span className='flex gap-x-1.5 text-xs 
-                    font-mono text-primary-muted'
-                  >
-                    <span>//</span>
-                    <span>{values.detail}</span>
-                  </span>
-                )}
-              </p>
+                {values.value}
+              </span>
             ))}
           </div>
         </li>

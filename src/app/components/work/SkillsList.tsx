@@ -6,8 +6,8 @@ export default function SkillsList({ skills }: { skills: Skill[] }) {
       {skills.map(skill => (
         <li
           key={skill.skill}
-          className='flex items-baseline gap-x-sm text-xs text-primary/90 font-normal font-mono select-none
-            px-sm py-xxs bg-primary-muted/35 border-l-2 tablet:border-l-3 border-primary/30'
+          className='flex items-baseline gap-x-2.5 text-xs text-primary/90 font-normal font-mono select-none
+            px-2.5 py-0.5 bg-primary-muted/35 border-l-2 tablet:border-l-3 border-primary/30'
         >
           {skill.skill}
           {skill.detail && (
