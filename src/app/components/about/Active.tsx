@@ -1,7 +1,20 @@
-import { ACTIVE_INTENSITY_HEATMAP, ACTIVE_ACTIVITIES } from '@/app/lib/constants';
-import PillList from '../utils/PillList';
+'use client';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { ACTIVE_ACTIVITIES, ACTIVE_INTENSITY_HEATMAP, ACTIVE_STATEMENT } from '@/app/lib/constants';
 
 export default function Active() {
+  const [activityIndex, setActivityIndex] = useState(0);
+
+  useEffect(() => {
+    // Rotate activity word every 2.5 seconds
+    const timer = setInterval(() => {
+      setActivityIndex((prev) => (prev + 1) % ACTIVE_ACTIVITIES.length);
+    }, 2500);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className='flex flex-col gap-6'>
       <ul className='flex justify-between px-0.5'>
@@ -17,7 +30,26 @@ export default function Active() {
           </li>
         ))}
       </ul>
-      <PillList items={ACTIVE_ACTIVITIES} />
+      
+      <p className='text-xs text-background/60 leading-relaxed'>
+        {ACTIVE_STATEMENT}
+
+        <span className='inline-block relative pl-2'>
+        <AnimatePresence mode='popLayout'>
+          <motion.span
+            key={ACTIVE_ACTIVITIES[activityIndex]}
+            initial={{ y: 15, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -15, opacity: 0 }}
+            transition={{ ease: 'easeInOut', duration: 0.3 }}
+            className='inline-block text-sm text-accent-dark/70 tracking-wide 
+              font-accent font-medium lowercase'
+          >
+            {ACTIVE_ACTIVITIES[activityIndex]}
+          </motion.span>
+        </AnimatePresence>
+      </span>
+      </p>
     </section>
   )
 }

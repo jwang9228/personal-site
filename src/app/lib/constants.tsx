@@ -129,8 +129,10 @@ export const ACTIVE_INTENSITY_HEATMAP: DayIntensityMapping[] = [
   { dayLabel: 'S', intensityClass: 'opacity-75' }
 ];
 
+export const ACTIVE_STATEMENT = 'Less screen time, more';
+
 export const ACTIVE_ACTIVITIES = [
-  'Badminton', 'Squash', 'Swimming', 'Weights'
+  'Badminton', 'Squash', 'Swimming', 'Running', 'Weights'
 ];
 
 /* Games Section */

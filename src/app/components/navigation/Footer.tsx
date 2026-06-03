@@ -6,7 +6,7 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className='flex flex-col tablet:items-center border-t border-primary-muted/25
-      gap-7 layout-px layout-py'>
+      gap-7 px-6 tablet:layout-px layout-py'>
       <div className='flex justify-between items-baseline gap-x-12'>
         <span className='text-micro text-background/60 font-semibold uppercase'>
           {FOOTER_NAV.label}
@@ -31,7 +31,7 @@ export default function Footer() {
         </nav>
       </div>
       <div className='flex flex-col gap-y-1.5 
-        text-micro text-background/55 tablet:text-center'>
+        text-micro text-background/60 tablet:text-center'>
         {DESIGN_STATEMENT}
         <span>
           {COPYRIGHT} <span className='pl-0.5'>{DEV_NAME}</span>
