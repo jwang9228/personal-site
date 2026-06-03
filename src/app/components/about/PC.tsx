@@ -4,10 +4,10 @@ export default function PC() {
   return (
     <section className='flex flex-col w-full justify-center'>
       <div className='grid grid-cols-1 laptop:grid-cols-12 gap-x-4 gap-y-2.5'>
-        <div className='tablet:col-span-5'>
+        <div className='laptop:col-span-5'>
           <PartsList parts={BUILD_PARTS} />
         </div>
-        <div className='tablet:col-span-7'>
+        <div className='laptop:col-span-7'>
           <PartsList parts={PERIPHERALS} />
         </div>
       </div>

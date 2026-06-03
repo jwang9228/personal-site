@@ -32,9 +32,9 @@ export default function Active() {
       </ul>
       
       <p className='text-xs text-background/60 leading-relaxed'>
-        {ACTIVE_STATEMENT}
+        <span className='pr-2'>{ACTIVE_STATEMENT}</span>
 
-        <span className='inline-block relative pl-2'>
+        <span className='inline-block relative w-24 text-left'>
         <AnimatePresence mode='popLayout'>
           <motion.span
             key={ACTIVE_ACTIVITIES[activityIndex]}
