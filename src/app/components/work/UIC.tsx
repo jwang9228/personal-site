@@ -10,17 +10,17 @@ const UICModels: UICModel[] = [
   { 
     name: 'N96', 
     label: 'Checkout',
-    sizeClass: 'w-2/5 tablet:w-1/6' 
+    sizeClass: 'w-2/5 tablet:w-1/6 laptop:w-1/7' 
   }, 
   { 
     name: 'CT20P', 
     label: 'Customer Payment',
-    sizeClass: 'w-2/5 tablet:w-1/5' 
+    sizeClass: 'w-2/5 tablet:w-1/5 laptop:w-1/6' 
   },
   { 
     name: 'EF20',
     label: 'Post-Auth Adjustments',
-    sizeClass: 'w-2/5 tablet:w-1/4' 
+    sizeClass: 'w-2/5 tablet:w-1/4 laptop:w-1/5' 
   } 
 ];
 
