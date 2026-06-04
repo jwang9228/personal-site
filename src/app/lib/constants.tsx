@@ -37,7 +37,7 @@ export const EXPERIENCES: ExperienceSection[] = [
     positions: [
       {
         title: 'Software Engineer',
-        duration: 'Oct 2025 - Present',
+        duration: 'Oct 2025 — Present',
         description: [
           "Engineering secure, high-performance Point-of-Sale (POS) systems for native Android.",
           "Currently integrating UIC's payment engine directly with NEXGO hardware terminals,",
@@ -60,21 +60,21 @@ export const EXPERIENCES: ExperienceSection[] = [
     positions: [
       {
         title: 'Software Developer',
-        duration: 'Jan 2024 - Oct 2025',
+        duration: 'Jan 2024 — Oct 2025',
         description: [
           'Transitioned to full-stack development,',
           'architecting React frontends and Flask APIs',
           'integrated with AWS and MongoDB.'
         ].join(' '),
         skills: [
-          { skill: 'Web Apps', detail: 'React + Tailwind CSS' },
-          { skill: 'Cloud', detail: 'Flask & AWS boto3' },
-          { skill: 'Database', detail: 'MongoDB' },
+          { skill: 'Web Apps', detail: 'React, Tailwind CSS' },
+          { skill: 'Cloud', detail: 'Flask, AWS (boto3)' },
+          { skill: 'Database', detail: 'MongoDB (PyMongo)' },
         ]
       },
       {
         title: 'Software Developer Intern & Co-op',
-        duration: 'Jul 2022 - Dec 2023',
+        duration: 'Jul 2022 — Dec 2023',
         description: [
           'Developed a native Android camera application with real-time RTSP',
           'video streaming. Optimized computer vision models with OpenCV algorithms',
@@ -82,7 +82,7 @@ export const EXPERIENCES: ExperienceSection[] = [
         ].join(' '),
         skills: [
           { skill: 'Android', detail: 'OpenGL, Camera2 API' },
-          { skill: 'ML', detail: 'OpenCV & TensorRT' }
+          { skill: 'ML', detail: 'OpenCV, TensorRT' }
         ]
       }
     ]

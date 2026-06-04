@@ -37,7 +37,7 @@ const designStatement = [
 export default function UIC() {
   return (
     <div className='flex flex-col w-full'>
-      <div className='flex flex-col gap-y-2.5
+      <div className='flex flex-col gap-y-2
         pt-4 pb-12'
       >
         <span className='font-mono uppercase text-xs text-primary/70'>
