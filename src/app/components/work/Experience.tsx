@@ -14,7 +14,7 @@ export default function Experience() {
         </p>
       </Fade>
 
-      <div className='flex flex-col gap-y-20'>
+      <div className='flex flex-col gap-y-16'>
         {EXPERIENCES.map((experience, i) => (
           <Fade
             key={experience.company} 
@@ -44,7 +44,7 @@ function ExperienceHeader({ experience } : { experience: ExperienceSection} ) {
       className='group flex items-center gap-5 w-fit'
     >
       <div className='flex items-center justify-center shrink-0 size-13
-        bg-white rounded-xl overflow-hidden'
+        bg-white rounded-xl'
       >
         <Image
           src={`/experience/${experience.logo}`} 
