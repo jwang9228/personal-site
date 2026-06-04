@@ -39,13 +39,13 @@ export const EXPERIENCES: ExperienceSection[] = [
         title: 'Software Engineer',
         duration: 'Oct 2025 - Present',
         description: [
-          "I engineer secure, high-performance Point-of-Sale (POS) systems for native Android.",
+          "Engineering secure, high-performance Point-of-Sale (POS) systems for native Android.",
           "Currently integrating UIC's payment engine directly with NEXGO hardware terminals,",
           'delivering fault-tolerant transaction flows for reliable daily commerce.'
         ].join(' '),
         showcase: <UIC />,
         skills: [
-          { skill: 'Android', detail: 'Kotlin & Jetpack Compose' },
+          { skill: 'Android', detail: 'Kotlin, Compose, MVVM' },
           { skill: 'Network', detail: 'TCP (XMl & JSON)' },
           { skill: 'NEXGO SDK' }
         ]
@@ -67,8 +67,8 @@ export const EXPERIENCES: ExperienceSection[] = [
           'integrated with AWS and MongoDB.'
         ].join(' '),
         skills: [
-          { skill: 'Web Apps', detail: 'React & Tailwind' },
-          { skill: 'Cloud Server', detail: 'Flask & AWS boto3' },
+          { skill: 'Web Apps', detail: 'React + Tailwind CSS' },
+          { skill: 'Cloud', detail: 'Flask & AWS boto3' },
           { skill: 'Database', detail: 'MongoDB' },
         ]
       },
@@ -77,8 +77,8 @@ export const EXPERIENCES: ExperienceSection[] = [
         duration: 'Jul 2022 - Dec 2023',
         description: [
           'Developed a native Android camera application with real-time RTSP',
-          'video streaming, and built computer vision infrastructure by',
-          'optimizing PyTorch models with TensorRT for high-performance inference.'
+          'video streaming. Optimized computer vision models with OpenCV algorithms',
+          'for high-performance inference.'
         ].join(' '),
         skills: [
           { skill: 'Android', detail: 'OpenGL, Camera2 API' },

@@ -17,7 +17,7 @@ const ABOUT_SECTION_VARIANTS = {
   hidden: {}, 
   show: { 
     transition: {
-      delayChildren: 0.2,
+      delayChildren: 0.1,
       staggerChildren: 0.15
     }
   }
@@ -29,7 +29,7 @@ export default function About() {
       variants={ABOUT_SECTION_VARIANTS}
       initial='hidden'
       whileInView='show'
-      viewport={{ once: true, amount: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
       className='grid grid-cols-1 tablet:grid-cols-12
         gap-4 tablet:gap-2.5 layout-px layout-py'
     >
@@ -83,11 +83,11 @@ function AboutSection({
         <h2 className='text-xs text-background/70 uppercase'>
           {aboutSectionLabels.header}
         </h2>
-        <h3 className='text-lg text-background/80 font-accent font-semibold'>
+        <h3 className='text-lg text-background/75 font-accent font-semibold'>
           {aboutSectionLabels.title}
         </h3>
       </header>
-      <div className='pt-8'>
+      <div className='pt-6'>
         {content}
       </div>
     </section>

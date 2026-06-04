@@ -32,24 +32,24 @@ export default function Active() {
         ))}
       </ul>
       
-      <p className='text-xs text-background/60 leading-relaxed'>
+      <p className='text-sm text-background/60 leading-relaxed'>
         <span className='pr-2'>{ACTIVE_STATEMENT}</span>
 
         <span className='inline-block relative w-24 text-left'>
-        <AnimatePresence mode='popLayout'>
-          <motion.span
-            key={ACTIVE_ACTIVITIES[activityIndex]}
-            initial={{ y: 15, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -15, opacity: 0 }}
-            transition={{ ease: 'easeInOut', duration: 0.3 }}
-            className='inline-block text-sm text-accent-dark/70 tracking-wide 
-              font-accent font-medium lowercase'
-          >
-            {ACTIVE_ACTIVITIES[activityIndex]}
-          </motion.span>
-        </AnimatePresence>
-      </span>
+          <AnimatePresence mode='popLayout'>
+            <motion.span
+              key={ACTIVE_ACTIVITIES[activityIndex]}
+              initial={{ y: 15, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -15, opacity: 0 }}
+              transition={{ ease: 'easeInOut', duration: 0.3 }}
+              className='inline-block text-base text-accent-dark/70 tracking-wide 
+                font-accent font-medium lowercase'
+            >
+              {ACTIVE_ACTIVITIES[activityIndex]}
+            </motion.span>
+          </AnimatePresence>
+        </span>
       </p>
     </section>
   )

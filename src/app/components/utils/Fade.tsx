@@ -1,6 +1,6 @@
 'use client';
 import { motion, Variants } from 'motion/react';
-import { ReactNode, ElementType, memo } from 'react';
+import { ReactNode, ElementType, memo, forwardRef } from 'react';
 
 // Configurations
 const FADE_UP_UI_PX_TRANSLATION = 10;
@@ -8,11 +8,11 @@ const FADE_UP_SECTION_PX_TRANSLATION = 25;
 const FADE_IN_DURATION = 0.3;
 
 // UI Timing
-const UI_DURATION = 0.4;
+const UI_DURATION = 0.3;
 const UI_EASE = [0.2, 0.65, 0.3, 0.9] as const;
 
 // Section timing
-const SECTION_DURATION = 0.8;
+const SECTION_DURATION = 0.6;
 const SECTION_EASE = [0.25, 0.4, 0.25, 1] as const;
 
 const FADE_UP_UI_VARIANTS: Variants = {
@@ -52,14 +52,14 @@ interface FadeProps {
   className?: string;
 }
 
-function Fade({
+const Fade = forwardRef<HTMLElement, FadeProps>(({
   children,
   type = 'up',
   speed = 'section',
   as = 'div' as ValidTag,
   inView = false,
   className = '',
-}: FadeProps) {
+}, ref) => {
   const Component = motion[as] as ElementType;
 
   let selectedVariant = FADE_UP_SECTION_VARIANTS;
@@ -79,6 +79,7 @@ function Fade({
 
   return (
     <Component 
+      ref={ref}
       variants={selectedVariant} 
       className={className}
       {...triggerProps}
@@ -86,6 +87,8 @@ function Fade({
       {children}
     </Component>
   )
-}
+});
+
+Fade.displayName = 'Fade';
 
 export default memo(Fade);

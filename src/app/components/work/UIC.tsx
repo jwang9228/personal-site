@@ -27,18 +27,18 @@ const UICModels: UICModel[] = [
 const designStatement = [
   'Retail and restaurant point-of-sale applications',
   'require interfaces that are highly responsive and', 
-  'instantly intuitive. We engineered a clean,',
+  'instantly intuitive. The team designed a clean,',
   'expressive UI that demonstrates meticulous care',
-  'for user experience at every stage of the transaction flow.',
-  'The resulting design scales seamlessly across handheld',
+  'for user experience at every stage of the transaction flow —',
+  'scaling seamlessly across handheld',
   'mobile units to full-size countertop registers.'
 ].join(' ');
 
 export default function UIC() {
   return (
-    <div className='flex flex-col pt-7 w-full'>
-      <div className='flex flex-col gap-y-3
-        pt-2.5 pb-14'
+    <div className='flex flex-col w-full'>
+      <div className='flex flex-col gap-y-2.5
+        pt-4 pb-12'
       >
         <span className='font-mono uppercase text-xs text-primary/70'>
           // System Design
@@ -51,7 +51,7 @@ export default function UIC() {
       </div>
       <div className='flex flex-col tablet:flex-row items-center 
         tablet:items-baseline tablet:justify-start tablet:pl-3
-        gap-14 tablet:gap-28 laptop:gap-32'>
+        gap-12 tablet:gap-28 laptop:gap-32'>
         {UICModels.map((model, i) => (
           <div 
             key={model.name} 

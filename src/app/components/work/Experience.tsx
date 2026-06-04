@@ -7,23 +7,23 @@ import Fade from '../utils/Fade';
 
 export default function Experience() {
   return (
-    <section className='flex flex-col gap-y-6 layout-px layout-py pb-16'>
+    <section className='flex flex-col gap-y-6 layout-px layout-py pb-14'>
       <Fade speed='ui'>
         <p className='text-xs text-primary/95 uppercase font-bold'>
           Experience
         </p>
       </Fade>
 
-      <div className='flex flex-col gap-y-16'>
+      <div className='flex flex-col gap-y-14'>
         {EXPERIENCES.map((experience, i) => (
           <Fade
             key={experience.company} 
             inView={i > 0}
-            className='flex flex-col gap-8 w-full'
+            className='flex flex-col gap-7 w-full'
           >
             <ExperienceHeader experience={experience} />
             
-            <ul className='flex flex-col gap-y-12'>
+            <ul className='flex flex-col gap-y-10'>
               {experience.positions.map(position => (
                 <PositionSection key={position.duration} position={position} />
               ))}
@@ -43,7 +43,7 @@ function ExperienceHeader({ experience } : { experience: ExperienceSection} ) {
       rel='noopener noreferrer'
       className='group flex items-center gap-5 w-fit'
     >
-      <div className='flex items-center justify-center shrink-0 size-13
+      <div className='flex items-center justify-center shrink-0 size-11
         bg-white rounded-xl'
       >
         <Image
@@ -51,7 +51,7 @@ function ExperienceHeader({ experience } : { experience: ExperienceSection} ) {
           alt={`${experience.company}`}
           width={48}
           height={48}
-          className='object-contain size-13 p-1.5' />
+          className='object-contain size-11 p-1.5' />
       </div>
       <div className='flex flex-col gap-y-1.5'>
         <h2 className='flex items-center gap-x-1.5 text-lg 
@@ -71,7 +71,7 @@ function ExperienceHeader({ experience } : { experience: ExperienceSection} ) {
 function PositionSection({ position } : { position: Position }) {
   return (
     <section className='relative flex flex-col gap-y-6 pl-8'>
-      <div className='absolute left-1.5 top-3 bottom-0 flex flex-col items-center w-1.5'>
+      <div className='absolute left-1.5 top-2.5 bottom-0 flex flex-col items-center w-1.5'>
         <div className='size-1.5 rounded-full bg-primary/60 shrink-0' />
         <div className='w-px h-full 
           bg-linear-to-b from-primary-muted/50 via primary-muted/50 to-primary-muted/25' />
@@ -79,7 +79,7 @@ function PositionSection({ position } : { position: Position }) {
       <hgroup className='flex flex-col tablet:flex-row items-baseline 
         gap-x-4 gap-y-1 font-mono'
       >
-        <h3 className='font-medium tracking-wider'>{position.title}</h3>
+        <h3 className='font-medium tracking-wide'>{position.title}</h3>
         <span className='flex gap-x-1.5 text-xs text-primary/80'>
           <span className='hidden tablet:block'>//</span>
           <span>{position.duration}</span>

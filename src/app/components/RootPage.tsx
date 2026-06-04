@@ -7,11 +7,10 @@ import { ABOUT_LABEL, HEADER_HEIGHT } from '../lib/navigation';
 import HeaderNav from './navigation/HeaderNav';
 import Hero from './hero/Hero';
 import Experience from './work/Experience';
-import Projects from './projects/Projects';
 import About from './about/About';
 import Footer from './navigation/Footer';
 
-const PAGE_STAGGER = 0.2;
+const PAGE_STAGGER = 0.25;
 const PAGE_DELAY = 0.1;
 const PAGE_VARIANTS: Variants = {
   hidden: { opacity: 0 },
@@ -59,7 +58,6 @@ export default function RootPage() {
           <motion.section variants={PAGE_VARIANTS} initial='hidden' animate='show'>
             <Hero />
             <Experience />
-            <Projects />
             <div 
               ref={lightModeRef} id={ABOUT_LABEL} 
               className='text-background bg-primary 
