@@ -14,7 +14,7 @@ export default function Experience() {
         </p>
       </Fade>
 
-      <div className='flex flex-col gap-y-16'>
+      <div className='flex flex-col gap-y-20'>
         {EXPERIENCES.map((experience, i) => (
           <Fade
             key={experience.company} 
@@ -23,7 +23,7 @@ export default function Experience() {
           >
             <ExperienceHeader experience={experience} />
             
-            <ul className='flex flex-col gap-y-8'>
+            <ul className='flex flex-col gap-y-12'>
               {experience.positions.map(position => (
                 <PositionSection key={position.duration} position={position} />
               ))}
@@ -37,43 +37,40 @@ export default function Experience() {
 
 function ExperienceHeader({ experience } : { experience: ExperienceSection} ) {
   return (
-    <Fade key={experience.company} className='flex'>
-      <Link
-        href={experience.link}
-        target='_blank'
-        rel='noopener noreferrer'
-        className='group flex items-center gap-5'
+    <Link
+      href={experience.link}
+      target='_blank'
+      rel='noopener noreferrer'
+      className='group flex items-center gap-5 w-fit'
+    >
+      <div className='flex items-center justify-center shrink-0 size-13
+        bg-white rounded-xl overflow-hidden'
       >
-        <div className='flex items-center justify-center shrink-0 size-13
-          bg-white rounded-xl overflow-hidden'
-        >
-          <Image
-            src={`/experience/${experience.logo}`} 
-            alt={`${experience.company}`}
-            width={48}
-            height={48}
-            className='object-contain size-13 p-1.5' />
-        </div>
-        <div className='flex flex-col gap-y-1.5'>
-          <h2 className='flex items-center gap-x-1.5 text-lg 
-            transition-colors group-hover:text-accent'
-          >
-            {experience.company}
-            <PiArrowUpRight className='translate-y-0.5 
-              text-primary/70 group-hover:text-accent' />
-          </h2>
-          <p className='text-xs text-primary/80'>
-            {experience.location}
-          </p>
-        </div>
-      </Link>
-    </Fade>
+        <Image
+          src={`/experience/${experience.logo}`} 
+          alt={`${experience.company}`}
+          width={48}
+          height={48}
+          className='object-contain size-13 p-1.5' />
+      </div>
+      <div className='flex flex-col gap-y-1.5'>
+        <h2 className='flex items-center gap-x-1.5 text-lg 
+          group-hover:text-accent transition-colors '>
+          {experience.company}
+          <PiArrowUpRight className='translate-y-0.5 text-primary/70 
+          group-hover:text-accent transition-colors' />
+        </h2>
+        <p className='text-xs text-primary/80'>
+          {experience.location}
+        </p>
+      </div>
+    </Link>
   )
 }
 
 function PositionSection({ position } : { position: Position }) {
   return (
-    <Fade as='section' className='relative flex flex-col gap-y-6 pl-8'>
+    <section className='relative flex flex-col gap-y-6 pl-8'>
       <div className='absolute left-1.5 top-3 bottom-0 flex flex-col items-center w-1.5'>
         <div className='size-1.5 rounded-full bg-primary/60 shrink-0' />
         <div className='w-px h-full 
@@ -93,6 +90,6 @@ function PositionSection({ position } : { position: Position }) {
       </p>
       <SkillsList skills={position.skills} />
       {position.showcase} 
-    </Fade>
+    </section>
   )
 }

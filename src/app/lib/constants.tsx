@@ -137,14 +137,14 @@ export const ACTIVE_ACTIVITIES = [
 
 /* Games Section */
 export const ABOUT_GAMES_SECTION: AboutSectionLabels = {
-  header: 'Matchmaking...',
-  title: 'Competitive: In Queue'
+  header: 'After Hours',
+  title: 'Competitive Matchmaking'
 };
 
 export const MAIN_GAME = 'Overwatch';
 
 export const GAMES = [
-  'Honkai: Star Rail', 'Battlefield 6', 'Clash Royale'
+  'Battlefield 6', 'Honkai: Star Rail', 'Clash Royale'
 ];
 
 /* PC Parts Section */
