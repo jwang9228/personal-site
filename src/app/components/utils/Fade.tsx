@@ -75,7 +75,7 @@ const Fade = forwardRef<HTMLElement, FadeProps>(({
     whileInView: 'show',
     viewport: { 
       once: true, 
-      margin: '0px 0px -20px 0px',
+      margin: '0px 0px -30px 0px',
       fallback: false 
     }
   } : {};
