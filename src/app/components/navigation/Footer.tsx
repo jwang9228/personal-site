@@ -32,7 +32,7 @@ export default function Footer() {
         </nav>
       </div>
       <div className='flex flex-col gap-y-1.5 
-        text-xs text-background/60 tablet:text-center'>
+        text-xs text-background/55 tablet:text-center'>
         {DESIGN_STATEMENT}
         <span>
           {COPYRIGHT} <span className='pl-0.5'>{DEV_NAME}</span>
