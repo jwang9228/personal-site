@@ -9,7 +9,7 @@ export default function Footer() {
       border-t laptop:border-t-0 border-primary-muted/25
       gap-7 px-6 laptop:px-0 layout-py laptop:py-8'>
       <div className='flex justify-between items-baseline gap-x-12'>
-        <span className='text-micro text-background/60 font-semibold uppercase'>
+        <span className='text-xs text-background/60 font-semibold uppercase'>
           {FOOTER_NAV.label}
         </span>
         <nav className='flex gap-8'>
@@ -32,7 +32,7 @@ export default function Footer() {
         </nav>
       </div>
       <div className='flex flex-col gap-y-1.5 
-        text-micro text-background/60 tablet:text-center'>
+        text-xs text-background/60 tablet:text-center'>
         {DESIGN_STATEMENT}
         <span>
           {COPYRIGHT} <span className='pl-0.5'>{DEV_NAME}</span>
