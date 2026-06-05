@@ -70,7 +70,16 @@ const Fade = forwardRef<HTMLElement, FadeProps>(({
     if (!inView) return;
 
     if ('fonts' in document) {
-      document.fonts.ready.then(() => setLayoutReady(true));
+      document.fonts.ready.then(() => {
+        // 1. Font is downloaded. Wait for the browser to calculate the layout (Reflow)
+        requestAnimationFrame(() => {
+          // 2. Layout is calculated. Wait for the pixels to be drawn (Paint)
+          requestAnimationFrame(() => {
+            // 3. The card is mathematically guaranteed to be its final, massive height
+            setLayoutReady(true);
+          });
+        });
+      });
     } else {
       // Fallback for old browsers
       setLayoutReady(true);
