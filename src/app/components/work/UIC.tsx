@@ -44,7 +44,7 @@ export default function UIC() {
           // System Design
         </span>
         <p className='text-sm text-primary/85 
-          leading-relaxed max-w-3xl'
+          leading-relaxed max-w-2xl'
         >
           {designStatement}
         </p>

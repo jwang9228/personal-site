@@ -1,5 +1,10 @@
+import { IconType } from 'react-icons';
+import { GoMail } from 'react-icons/go';
+import { IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5';
+
 export const WORK_LABEL = 'work';
 export const ABOUT_LABEL = 'about';
+const EMAIL = 'jwang.srv1@gmail.com'
 const LINKEDIN_LINK = 'https://www.linkedin.com/in/justin-n-wang/';
 const RESUME_LINK = '/experience/WangResume.pdf';
 
@@ -11,6 +16,10 @@ export interface NavItem {
 export interface FooterNav {
   label: string;
   links: NavItem[];
+}
+
+export interface SocialLink extends NavItem {
+  icon: IconType
 }
 
 export const HEADER_HEIGHT = 61;
@@ -29,9 +38,23 @@ export const FOOTER_NAV: FooterNav = {
   ]
 }
 
-export const TECHSTACK_LAYER_NAV = ['Project', 'Experience', 'Home'] as const;
-
-export type TechstackLayer = typeof TECHSTACK_LAYER_NAV[number];
+export const SOCIALS: SocialLink[] = [
+  { 
+    label: 'GitHub',
+    href: 'https://github.com/jwang9228',
+    icon: IoLogoGithub
+  },
+  { 
+    label: 'LinkedIn',
+    href: LINKEDIN_LINK,
+    icon: IoLogoLinkedin
+  },
+  { 
+    label: 'Email',
+    href: `mailto:${EMAIL}`,
+    icon: GoMail
+  }
+];
 
 export function useNavClick() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -52,4 +75,4 @@ export function useNavClick() {
   };
 
   return { handleNavClick, scrollToTop };
- }
+}

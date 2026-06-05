@@ -80,7 +80,7 @@ function PositionSection({ position } : { position: Position }) {
         <span className='text-xs text-primary/80 font-normal'>{position.duration}</span>
         <h3 className='font-medium tracking-wide'>{position.title}</h3>
       </hgroup>
-      <p className='text-sm text-primary/85 leading-relaxed max-w-3xl'>
+      <p className='text-sm text-primary/85 leading-relaxed max-w-2xl'>
         {position.description}
       </p>
       <SkillsList skills={position.skills} />

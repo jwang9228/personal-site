@@ -1,5 +1,7 @@
 export default function NotFound() {
   return (
-    <>Not Found</>
+    <main className='flex flex-col'>
+
+    </main>
   )
 }
