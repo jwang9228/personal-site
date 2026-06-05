@@ -1,6 +1,6 @@
 'use client';
 import { motion, Variants } from 'motion/react';
-import { ReactNode, ElementType, memo, forwardRef } from 'react';
+import { ReactNode, ElementType, memo, forwardRef, useState, useEffect } from 'react';
 
 // Configurations
 const FADE_UP_UI_PX_TRANSLATION = 10;
@@ -62,6 +62,21 @@ const Fade = forwardRef<HTMLElement, FadeProps>(({
 }, ref) => {
   const Component = motion[as] as ElementType;
 
+  // State to track browser finishing loading fonts - prevents early rendering
+  const [layoutReady, setLayoutReady] = useState(false);
+
+  useEffect(() => {
+    // If this component isn't a scroll-trigger, ignore the layout check
+    if (!inView) return;
+
+    if ('fonts' in document) {
+      document.fonts.ready.then(() => setLayoutReady(true));
+    } else {
+      // Fallback for old browsers
+      setLayoutReady(true);
+    }
+  }, [inView]);
+
   let selectedVariant = FADE_UP_SECTION_VARIANTS;
   if (type === 'in') {
     selectedVariant = FADE_IN_VARIANTS;
@@ -69,17 +84,19 @@ const Fade = forwardRef<HTMLElement, FadeProps>(({
     selectedVariant = FADE_UP_UI_VARIANTS;
   }
 
-  // If inView true, apply scroll-trigger props - only apply animation when component
-  // is in the viewport, only render once and when at least 25% of the component is on screen
+  // inView true - scroll-trigger settings
   const triggerProps = inView ? {
     initial: 'hidden',
-    whileInView: 'show',
-    viewport: { 
-      once: true, 
-      amount: 0.2,
-      margin: '0px 0px -50px 0px',
-      fallback: false 
-    }
+    // Only attach observer trigger when layout is ready
+    ...(layoutReady ? {
+      whileInView: 'show',
+      viewport: { 
+        once: true, 
+        amount: 0.2, 
+        margin: '0px 0px -50px 0px',
+        fallback: false 
+      }
+    } : {})
   } : {};
 
   return (
