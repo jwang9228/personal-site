@@ -18,7 +18,7 @@ export default function Games() {
           transition={{
             duration: 0.9,
             repeat: Infinity,
-            repeatType: 'reverse',
+            repeatType: 'mirror',
             ease: 'easeInOut'
           }}
         />
