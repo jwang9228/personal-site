@@ -69,15 +69,13 @@ const Fade = forwardRef<HTMLElement, FadeProps>(({
     selectedVariant = FADE_UP_UI_VARIANTS;
   }
 
-  // If inView true, apply scroll-trigger props - only apply animation when component
-  // is in the viewport, only render once and when at least 25% of the component is on screen
+  // inView - apply scroll-trigger props
   const triggerProps = inView ? {
     initial: 'hidden',
     whileInView: 'show',
     viewport: { 
       once: true, 
-      amount: 0.2, 
-      margin: '0px 0px -50px 0px',
+      margin: '0px 0px -20px 0px',
       fallback: false 
     }
   } : {};
