@@ -14,7 +14,7 @@ export default function Experience() {
         </p>
       </Fade>
 
-      <div className='flex flex-col gap-y-14'>
+      <div className='flex flex-col gap-y-14 desktop:gap-y-16'>
         {EXPERIENCES.map((experience, i) => (
           <Fade
             key={experience.company} 
@@ -68,23 +68,33 @@ function ExperienceHeader({ experience } : { experience: ExperienceSection} ) {
   )
 }
 
-function PositionSection({ position } : { position: Position }) {
+function PositionSection({ position }: { position: Position }) {
   return (
-    <section className='relative flex flex-col gap-y-5 pl-8'>
-      <div className='absolute left-1.5 top-2 bottom-0 flex flex-col items-center w-1.5'>
-        <div className='size-1.5 rounded-full bg-primary/55 shrink-0' />
-        <div className='w-px h-full 
-          bg-linear-to-b from-primary-muted/50 via primary-muted/50 to-primary-muted/30' />
+    <li className='flex flex-col gap-y-5'>
+      <div className='relative flex flex-col gap-y-5 pl-8'>
+        <div className='absolute left-1.5 top-2 bottom-0 flex flex-col items-center w-1.5'>
+          <div className='size-1.5 rounded-full bg-primary/55 shrink-0' />
+          <div className='w-px h-full 
+            bg-linear-to-b from-primary-muted/45 via-primary-muted/45 to-primary-muted/25' />
+        </div>
+        
+        <hgroup className='flex flex-col gap-y-1 font-mono'>
+          <span className='text-xs text-primary/80 font-normal'>{position.duration}</span>
+          <h3 className='font-medium tracking-wide'>{position.title}</h3>
+        </hgroup>
+        
+        <p className='text-sm text-primary/85 leading-relaxed max-w-2xl'>
+          {position.description}
+        </p>
+        
+        <SkillsList skills={position.skills} />
       </div>
-      <hgroup className='flex flex-col gap-y-1 font-mono'>
-        <span className='text-xs text-primary/80 font-normal'>{position.duration}</span>
-        <h3 className='font-medium tracking-wide'>{position.title}</h3>
-      </hgroup>
-      <p className='text-sm text-primary/85 leading-relaxed max-w-2xl'>
-        {position.description}
-      </p>
-      <SkillsList skills={position.skills} />
-      {position.showcase} 
-    </section>
+
+      {position.showcase && (
+        <div className='pl-8'>
+          {position.showcase}
+        </div>
+      )}
+    </li>
   )
 }
