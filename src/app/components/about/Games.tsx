@@ -39,7 +39,7 @@ export default function Games() {
             className='flex gap-x-3 text-xs font-mono'
           >
             <span className='text-background/25 select-none'>
-              {index === GAMES.length - 1 ? '└──' : '├──'}
+              {index === GAMES.length - 1 ? '└─' : '├─'}
             </span>
             <span className='text-background/60 tracking-wide'>
               {game}

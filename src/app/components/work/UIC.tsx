@@ -25,13 +25,10 @@ const UICModels: UICModel[] = [
 ];
 
 const designStatement = [
-  'Retail and restaurant point-of-sale applications',
+  'Restaurant point-of-sale applications',
   'require interfaces that are highly responsive and', 
-  'instantly intuitive. The team designed a clean,',
-  'expressive UI that demonstrates meticulous care',
-  'for user experience at every stage of the transaction flow —',
-  'scaling seamlessly across handheld',
-  'mobile units to full-size countertop registers.'
+  'instantly intuitive - UI that demonstrates meticulous care',
+  'for user experience at every stage of the transaction flow.'
 ].join(' ');
 
 export default function UIC() {

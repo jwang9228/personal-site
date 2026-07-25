@@ -37,17 +37,16 @@ export const EXPERIENCES: ExperienceSection[] = [
     positions: [
       {
         title: 'Software Engineer',
-        duration: 'Oct 2025 — Present',
+        duration: 'Oct 2025 — July 2026',
         description: [
-          "Engineering secure, high-performance Point-of-Sale (POS) systems for native Android.",
-          "Currently integrating UIC's payment engine directly with NEXGO hardware terminals,",
+          "Engineered secure, high-performance Point-of-Sale (POS) systems for native Android.",
+          "Integrated UIC's payment engine with NEXGO hardware terminals,",
           'delivering fault-tolerant transaction flows for reliable daily commerce.'
         ].join(' '),
         showcase: <UIC />,
         skills: [
           { skill: 'Android', detail: 'Kotlin, Compose, MVVM' },
-          { skill: 'Network', detail: 'TCP (XMl & JSON)' },
-          { skill: 'NEXGO SDK' }
+          { skill: 'Network', detail: 'TCP (XMl & JSON)' }
         ]
       }
     ]
@@ -62,8 +61,7 @@ export const EXPERIENCES: ExperienceSection[] = [
         title: 'Software Developer',
         duration: 'Jan 2024 — Oct 2025',
         description: [
-          'Transitioned to full-stack development,',
-          'architecting React frontends and Flask APIs',
+          'Designed React frontends and Flask APIs',
           'integrated with AWS and MongoDB.'
         ].join(' '),
         skills: [
@@ -76,13 +74,12 @@ export const EXPERIENCES: ExperienceSection[] = [
         title: 'Software Developer Intern & Co-op',
         duration: 'Jul 2022 — Dec 2023',
         description: [
-          'Developed a native Android camera application with real-time RTSP',
-          'video streaming. Optimized computer vision models with OpenCV algorithms',
-          'for high-performance inference.'
+          'Developed a native Android camera application with RTSP',
+          'video streaming and motion tracking (OpenCV Java).'
         ].join(' '),
         skills: [
-          { skill: 'Android', detail: 'OpenGL, Camera2 API' },
-          { skill: 'ML', detail: 'OpenCV, TensorRT' }
+          { skill: 'Android', detail: 'Java, Camera2 API' },
+          { skill: 'ML', detail: 'OpenCV' }
         ]
       }
     ]
