@@ -30,6 +30,22 @@ export interface Skill {
 
 export const EXPERIENCES: ExperienceSection[] = [
   {
+    company: "Lowe's",
+    logo: 'Lowes.webp',
+    link: 'https://lowes.com',
+    location: 'Charlotte, NC',
+    positions: [
+      {
+        title: 'Software Engineer',
+        duration: 'July 2026 — Present',
+        description: 'Android Engineering.',
+        skills: [
+          { skill: 'Android', detail: 'Kotlin' },
+        ]
+      }
+    ]
+  },
+  {
     company: 'UIC Payments',
     logo: 'UIC.jpg',
     link: 'https://uicpaymentsinc.com/',

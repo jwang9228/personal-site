@@ -18,7 +18,7 @@ export default function Experience() {
         {EXPERIENCES.map((experience, i) => (
           <Fade
             key={experience.company} 
-            inView={i > 0}
+            inView={i > 1}
             className='flex flex-col gap-7 w-full'
           >
             <ExperienceHeader experience={experience} />
