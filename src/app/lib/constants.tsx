@@ -39,7 +39,7 @@ export const EXPERIENCES: ExperienceSection[] = [
         title: 'Software Engineer',
         duration: 'July 2026 — Present',
         description: [
-          "Android Engineering for Mylow Companion, an AI-powered mobile assistant for Lowe's",
+          "Android engineering for Mylow Companion, an AI-powered mobile assistant for Lowe's",
           "floor associates to help answer product questions and offer installation services."
         ].join(' '),
         skills: [
