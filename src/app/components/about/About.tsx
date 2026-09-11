@@ -34,28 +34,28 @@ function About() {
       className='grid grid-cols-1 tablet:grid-cols-12
         gap-4 tablet:gap-2.5 layout-px layout-py'
     >
-      <Fade className='tablet:col-span-7'>
+      <Fade trigger='inherit' className='tablet:col-span-7'>
         <AboutSection
           aboutSectionLabels={ABOUT_ME_SECTION}
           content={<AboutMe />}
         />
       </Fade>
       
-      <Fade className='tablet:col-span-5'>
+      <Fade trigger='inherit' className='tablet:col-span-5'>
         <AboutSection
           aboutSectionLabels={ABOUT_GAMES_SECTION}
           content={<Games />}
         />
       </Fade>
 
-      <Fade className='tablet:col-span-5'>
+      <Fade trigger='inherit' className='tablet:col-span-5'>
         <AboutSection 
           aboutSectionLabels={ABOUT_ACTIVE_SECTION}
           content={<Active />}
         />
       </Fade>
 
-      <Fade className='tablet:col-span-7'>
+      <Fade trigger='inherit' className='tablet:col-span-7'>
         <AboutSection
           aboutSectionLabels={ABOUT_PC_SECTION}
           content={<PC />}
