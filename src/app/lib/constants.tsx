@@ -122,7 +122,8 @@ export const ABOUT_ME_STATEMENT = [
   "I'm always chasing that sweet spot where solid logic meets clean design."
 ].join(' ');
 
-export const ABOUT_ME_LOCATION = 'BASED - Pleasanton, CA (PT)';
+export const ABOUT_ME_BASED_LOCATION = 'BASED - Charlotte, NC';
+export const ABOUT_ME_ORIGIN_LOCATION = 'ORIGIN - Pleasanton, CA';
 
 /* Active Section */
 export const ABOUT_ACTIVE_SECTION: AboutSectionLabels = {
@@ -157,10 +158,10 @@ export const ABOUT_GAMES_SECTION: AboutSectionLabels = {
   title: 'Competitive Matchmaking'
 };
 
-export const MAIN_GAME = 'Overwatch';
+export const MAIN_GAME = 'Battlefield 6';
 
 export const GAMES = [
-  'Battlefield 6', 'Honkai: Star Rail', 'Clash Royale'
+  'Overwatch', 'Honkai: Star Rail', 'Clash Royale'
 ];
 
 /* PC Parts Section */

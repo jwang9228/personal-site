@@ -76,7 +76,7 @@ function AboutSection({
 } : AboutSectionProps) {
   return (
     <section className='h-full bg-white/90
-      border border-primary-muted/35 rounded-2xl px-6 py-4.5'
+      border border-primary-muted/35 rounded-2xl shadow-card px-6 py-4.5'
     >
       <header className='flex flex-col gap-1'>
         <h2 className='text-xs text-background/70 uppercase'>
