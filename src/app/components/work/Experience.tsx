@@ -4,8 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import SkillsList from './SkillsList';
 import Fade from '../utils/Fade';
+import { memo } from 'react';
 
-export default function Experience() {
+function Experience() {
   return (
     <section className='flex flex-col gap-y-6 layout-px layout-py pb-14'>
       <Fade speed='ui'>
@@ -34,6 +35,8 @@ export default function Experience() {
     </section>
   )
 }
+
+export default memo(Experience);
 
 function ExperienceHeader({ experience } : { experience: ExperienceSection} ) {
   return (

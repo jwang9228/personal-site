@@ -2,8 +2,9 @@ import { MAIN_TITLE, SECONDARY_TITLE } from '@/app/lib/constants';
 import { SOCIALS } from '@/app/lib/navigation';
 import Fade from '../utils/Fade';
 import Link from 'next/link';
+import { memo } from 'react';
 
-export default function Hero() {
+function Hero() {
   return (
     <section className='flex flex-col layout-px layout-py tablet:pt-9 gap-y-7'>
       <Fade 
@@ -41,3 +42,5 @@ export default function Hero() {
     </section>
   )
 }
+
+export default memo(Hero);

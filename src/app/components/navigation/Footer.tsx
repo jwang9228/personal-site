@@ -2,8 +2,9 @@ import { PiArrowUpRight } from 'react-icons/pi';
 import { FOOTER_NAV } from '@/app/lib/navigation';
 import { COPYRIGHT, DESIGN_STATEMENT, DEV_NAME } from '@/app/lib/constants';
 import Link from 'next/link';
+import { memo } from 'react';
 
-export default function Footer() {
+function Footer() {
   return (
     <footer className='flex flex-col tablet:items-center 
       border-t laptop:border-t-0 border-primary-muted/25
@@ -41,3 +42,5 @@ export default function Footer() {
     </footer>
   )
 }
+
+export default memo(Footer);

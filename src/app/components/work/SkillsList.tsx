@@ -12,7 +12,7 @@ export default function SkillsList({ skills }: { skills: Skill[] }) {
           <span className='text-primary/85'>{skill.skill}</span>
           {skill.detail && (
             <span className='flex gap-x-1.5 pl-0.5 text-xs text-primary/65'>
-              <span>//</span>
+              <span>{'//'}</span>
               <span>{skill.detail}</span>
             </span>
           )}

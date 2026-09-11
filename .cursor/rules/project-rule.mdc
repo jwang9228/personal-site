@@ -1,0 +1,23 @@
+---
+alwaysApply: true
+---
+
+# Cursor Rules for Next.js, Tailwind, and Developer Site
+
+## Tech Stack & Architecture
+- **Framework:** Next.js (App Router, React 19 rules). Use Server Components (`page.tsx`) by default. Use Client Components (`'use client'`) only when interactive state (e.g., hooks, filtering, modals) is required.
+- **Styling:** Tailwind CSS. Use utility classes. Prefer semantic class ordering and keep layouts responsive using breakpoints (`tablet:`, `laptop:`, `desktop:`).
+- **State & Routing:** Next.js native navigation (`next/link`, `next/navigation`).
+- **Animations:** Framer Motion. Prefer standardizing a fade component with parameterized settings.
+
+## Code Style & Best Practices
+- **TypeScript:** Strict mode enabled. Define clear interfaces/types.
+- **File Structure:** 
+  - Components in `src/components/` (ui components, layout components, gallery components).
+  - Types in `src/types/`.
+- **Formatting:** Clean, readable code without placeholder comments. Group imports logically (React/Next.js, external libraries, internal components, types).
+
+## AI Output Guidelines
+- Provide modular, reusable React components.
+- Do not write mock data inline; abstract it into a separate configuration file or provide a clean interface for data fetching.
+- Ensure all components are accessible (semantic HTML like `<main>`, `<article>`, `<section>`, and proper `alt` text for images).

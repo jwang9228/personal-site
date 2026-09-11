@@ -38,7 +38,7 @@ export default function UIC() {
         pt-4 pb-12'
       >
         <span className='font-mono uppercase text-xs text-primary/70'>
-          // System Design
+          {'// System Design'}
         </span>
         <p className='text-sm text-primary/85 
           leading-relaxed max-w-2xl'
@@ -61,7 +61,6 @@ export default function UIC() {
                 width={600} 
                 height={600}
                 className='w-full h-auto object-contain' 
-                priority
               />
               <div className='hidden tablet:flex justify-center items-baseline
                 gap-x-2.5 whitespace-nowrap'>

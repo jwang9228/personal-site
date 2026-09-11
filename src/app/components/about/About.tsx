@@ -11,6 +11,7 @@ import Games from './Games';
 import PC from './PC';
 import AboutMe from './AboutMe';
 import { motion } from 'motion/react';
+import { memo } from 'react';
 
 // Fade ins are handled by children
 const ABOUT_SECTION_VARIANTS = {
@@ -23,7 +24,7 @@ const ABOUT_SECTION_VARIANTS = {
   }
 };
 
-export default function About() {
+function About() {
   return (
     <motion.div
       variants={ABOUT_SECTION_VARIANTS}
@@ -65,19 +66,17 @@ export default function About() {
 }
 
 interface AboutSectionProps {
-  containerStyle?: string,
   aboutSectionLabels: AboutSectionLabels,
   content: React.ReactNode
 }
 
 function AboutSection({ 
-  containerStyle, 
   aboutSectionLabels, 
   content 
 } : AboutSectionProps) {
   return (
-    <section className={`${containerStyle} h-full bg-white/90
-      border border-primary-muted/35 rounded-2xl px-6 py-4.5`}
+    <section className='h-full bg-white/90
+      border border-primary-muted/35 rounded-2xl px-6 py-4.5'
     >
       <header className='flex flex-col gap-1'>
         <h2 className='text-xs text-background/70 uppercase'>
@@ -93,3 +92,5 @@ function AboutSection({
     </section>
   )
 }
+
+export default memo(About);
