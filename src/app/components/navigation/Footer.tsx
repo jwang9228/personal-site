@@ -21,13 +21,13 @@ function Footer() {
               target='_blank'
               rel='noopener noreferrer'
               className='group flex items-center gap-2 text-sm text-background/75
-                hover:text-accent-dark transition-colors duration-300 lowercase'
+                hover:text-accent-dark transition-colors duration-ui ease-ui lowercase'
             >
               {link.label}
               <PiArrowUpRight 
                 size={18}
                 className='translate-y-0.5 opacity-75
-                  group-hover:opacity-90 transition-opacity duration-300'/>
+                  group-hover:opacity-90 transition-opacity duration-ui ease-ui'/>
             </Link>
           ))}
         </nav>

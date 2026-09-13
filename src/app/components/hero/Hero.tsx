@@ -8,7 +8,7 @@ function Hero() {
   return (
     <section className='flex flex-col layout-px layout-py tablet:pt-9 gap-y-7'>
       <Fade 
-        as='section' speed='ui'
+        as='section' speed='ui' trigger='inherit'
         className='flex flex-col text-2xl gap-1'
       >
         <h1 className='flex flex-col tablet:flex-row gap-1 tablet:gap-3'>
@@ -20,7 +20,7 @@ function Hero() {
         </h1>
       </Fade>
       <Fade 
-        as='section' speed='ui'
+        as='section' speed='ui' trigger='inherit'
         className='flex items-center gap-x-6 tablet:gap-x-7'
       >
         {SOCIALS.map(social => {
@@ -34,7 +34,7 @@ function Hero() {
               rel='noopener noreferrer'
             >
               <Icon className='text-primary/80 hover:text-accent
-                transition-colors duration-300 size-7' />
+                transition-colors duration-ui ease-ui size-7' />
             </Link>
           )
         })}

@@ -73,6 +73,14 @@
                  0 2px 8px oklch(0.10 0.003 25 / 0.03);
 }
 
+/* Motion — keep Fade.tsx JS constants in sync with these values */
+@theme {
+  --duration-ui: 300ms;
+  --duration-section: 600ms;
+  --ease-ui: cubic-bezier(0.2, 0.65, 0.3, 0.9);
+  --ease-section: cubic-bezier(0.25, 0.4, 0.25, 1);
+}
+
 /* Application layout margins */
 @utility layout-root {
   display:          flex;

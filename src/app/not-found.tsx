@@ -24,14 +24,14 @@ export default function NotFound() {
         justify-center items-center text-center
         layout-px max-w-md gap-y-8'
     >
-      <Fade speed='ui'>
+      <Fade speed='ui' trigger='inherit'>
         <h1 className='text-8xl text-primary/95 
           tracking-wider font-accent font-medium'>
           404
         </h1>
       </Fade>
 
-      <Fade speed='ui'>
+      <Fade speed='ui' trigger='inherit'>
         <p className='flex flex-col gap-y-4 font-mono leading-relaxed'>
           <span className='flex justify-center items-center gap-x-3'>
             <span className='text-xl text-primary/95'>{'> Page not found'}</span>
@@ -52,12 +52,12 @@ export default function NotFound() {
         </p>
       </Fade>
 
-      <Fade speed='ui' className='mt-4'>
+      <Fade speed='ui' trigger='inherit' className='mt-4'>
         <Link
           href='/'
           className='inline-block bg-primary/95 text-background 
             font-mono font-medium uppercase px-5 py-2 rounded-md
-            transition-transform hover:scale-105 active:scale-95'
+            transition-transform duration-ui ease-ui hover:scale-105 active:scale-95'
         >
           Return Home
         </Link>

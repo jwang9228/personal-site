@@ -9,7 +9,7 @@ import { memo } from 'react';
 function Experience() {
   return (
     <section className='flex flex-col gap-y-6 layout-px layout-py pb-14'>
-      <Fade speed='ui'>
+      <Fade speed='ui' trigger='inherit'>
         <p className='text-xs text-primary/95 uppercase font-bold'>
           Experience
         </p>
@@ -19,7 +19,7 @@ function Experience() {
         {EXPERIENCES.map((experience, i) => (
           <Fade
             key={experience.company} 
-            inView={i > 1}
+            trigger={i > 1 ? 'inView' : 'inherit'}
             className='flex flex-col gap-7 w-full'
           >
             <ExperienceHeader experience={experience} />
@@ -58,10 +58,10 @@ function ExperienceHeader({ experience } : { experience: ExperienceSection} ) {
       </div>
       <div className='flex flex-col gap-y-1.5'>
         <h2 className='flex items-center gap-x-1.5 text-lg 
-          group-hover:text-accent transition-colors '>
+          group-hover:text-accent transition-colors duration-ui ease-ui'>
           {experience.company}
           <PiArrowUpRight className='translate-y-0.5 text-primary/70 
-          group-hover:text-accent transition-colors' />
+          group-hover:text-accent transition-colors duration-ui ease-ui' />
         </h2>
         <p className='text-xs text-primary/80'>
           {experience.location}

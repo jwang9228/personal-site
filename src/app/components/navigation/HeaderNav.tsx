@@ -40,7 +40,7 @@ export default function HeaderNav() {
                 href={tab.href}
                 key={tab.label}
                 onClick={(e) => handleNavClick(e, tab.label)}
-                className={`transition-colors duration-300 lowercase cursor-pointer
+                className={`transition-colors duration-ui ease-ui lowercase cursor-pointer
                   ${isLightMode ? lightModeStyle : darkModeStyle}`
                 }
               >
