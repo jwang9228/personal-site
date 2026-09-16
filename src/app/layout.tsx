@@ -6,6 +6,8 @@ import {
 import './globals.css';
 import { Metadata, Viewport } from 'next';
 import { ReactNode } from 'react';
+import { DEV_NAME, MAIN_TITLE, SITE_URL } from './lib/constants';
+import { SOCIALS } from './lib/navigation';
 
 const lora = Lora({ 
   subsets: ['latin'],
@@ -26,17 +28,31 @@ const jetbrains_mono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://justinnwang.com'),
+  metadataBase: new URL(SITE_URL),
   title: {
     template: '%s | Justin Wang',
     default: 'Justin Wang | Software Engineer'
   },
-  description: 'Developer portfolio of Justin Wang.'
+  description: 'Developer portfolio of Justin Wang.',
+  alternates: {
+    canonical: '/',
+  },
 }
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
+}
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: DEV_NAME,
+  url: SITE_URL,
+  jobTitle: MAIN_TITLE,
+  sameAs: SOCIALS
+    .map(social => social.href)
+    .filter(href => href.startsWith('http')),
 }
 
 export default function Layout({ children } : { children: ReactNode }) {
@@ -47,6 +63,10 @@ export default function Layout({ children } : { children: ReactNode }) {
         ${jetbrains_mono.variable}`}
     >
       <body className='font-base antialiased'>
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         {children}
       </body>
     </html>
