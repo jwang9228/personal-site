@@ -1,5 +1,6 @@
 import UIC from '../components/work/UIC';
 
+export const SITE_URL = 'https://justinnwang.com';
 export const DEV_NAME = 'Justin Wang';
 export const DESIGN_STATEMENT = 'Designed and built with Next.js and Tailwind CSS'
 export const COPYRIGHT = `\u00A9 ${new Date().getFullYear()}`;
