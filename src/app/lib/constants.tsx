@@ -44,14 +44,14 @@ export const EXPERIENCES: ExperienceSection[] = [
           "floor associates to help answer product questions and offer installation services."
         ].join(' '),
         skills: [
-          { skill: 'Android', detail: 'Kotlin, XML' },
+          { skill: 'Android', detail: 'Kotlin, XML, MVVM' },
         ]
       }
     ]
   },
   {
     company: 'UIC Payments',
-    logo: 'UIC.jpg',
+    logo: 'UIC.webp',
     link: 'https://uicpaymentsinc.com/',
     location: 'Fremont, CA',
     positions: [
@@ -73,7 +73,7 @@ export const EXPERIENCES: ExperienceSection[] = [
   },
   {
     company: 'Agrofocal Technologies',
-    logo: 'Agrofocal.png',
+    logo: 'Agrofocal.webp',
     link: 'https://agrofocal.ai',
     location: 'San Jose, CA',
     positions: [
