@@ -10,17 +10,17 @@ const UICModels: UICModel[] = [
   { 
     name: 'N96', 
     label: 'Checkout',
-    sizeClass: 'w-1/5 tablet:w-1/6 laptop:w-1/7' 
+    sizeClass: 'w-1/5 tablet:w-1/7 laptop:w-1/9' 
   }, 
   { 
     name: 'CT20P', 
     label: 'Customer Payment',
-    sizeClass: 'w-1/4 tablet:w-1/5 laptop:w-1/6' 
+    sizeClass: 'w-1/4 tablet:w-1/6 laptop:w-1/7' 
   },
   { 
     name: 'EF20',
     label: 'Post-Auth Adjustments',
-    sizeClass: 'w-3/10 tablet:w-1/4 laptop:w-1/5' 
+    sizeClass: 'w-3/10 tablet:w-1/5 laptop:w-1/6' 
   } 
 ];
 
@@ -47,8 +47,7 @@ export default function UIC() {
         </p>
       </div>
       <div className='flex flex-row 
-        items-baseline justify-start tablet:pl-3
-        gap-8 tablet:gap-28 laptop:gap-32'>
+        items-baseline justify-start gap-8 tablet:gap-28'>
         {UICModels.map((model, i) => (
           <div 
             key={model.name} 
@@ -56,7 +55,7 @@ export default function UIC() {
               shrink-0 ${model.sizeClass}`}
           >
               <Image
-                src={`/experience/uic/${model.name}.png`} 
+                src={`/experience/uic/${model.name}.webp`} 
                 alt={model.name}
                 width={600} 
                 height={600}

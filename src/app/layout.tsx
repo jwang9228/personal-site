@@ -3,6 +3,7 @@ import {
   Plus_Jakarta_Sans,
   JetBrains_Mono
 } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 import { Metadata, Viewport } from 'next';
 import { ReactNode } from 'react';
@@ -68,6 +69,7 @@ export default function Layout({ children } : { children: ReactNode }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
         {children}
+        <Analytics />
       </body>
     </html>
   );
